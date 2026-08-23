@@ -33,6 +33,9 @@ metallic/roughness workflow, so that is the workflow taught here.
 | [Marvelous Designer](software/marvelous-designer.md) | Paid — cloth and accessories |
 | [Poly Haven](software/poly-haven.md) | CC0 — HDRIs, textures, models |
 | [ambientCG](software/ambientcg.md) | CC0 — PBR material library |
+| [3DTextures.me](https://3dtextures.me/) | CC0 — hand-authored sets, strong stylised and sci-fi selection |
+| [cgbookcase](https://www.cgbookcase.com/) | Free PBR textures; smaller library, check each licence |
+| [ShareTextures](https://www.sharetextures.com/) | Large free library — **licence varies per material, check before shipping** |
 
 ## Hands-on projects
 

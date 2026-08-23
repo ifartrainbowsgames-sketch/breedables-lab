@@ -51,6 +51,31 @@ Free (some open-source, some free-tier). Verify license before shipping anything
 
 ---
 
+## Open source, off-catalog
+
+Not in Blender's extensions list, but GPL-compatible and worth knowing. None is
+studio-approved — run it past the [decision model](../../research/decision-model.md) first.
+
+| Add-on | Licence | What it does | Why it matters here |
+|--------|---------|--------------|---------------------|
+| [GameRig](https://github.com/Arminando/GameRig) | Open source | Rigify-based auto-rigging aimed at game engines; adds rigs and metarigs | Game-engine-friendly rigs are closer to what Second Life wants than a film rig |
+| [CloudRig](https://gitlab.com/blender/CloudRig) | Open source | Blender Studio's production rig-building framework | The rigging system behind Blender Studio's own characters |
+| [Rigify (upstream)](https://github.com/cessen/rigify) | GPL | The add-on's development repository | Where quadruped metarig behaviour is actually decided |
+| [AutoRemesher](https://github.com/huxingyi/autoremesher) | GPLv3 | Automatic all-quad retopology, with a Blender bridge | An automatic first pass before manual cleanup — feed it into [E03](../../research/experiments.md#e03-organic-retopology-benchmark) |
+| [B-Surfaces GPL Edition](https://extensions.blender.org/add-ons/bsurfaces-gpl-edition/) | GPL | Draw-based modelling and retopology in Edit Mode | Free alternative to RetopoFlow's stroke workflow |
+
+## Procedural and scripting
+
+For phenotype variants, one node graph beats a folder of hand-made meshes.
+
+| Project | Licence | What it does |
+|---------|---------|--------------|
+| [Geometry Script](https://github.com/carson-katri/geometry-script) | Open source | Write geometry node trees as Python — reviewable in git, unlike a node graph |
+| [geonodes](https://github.com/al1brn/geonodes) | Open source | Build geometry nodes from Python scripts |
+| [pynodes](https://github.com/iplai/pynodes) | Open source | Programmatic geometry, shader and compositor nodes |
+| [NodeToPython](https://github.com/BrendanParmer/NodeToPython) | Open source | Convert an existing node group into a Python add-on |
+| [Sorcar](https://github.com/aachman98/Sorcar) | Open source | Node-based procedural modelling, Houdini-inspired |
+
 ## Paid — but worth it
 
 Only adopt a paid add-on when it wins on measured evidence (see the [tool comparison rules](../../research/decision-model.md#writing-a-tool-comparison)). These are the ones that repeatedly justify their cost for SL work.

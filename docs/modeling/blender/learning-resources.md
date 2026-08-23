@@ -50,6 +50,7 @@ Readable in a browser; no proprietary tutor app required.
 | [modeling-course](https://github.com/sajmon170/modeling-course) | MkDocs site, AGPL, with `.webm` lessons | A structured modelling course. Read it from the repository — the published site is currently offline |
 | [Blender add-on development](https://github.com/varkenvarken/Blender-add-on-development) | GPL source plus a video series | Writing add-ons, once modelling is not the bottleneck |
 | [blender_python_tutorial](https://github.com/kandeng/blender_python_tutorial) | Notebook-style Python walkthroughs | Scripting Blender for repeatable breedable variants |
+| [Geometry Nodes scripting examples](https://github.com/cgwire/blender-scripting-geometry-nodes) | Worked source examples | Driving geometry nodes from Python — see the [add-on catalog](addon-catalog.md) for the libraries |
 
 ## Practice files
 
@@ -61,6 +62,26 @@ Learning sticks faster when you can open the finished scene and take it apart.
 | [Blender-Donut-Tutorial](https://github.com/thecrazymage/Blender-Donut-Tutorial) | Per-lesson `Donut_{N}.blend` files matching the 4.x donut series, so you can rejoin at any lesson |
 | [Rain rig](https://studio.blender.org/characters/rain/v3/) | CC-BY production rig. Rigging practice without building a rig first — see [rigging & skinning](../../rigging-animation/rigging-and-skinning.md) |
 | [Animation fundamentals rigs](https://studio.blender.org/training/animation-fundamentals/) | Ball, pendulum and character rigs for motion practice |
+
+## Course repositories
+
+Course projects that publish their working files. Useful when you want to open
+the finished scene rather than only watch someone build it.
+
+| Repository | What it holds |
+|------------|---------------|
+| [Complete Blender Creator](https://github.com/CompleteBlenderCreator) | Twelve repositories of course files — box modelling through character creation |
+| [Blender Character Creator](https://github.com/blendercharacters) | Character work aimed at game engines: rigging, animation principles, simple character modelling |
+
+## Character and creature generators
+
+Base meshes so you can practise sculpting and rigging without modelling a body
+first. Both are under evaluation, not approved.
+
+| Project | Licence | Note |
+|---------|---------|------|
+| [CharMorph](https://github.com/Upliner/CharMorph) | Open source | Character creation add-on; a rewrite of the unmaintained MB-Lab |
+| [MPFB2](https://github.com/makehumancommunity/mpfb2) | Open source | MakeHuman rebuilt as a Blender add-on |
 
 ## Primary documentation
 

@@ -20,6 +20,7 @@ Life's Animesh imposes its own limits, covered in
 |------|----------------|
 | [Rigging & skinning](rigging-and-skinning.md) | Quadruped armatures and clean deformation weights |
 | [Animation](animation.md) | Idle and walk cycles, baked for export |
+| [Animation libraries](animation-libraries.md) | Where ready-made motion comes from, and what its licence permits |
 
 ## Software
 
@@ -29,6 +30,7 @@ Life's Animesh imposes its own limits, covered in
 | [Avastar](../research/tool-registry.md) | Paid — exact Second Life skeleton for Blender |
 | [Rokoko Studio Live](../research/candidates/rokoko-studio-live.md) | Under evaluation — motion capture |
 | [Animation retargeting](../research/candidates/animation-retargeting.md) | Under evaluation — reuse animation libraries |
+| [Open Mocap](https://github.com/Larenju-Rai/open-mocap-blender) | Open source — AI pose tracking inside Blender |
 
 ## Hands-on projects
 
