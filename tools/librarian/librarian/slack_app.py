@@ -9,15 +9,33 @@ from .config import Settings
 from .db import LibrarianDB
 
 
-def _format_resource(r) -> str:
+def _wiki_link(settings: Settings, wiki_path: str | None) -> str | None:
+    if not wiki_path:
+        return None
+    rel = wiki_path.removeprefix("docs/").removesuffix(".md")
+    return f"{settings.wiki_base_url}/{rel}/"
+
+
+def _format_resource(settings: Settings, r) -> str:
     license_value = r.code_license or r.github_license or "unknown"
-    return (
-        f"*{r.name}*\n"
-        f"Type: `{r.commercial_type}` | Status: `{r.status}` | License: `{license_value}`\n"
-        f"Category: `{r.category}`\n"
-        f"Official: {r.url}\n"
-        f"HTTP: `{r.http_status if r.http_status is not None else 'unchecked'}`"
-    )
+    lines = [
+        f"*{r.name}*",
+        f"License: `{license_value}` | Category: `{r.category}`",
+        f"Official: {r.url}",
+    ]
+    if r.primary_video_url:
+        lines.append(f"Video: {r.primary_video_url}")
+    docs = r.doc_url_list()
+    if docs:
+        lines.append("Docs: " + ", ".join(docs[:3]))
+    lesson = _wiki_link(settings, r.lesson_wiki_path)
+    if lesson:
+        lines.append(f"Lesson: {lesson}")
+    if r.evidence_path:
+        lines.append(f"Evidence folder: `{r.evidence_path}`")
+    if r.academy_track:
+        lines.append(f"Academy track: `{r.academy_track}`")
+    return "\n".join(lines)
 
 
 def _open_db(settings: Settings) -> LibrarianDB:
@@ -44,29 +62,41 @@ def build_app(settings: Settings) -> App:
         if not matches:
             respond(f"No Librarian record matched `{query}`.")
             return
-        respond("\n\n".join(_format_resource(r) for r in matches))
+        respond("\n\n".join(_format_resource(settings, r) for r in matches))
 
     @app.command("/breedstatus")
     def breedstatus(ack, respond):
         ack()
         db = _open_db(settings)
-        counts = db.status_counts()
-        if not counts:
+        resources = db.list(limit=500)
+        if not resources:
             respond("The Librarian registry is empty.")
             return
-        respond("*Breedables Librarian status*\n" + "\n".join(f"• `{k}`: {v}" for k, v in counts.items()))
+        with_video = sum(1 for r in resources if r.primary_video_url)
+        with_docs = sum(1 for r in resources if r.doc_url_list())
+        with_lesson = sum(1 for r in resources if r.lesson_wiki_path)
+        respond(
+            "*Breedables Librarian evidence status*\n"
+            f"• Tools registered: {len(resources)}\n"
+            f"• With video: {with_video}\n"
+            f"• With official docs: {with_docs}\n"
+            f"• With wiki lesson: {with_lesson}\n"
+            f"• Wiki: {settings.wiki_base_url}/"
+        )
 
     @app.command("/breedgaps")
     def breedgaps(ack, respond):
         ack()
         db = _open_db(settings)
-        gaps = db.gaps(limit=10)
+        gaps = db.evidence_gaps(repo_root=settings.repo_root, limit=10)
         if not gaps:
-            respond("No obvious registry gaps found.")
+            respond("No evidence gaps found in the registry.")
             return
-        lines = ["*Top registry gaps*"]
+        lines = ["*Top evidence gaps* (wiki-first)"]
         for item in gaps:
-            lines.append(f"• #{item['id']} *{item['name']}*: {', '.join(item['issues'])}")
+            lesson = _wiki_link(settings, item.get("lesson_wiki_path"))
+            suffix = f" → {lesson}" if lesson else ""
+            lines.append(f"• #{item['id']} *{item['name']}*: {', '.join(item['issues'])}{suffix}")
         respond("\n".join(lines))
 
     @app.event("app_mention")
@@ -78,16 +108,30 @@ def build_app(settings: Settings) -> App:
         db = _open_db(settings)
         lowered = text.casefold()
         if lowered == "status":
-            counts = db.status_counts()
-            say(" ".join(f"{k}:{v}" for k, v in counts.items()) or "Registry empty.")
+            resources = db.list(limit=500)
+            with_lesson = sum(1 for r in resources if r.lesson_wiki_path)
+            say(f"tools:{len(resources)} with_lesson:{with_lesson} wiki:{settings.wiki_base_url}/")
         elif lowered == "gaps":
-            gaps = db.gaps(limit=5)
-            say("\n".join(f"#{g['id']} {g['name']}: {', '.join(g['issues'])}" for g in gaps) or "No obvious gaps.")
+            gaps = db.evidence_gaps(repo_root=settings.repo_root, limit=5)
+            say(
+                "\n".join(
+                    f"#{g['id']} {g['name']}: {', '.join(g['issues'])}"
+                    for g in gaps
+                )
+                or "No evidence gaps."
+            )
         elif lowered.startswith("tool "):
             matches = db.search(text[5:].strip(), limit=3)
-            say("\n\n".join(_format_resource(r) for r in matches) if matches else "No matching tool.")
+            say(
+                "\n\n".join(_format_resource(settings, r) for r in matches)
+                if matches
+                else "No matching tool."
+            )
         else:
-            say("I keep structured studio records. Try `tool <name>`, `status`, or `gaps`. Deep research stays in ChatGPT.")
+            say(
+                "I link tools to wiki lessons and evidence folders. "
+                f"Try `tool <name>`, `status`, or `gaps`. Full wiki: {settings.wiki_base_url}/"
+            )
 
     return app
 

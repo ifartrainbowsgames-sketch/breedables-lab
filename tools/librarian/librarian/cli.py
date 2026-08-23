@@ -3,12 +3,14 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from datetime import datetime, timezone
 
 from .checks import check_resource
 from .config import Settings
 from .db import LibrarianDB
 from .ingest import github_search, ingest_feed
 from .seed import seed_baseline
+from .academy_manifest import academy_content_gaps
 
 
 def _db() -> tuple[LibrarianDB, Settings]:
@@ -92,8 +94,56 @@ def cmd_check(args) -> int:
 
 
 def cmd_gaps(args) -> int:
+    db, settings = _db()
+    print(json.dumps(db.gaps(limit=args.limit, repo_root=settings.repo_root), indent=2))
+    return 0
+
+
+def cmd_registry_gaps(args) -> int:
     db, _ = _db()
-    print(json.dumps(db.gaps(limit=args.limit), indent=2))
+    print(json.dumps(db.registry_gaps(limit=args.limit), indent=2))
+    return 0
+
+
+def cmd_content_gaps(args) -> int:
+    db, settings = _db()
+    payload = {
+        "resources": db.evidence_gaps(repo_root=settings.repo_root, limit=args.limit),
+        "academy": academy_content_gaps(settings.repo_root),
+    }
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def cmd_research_queue(args) -> int:
+    db, settings = _db()
+    payload = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "wiki_base_url": settings.wiki_base_url,
+        "resources": db.evidence_gaps(repo_root=settings.repo_root, limit=args.limit),
+        "academy": academy_content_gaps(settings.repo_root),
+        "registry": db.registry_gaps(limit=args.limit),
+    }
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def cmd_set_evidence(args) -> int:
+    db, _ = _db()
+    doc_urls = None
+    if args.docs:
+        doc_urls = [part.strip() for part in args.docs.split(",") if part.strip()]
+    resource = db.update_evidence(
+        args.id,
+        primary_video_url=args.video,
+        doc_urls=doc_urls,
+        lesson_wiki_path=args.lesson,
+        evidence_path=args.evidence,
+        license_note_path=args.license_note,
+        academy_track=args.track,
+        last_evidence_review=args.reviewed,
+    )
+    print(json.dumps(resource.as_dict(), indent=2))
     return 0
 
 
@@ -178,6 +228,29 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("gaps")
     p.add_argument("--limit", type=int, default=25)
     p.set_defaults(func=cmd_gaps)
+
+    p = sub.add_parser("registry-gaps")
+    p.add_argument("--limit", type=int, default=25)
+    p.set_defaults(func=cmd_registry_gaps)
+
+    p = sub.add_parser("content-gaps")
+    p.add_argument("--limit", type=int, default=50)
+    p.set_defaults(func=cmd_content_gaps)
+
+    p = sub.add_parser("research-queue")
+    p.add_argument("--limit", type=int, default=50)
+    p.set_defaults(func=cmd_research_queue)
+
+    p = sub.add_parser("set-evidence")
+    p.add_argument("id", type=int)
+    p.add_argument("--video")
+    p.add_argument("--docs", help="Comma-separated official doc URLs")
+    p.add_argument("--lesson", help="Wiki lesson path, e.g. docs/academy/tracks/a01-organic-pbr.md")
+    p.add_argument("--evidence", help="Evidence folder path, e.g. training/texturing/a01/")
+    p.add_argument("--license-note")
+    p.add_argument("--track", help="Academy track id, e.g. A01")
+    p.add_argument("--reviewed", help="ISO date of last evidence review")
+    p.set_defaults(func=cmd_set_evidence)
 
     p = sub.add_parser("status")
     p.set_defaults(func=cmd_status)

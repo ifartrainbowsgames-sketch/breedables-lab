@@ -46,10 +46,24 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Roadmap: studio-roadmap.md
-  - Production:
-      - Decision model: production/decision-model.md
-      - Tools:
+  - Academy:
+      - Overview: academy/overview.md
+      - Production line: academy/production-line.md
+      - Tracks:
+          - A01 Organic PBR: academy/tracks/a01-organic-pbr.md
+          - A02 Layered textures: academy/tracks/a02-layered-textures.md
+          - A03 Retopology: academy/tracks/a03-retopology.md
+          - A04 Rig + animation: academy/tracks/a04-rig-animation.md
+          - A05 SL fixture: academy/tracks/a05-sl-fixture.md
+      - Resources:
+          - Training videos: academy/resources/videos.md
+          - Official docs: academy/resources/official-docs.md
+  - Studio:
+      - Roadmap: studio-roadmap.md
+      - Wiki-first strategy: studio/wiki-first-strategy.md
+      - Channel map: studio/channel-map.md
+      - Content requirements: studio/channel-content-requirements.md
+      - Tools registry:
           - Overview: production/tools/index.md
           - Blender: production/tools/blender.md
           - Material Maker: production/tools/material-maker.md
@@ -61,10 +75,11 @@ nav:
           - Research candidates: production/tools/research-candidates.md
       - Experiments: production/experiments.md
       - Promotion rules: production/promotion-rules.md
+      - Decision model: production/decision-model.md
   - Second Life: secondlife/platform-baseline.md
-  - Academy: academy/overview.md
   - Research:
       - Phase 0 survey: research/phase-0-survey.md
+      - Wiki concept audit: research/wiki-concept-audit.md
 
 extra:
   social:

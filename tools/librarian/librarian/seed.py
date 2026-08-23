@@ -70,12 +70,89 @@ BASELINE_RESOURCES = [
     },
 ]
 
+EVIDENCE_DEFAULTS: dict[str, dict] = {
+    "Blender": {
+        "primary_video_url": "https://www.youtube.com/watch?v=B0J27sf02NU",
+        "doc_urls": [
+            "https://docs.blender.org/manual/en/latest/",
+            "https://docs.blender.org/manual/en/latest/render/shader_nodes/intro.html",
+        ],
+        "lesson_wiki_path": "docs/production/tools/blender.md",
+        "evidence_path": "training/blender/",
+        "academy_track": "A-model",
+    },
+    "Material Maker": {
+        "primary_video_url": "https://www.youtube.com/watch?v=8MMSS2F5vtc",
+        "doc_urls": [
+            "https://github.com/RodZill4/material-maker/wiki",
+            "https://docs.blender.org/manual/en/latest/files/import_export.html",
+        ],
+        "lesson_wiki_path": "docs/academy/tracks/a01-organic-pbr.md",
+        "evidence_path": "training/texturing/a01/",
+        "academy_track": "A01",
+    },
+    "Ucupaint": {
+        "doc_urls": [
+            "https://github.com/ucupumar/ucupaint",
+            "https://docs.blender.org/manual/en/latest/sculpt_paint/texture_paint/index.html",
+        ],
+        "lesson_wiki_path": "docs/academy/tracks/a02-layered-textures.md",
+        "evidence_path": "training/texturing/a02/",
+        "academy_track": "A02",
+    },
+    "TripoSR": {
+        "doc_urls": [
+            "https://github.com/VAST-AI-Research/TripoSR",
+            "https://github.com/VAST-AI-Research/TripoSR/blob/main/LICENSE",
+        ],
+        "lesson_wiki_path": "docs/production/tools/triposr.md",
+        "evidence_path": "training/modeling/triposr/",
+        "academy_track": "A-model",
+    },
+    "RetopoFlow": {
+        "doc_urls": [
+            "https://github.com/CGCookie/retopoflow",
+            "https://docs.blender.org/manual/en/latest/modeling/meshes/retopology.html",
+        ],
+        "lesson_wiki_path": "docs/academy/tracks/a03-retopology.md",
+        "evidence_path": "training/modeling/a03/",
+        "license_note_path": "docs/production/tools/retopoflow.md",
+        "academy_track": "A03",
+    },
+    "Poly Haven": {
+        "doc_urls": [
+            "https://polyhaven.com/license",
+            "https://docs.blender.org/manual/en/latest/files/asset_libraries/introduction.html",
+        ],
+        "lesson_wiki_path": "docs/production/tools/poly-haven.md",
+        "evidence_path": "training/texturing/assets/",
+    },
+    "ambientCG": {
+        "doc_urls": [
+            "https://ambientcg.com/license",
+            "https://docs.blender.org/manual/en/latest/files/import_export.html",
+        ],
+        "lesson_wiki_path": "docs/production/tools/ambientcg.md",
+        "evidence_path": "training/texturing/assets/",
+    },
+}
+
 
 def seed_baseline(db: LibrarianDB) -> dict:
     created = 0
     merged = 0
+    evidence_updated = 0
     for item in BASELINE_RESOURCES:
-        _, was_created = db.add(**item, source_type="curated-baseline")
+        resource, was_created = db.add(**item, source_type="curated-baseline")
         created += int(was_created)
         merged += int(not was_created)
-    return {"seen": len(BASELINE_RESOURCES), "created": created, "merged": merged}
+        defaults = EVIDENCE_DEFAULTS.get(resource.name)
+        if defaults:
+            db.update_evidence(resource.id, **defaults)
+            evidence_updated += 1
+    return {
+        "seen": len(BASELINE_RESOURCES),
+        "created": created,
+        "merged": merged,
+        "evidence_updated": evidence_updated,
+    }

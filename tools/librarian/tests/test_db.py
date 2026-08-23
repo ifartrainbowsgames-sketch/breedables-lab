@@ -50,7 +50,7 @@ def test_gaps_flags_unchecked_and_unknown(tmp_path):
     db = LibrarianDB(tmp_path / "test.sqlite3")
     db.init()
     db.add(name="Mystery Tool", url="https://example.com")
-    gaps = db.gaps()
+    gaps = db.registry_gaps()
     assert gaps
     assert "link not checked" in gaps[0]["issues"]
     assert "commercial type unknown" in gaps[0]["issues"]

@@ -2,6 +2,9 @@
 
 Open-source-first production studio for building **Second Life breedables**.
 
+!!! warning "Wiki-first"
+    We are **building the complete wiki in this repo** first. Slack docs will be removed/archived; Slack will only **link** to the wiki later. See **[Wiki-first strategy](studio/wiki-first-strategy.md)**.
+
 ## Workflow
 
 **Research → Learn → Experiment → Build → Test → Release**
@@ -15,6 +18,7 @@ This site is the studio wiki. Facts live in the [Librarian](https://github.com/i
 | [Studio roadmap](studio-roadmap.md) | Phased plan and recommended open source stack |
 | [Decision model](production/decision-model.md) | License + readiness classification |
 | [Tool registry](production/tools/index.md) | Curated tools with links and status |
+| **[Production line](academy/production-line.md)** | Full pipeline: model → texture → rig → SL |
 | [Experiments](production/experiments.md) | E01–E05 benchmark plan |
 | [Second Life baseline](secondlife/platform-baseline.md) | PBR, Animesh, Linkset Data, LSL |
 | [Academy](academy/overview.md) | Training tracks tied to experiments |

@@ -1,37 +1,51 @@
-# Academy overview
+# Breedables Academy
 
-The Breedables Academy turns experiments into **training with artifacts**. Every track produces files you can reuse in production.
+Training must **directly improve production capability**. Every lesson produces **evidence** (files, screenshots, in-world results) — not color labels.
 
-## Tracks (Phase 0)
+## Start here
 
-| ID | Track | Experiment | Deliverables |
-|----|-------|------------|--------------|
-| **A01** | Organic PBR Material | [E01](../production/experiments.md) | Material Maker project, SL PBR screenshots |
-| **A02** | Layered Texture Refinement | E01 | Ucupaint layers, phenotype variants |
-| **A03** | Organic Retopology | [E03](../production/experiments.md) | Retopo mesh, timing notes, deformation test |
-| **A04** | Rig + Two Animations | [E04](../production/experiments.md) | Rigify rig, idle/walk, retarget notes |
-| **A05** | Second Life Creature Fixture | [E05](../production/experiments.md) | LSL scripts, Linkset Data tests, in-world demo |
+**[Full production line](production-line.md)** — every stage from research to release: what it's for, free vs paid tools, which is better for breedables, what to learn.
 
-## Completion criteria
+Also read:
 
-Completion requires:
+- [Content requirements](../studio/channel-content-requirements.md) — evidence rules per channel  
+- [Channel map](../studio/channel-map.md) — Slack, wiki, repo routing  
 
-- Source files committed or linked with provenance
-- Exported assets (meshes, textures, animations as applicable)
-- Written measurements or pass/fail notes
-- In-world Second Life result where applicable
+## Tracks (learning paths)
 
-Watching a tutorial alone does **not** count as completion.
+| Track | Subject | Lesson |
+|-------|---------|--------|
+| [A01](tracks/a01-organic-pbr.md) | Organic PBR Material | Texturing & SL PBR |
+| [A02](tracks/a02-layered-textures.md) | Layered Texture Refinement | Texturing |
+| [A03](tracks/a03-retopology.md) | Organic Retopology | Retopo & LOD |
+| [A04](tracks/a04-rig-animation.md) | Rig + Two Animations | Rigging & animation |
+| [A05](tracks/a05-sl-fixture.md) | SL Creature Fixture | LSL, persistence, in-world test |
 
-## Planned folders
+Resource indexes: [Training videos](resources/videos.md) · [Official docs](resources/official-docs.md)
 
-Future academy content will live under `training/` in the repository:
+Planned: A00 Concept · A-model Modeling · A-export · A-data · A-hud — see [production line](production-line.md#academy-track-index-learning-paths).
 
-- `training/blender/`
-- `training/modeling/`
-- `training/texturing/`
-- and related tracks
+## Lesson template (every track)
 
-## Tools wiki
+Each lesson must include:
 
-Start with the [production tool registry](../production/tools/index.md).
+1. **Outcome** — skill gained  
+2. **Watch** — tutorial video URLs  
+3. **Read** — official doc links  
+4. **Explain** — our breedables workflow  
+5. **Do** — hands-on lab  
+6. **Produce** — artifacts to commit  
+7. **Evidence folder** — git path  
+
+## Repo folders
+
+Academy artifacts live under `training/` by subject:
+
+- `training/blender/` · `training/modeling/` · `training/texturing/`  
+- `training/rigging/` · `training/animation/` · `training/lsl/` · `training/secondlife/`  
+
+Watching a tutorial alone is **not** completion.
+
+## Experiments
+
+Benchmark labs: [E01–E05](../production/experiments.md) — tied to tracks above.

@@ -56,6 +56,13 @@ class Resource:
     github_stars: int | None
     github_pushed_at: str | None
     github_license: str | None
+    primary_video_url: str | None
+    doc_urls: str | None
+    lesson_wiki_path: str | None
+    evidence_path: str | None
+    license_note_path: str | None
+    academy_track: str | None
+    last_evidence_review: str | None
     created_at: str
     updated_at: str
 
@@ -63,7 +70,21 @@ class Resource:
         data = asdict(self)
         if data["github_archived"] is not None:
             data["github_archived"] = bool(data["github_archived"])
+        if data["doc_urls"]:
+            try:
+                data["doc_urls"] = json.loads(data["doc_urls"])
+            except json.JSONDecodeError:
+                pass
         return data
+
+    def doc_url_list(self) -> list[str]:
+        if not self.doc_urls:
+            return []
+        try:
+            parsed = json.loads(self.doc_urls)
+        except json.JSONDecodeError:
+            return [u.strip() for u in self.doc_urls.split(",") if u.strip()]
+        return parsed if isinstance(parsed, list) else []
 
 
 class LibrarianDB:
@@ -125,6 +146,23 @@ class LibrarianDB:
                 ON resources(github_full_name);
                 """
             )
+            self._migrate_evidence_columns(conn)
+
+    _EVIDENCE_COLUMNS: tuple[tuple[str, str], ...] = (
+        ("primary_video_url", "TEXT"),
+        ("doc_urls", "TEXT"),
+        ("lesson_wiki_path", "TEXT"),
+        ("evidence_path", "TEXT"),
+        ("license_note_path", "TEXT"),
+        ("academy_track", "TEXT"),
+        ("last_evidence_review", "TEXT"),
+    )
+
+    def _migrate_evidence_columns(self, conn: sqlite3.Connection) -> None:
+        existing = {row[1] for row in conn.execute("PRAGMA table_info(resources)").fetchall()}
+        for name, typedef in self._EVIDENCE_COLUMNS:
+            if name not in existing:
+                conn.execute(f"ALTER TABLE resources ADD COLUMN {name} {typedef}")
 
     def add(
         self,
@@ -290,7 +328,97 @@ class LibrarianDB:
             raise KeyError(resource_id)
         return self._row(row)
 
-    def gaps(self, limit: int = 25) -> list[dict]:
+    def update_evidence(
+        self,
+        resource_id: int,
+        *,
+        primary_video_url: str | None = None,
+        doc_urls: list[str] | str | None = None,
+        lesson_wiki_path: str | None = None,
+        evidence_path: str | None = None,
+        license_note_path: str | None = None,
+        academy_track: str | None = None,
+        last_evidence_review: str | None = None,
+        clear_missing: bool = False,
+    ) -> Resource:
+        fields: dict[str, object] = {}
+        if clear_missing or primary_video_url is not None:
+            fields["primary_video_url"] = primary_video_url
+        if clear_missing or doc_urls is not None:
+            if doc_urls is None:
+                fields["doc_urls"] = None
+            elif isinstance(doc_urls, list):
+                fields["doc_urls"] = json.dumps(doc_urls)
+            else:
+                fields["doc_urls"] = doc_urls
+        if clear_missing or lesson_wiki_path is not None:
+            fields["lesson_wiki_path"] = lesson_wiki_path
+        if clear_missing or evidence_path is not None:
+            fields["evidence_path"] = evidence_path
+        if clear_missing or license_note_path is not None:
+            fields["license_note_path"] = license_note_path
+        if clear_missing or academy_track is not None:
+            fields["academy_track"] = academy_track
+        if clear_missing or last_evidence_review is not None:
+            fields["last_evidence_review"] = last_evidence_review
+        if not fields:
+            raise ValueError("No evidence fields provided")
+        fields["updated_at"] = datetime.now(timezone.utc).isoformat()
+        assignments = ", ".join(f"{key} = :{key}" for key in fields)
+        with self.connect() as conn:
+            conn.execute(
+                f"UPDATE resources SET {assignments} WHERE id = :id",
+                {**fields, "id": resource_id},
+            )
+            row = conn.execute("SELECT * FROM resources WHERE id = ?", (resource_id,)).fetchone()
+        if not row:
+            raise KeyError(resource_id)
+        return self._row(row)
+
+    def _resource_evidence_issues(self, resource: Resource, repo_root: Path | None) -> list[str]:
+        issues: list[str] = []
+        if not resource.primary_video_url:
+            issues.append("missing primary video")
+        if not resource.doc_url_list():
+            issues.append("missing official doc links")
+        if not resource.lesson_wiki_path:
+            issues.append("missing wiki lesson link")
+        elif repo_root is not None:
+            lesson = repo_root / resource.lesson_wiki_path
+            if not lesson.is_file():
+                issues.append(f"wiki lesson missing on disk: {resource.lesson_wiki_path}")
+        if not resource.evidence_path:
+            issues.append("missing evidence folder path")
+        elif repo_root is not None:
+            evidence = repo_root / resource.evidence_path
+            if not evidence.is_dir():
+                issues.append(f"evidence folder missing: {resource.evidence_path}")
+            elif not any(evidence.iterdir()):
+                issues.append(f"evidence folder empty: {resource.evidence_path}")
+        if resource.commercial_type in {"UNKNOWN", "PAID_COMMERCIAL", "FREEMIUM"} and not resource.license_note_path:
+            issues.append("license note path recommended")
+        return issues
+
+    def evidence_gaps(self, *, repo_root: Path | None = None, limit: int = 25) -> list[dict]:
+        gaps: list[dict] = []
+        for resource in self.list(limit=500):
+            issues = self._resource_evidence_issues(resource, repo_root)
+            if issues:
+                gaps.append(
+                    {
+                        "kind": "resource",
+                        "id": resource.id,
+                        "name": resource.name,
+                        "academy_track": resource.academy_track,
+                        "lesson_wiki_path": resource.lesson_wiki_path,
+                        "issues": issues,
+                    }
+                )
+            if len(gaps) >= limit:
+                break
+        return gaps
+
+    def registry_gaps(self, limit: int = 25) -> list[dict]:
         rows = self.list(limit=500)
         gaps = []
         for r in rows:
@@ -303,13 +431,14 @@ class LibrarianDB:
                 issues.append("commercial type unknown")
             if r.commercial_type == "OPEN_SOURCE" and not (r.code_license or r.github_license):
                 issues.append("open-source license missing")
-            if r.status in {"DISCOVERED", "REVIEWING", "EXPERIMENTAL"}:
-                issues.append(f"not yet approved ({r.status})")
             if issues:
-                gaps.append({"id": r.id, "name": r.name, "issues": issues})
+                gaps.append({"kind": "registry", "id": r.id, "name": r.name, "issues": issues})
             if len(gaps) >= limit:
                 break
         return gaps
+
+    def gaps(self, limit: int = 25, repo_root: Path | None = None) -> list[dict]:
+        return self.evidence_gaps(repo_root=repo_root, limit=limit)
 
     def status_counts(self) -> dict[str, int]:
         with self.connect() as conn:
@@ -320,5 +449,18 @@ class LibrarianDB:
         return json.dumps([r.as_dict() for r in self.list(limit=100000)], indent=2, sort_keys=True)
 
     @staticmethod
-    def _row(row: sqlite3.Row) -> Resource:
-        return Resource(**dict(row))
+    def _row(row: sqlite3.Row | None) -> Resource:
+        if row is None:
+            raise ValueError("row is None")
+        data = dict(row)
+        for key in (
+            "primary_video_url",
+            "doc_urls",
+            "lesson_wiki_path",
+            "evidence_path",
+            "license_note_path",
+            "academy_track",
+            "last_evidence_review",
+        ):
+            data.setdefault(key, None)
+        return Resource(**data)
