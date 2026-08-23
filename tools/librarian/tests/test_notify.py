@@ -37,10 +37,10 @@ def test_format_daily_slack_body_includes_summary() -> None:
 
 
 def test_send_notification_requires_urls(monkeypatch) -> None:
-    monkeypatch.delenv("APPRISE_URLS", raising=False)
-    monkeypatch.delenv("SLACK_WEBHOOK_URL", raising=False)
-    monkeypatch.delenv("SLACK_BOT_TOKEN", raising=False)
-    monkeypatch.delenv("SLACK_NOTIFY_CHANNEL", raising=False)
+    monkeypatch.setattr(
+        "librarian.notify.apprise_urls_from_env",
+        lambda settings=None: [],
+    )
     try:
         send_notification("test", settings=Settings.from_env())
         assert False, "expected NotifyUnavailableError"

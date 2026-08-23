@@ -39,3 +39,17 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force
+
+  slack:
+    needs: deploy
+    if: always()
+    uses: ./.github/workflows/slack-notify.yml
+    with:
+      title: "Wiki deploy (MkDocs → GitHub Pages)"
+      conclusion: ${{ needs.deploy.result }}
+      notify_on: always
+      details: "Site: https://ifartrainbowsgames-sketch.github.io/breedables-lab/"
+    secrets:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      SLACK_NOTIFY_CHANNEL: ${{ secrets.SLACK_NOTIFY_CHANNEL }}

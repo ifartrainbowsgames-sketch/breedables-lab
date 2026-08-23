@@ -22,7 +22,7 @@ def apprise_urls_from_env(settings: Settings | None = None) -> list[str]:
 
     webhook = os.getenv("SLACK_WEBHOOK_URL", "").strip()
     if webhook:
-        urls.append(webhook)
+        urls.append(webhook if webhook.startswith("http") else f"slack://{webhook}")
 
     bot = (settings.slack_bot_token if settings else None) or os.getenv("SLACK_BOT_TOKEN", "")
     bot = bot.strip()
@@ -87,7 +87,25 @@ def send_notification(
         app.add(url)
 
     ok = app.notify(body=body, title=title, body_format=apprise.NotifyFormat.MARKDOWN)
-    return {"ok": bool(ok), "targets": len(targets)}
+    if ok:
+        return {"ok": True, "targets": len(targets), "via": "apprise"}
+
+    # Apprise slackb:// can fail on some workspaces — fall back to slack-sdk bot post.
+    bot = (settings.slack_bot_token if settings else None) or os.getenv("SLACK_BOT_TOKEN", "")
+    channel = os.getenv("SLACK_NOTIFY_CHANNEL", "").strip()
+    if bot.strip() and channel:
+        try:
+            from slack_sdk import WebClient
+            from slack_sdk.errors import SlackApiError
+
+            client = WebClient(token=bot.strip())
+            target = channel if channel.startswith("#") or channel.startswith("@") else f"#{channel}"
+            resp = client.chat_postMessage(channel=target, text=f"*{title}*\n{body}", mrkdwn=True)
+            return {"ok": bool(resp.get("ok")), "targets": 1, "via": "slack_sdk"}
+        except SlackApiError as exc:
+            return {"ok": False, "targets": len(targets), "via": "slack_sdk", "error": str(exc)}
+
+    return {"ok": False, "targets": len(targets), "via": "apprise"}
 
 
 def notify_daily_wiki(

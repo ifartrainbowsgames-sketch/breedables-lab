@@ -1,0 +1,66 @@
+# Reusable Slack notification for CI (slackapi/slack-github-action).
+# Secrets (either works):
+#   SLACK_WEBHOOK_URL — incoming webhook (preferred for CI)
+#   SLACK_BOT_TOKEN + SLACK_NOTIFY_CHANNEL — bot post (e.g. #breedables-knowledge)
+
+name: Slack CI notify
+
+on:
+  workflow_call:
+    inputs:
+      title:
+        required: true
+        type: string
+      conclusion:
+        required: true
+        type: string
+      details:
+        required: false
+        type: string
+        default: ""
+      notify_on:
+        required: false
+        type: string
+        default: "failure"
+        description: "failure | success | always"
+    secrets:
+      SLACK_WEBHOOK_URL:
+        required: false
+      SLACK_BOT_TOKEN:
+        required: false
+      SLACK_NOTIFY_CHANNEL:
+        required: false
+
+jobs:
+  slack:
+    runs-on: ubuntu-latest
+    if: >-
+      ${{
+        (inputs.notify_on == 'always') ||
+        (inputs.notify_on == 'failure' && inputs.conclusion == 'failure') ||
+        (inputs.notify_on == 'success' && inputs.conclusion == 'success')
+      }}
+    steps:
+      - name: Post via incoming webhook
+        if: ${{ secrets.SLACK_WEBHOOK_URL != '' }}
+        uses: slackapi/slack-github-action@v2.0.0
+        continue-on-error: true
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: incoming-webhook
+          payload: |
+            {
+              "text": "*${{ inputs.title }}*\n• Status: `${{ inputs.conclusion }}`\n• Branch: `${{ github.ref_name }}`\n• ${{ inputs.details }}\n• <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View workflow run>"
+            }
+
+      - name: Post via bot token
+        if: ${{ secrets.SLACK_WEBHOOK_URL == '' && secrets.SLACK_BOT_TOKEN != '' }}
+        uses: slackapi/slack-github-action@v2.0.0
+        continue-on-error: true
+        with:
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
+          payload: |
+            channel: "${{ secrets.SLACK_NOTIFY_CHANNEL != '' && secrets.SLACK_NOTIFY_CHANNEL || '#breedables-knowledge' }}"
+            text: "*${{ inputs.title }}*\n• Status: `${{ inputs.conclusion }}`\n• Branch: `${{ github.ref_name }}`\n• ${{ inputs.details }}\n• <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View workflow run>"
+            mrkdwn: true

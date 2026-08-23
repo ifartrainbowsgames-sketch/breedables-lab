@@ -30,3 +30,17 @@ jobs:
         with:
           args: --config .lychee.toml --verbose --no-progress './docs/**/*.md'
           fail: true
+
+  slack:
+    needs: lychee
+    if: always()
+    uses: ./.github/workflows/slack-notify.yml
+    with:
+      title: "Wiki link check (lychee)"
+      conclusion: ${{ needs.lychee.result }}
+      notify_on: failure
+      details: "Broken or unreachable links in `docs/**/*.md`. Run locally: `lychee --config .lychee.toml './docs/**/*.md'`"
+    secrets:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      SLACK_NOTIFY_CHANNEL: ${{ secrets.SLACK_NOTIFY_CHANNEL }}

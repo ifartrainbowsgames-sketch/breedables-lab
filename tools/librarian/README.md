@@ -234,6 +234,16 @@ python -m librarian.cli notify-test
 .\scripts\daily-wiki.ps1   # includes --notify-slack when configured
 ```
 
+### GitHub Actions → Slack
+
+Uses **[slack-github-action](https://github.com/slackapi/slack-github-action)** (reusable workflow `.github/workflows/slack-notify.yml`).
+
+1. Slack app → **Incoming Webhooks** → add webhook to `#breedables-knowledge`
+2. GitHub repo → **Settings → Secrets → Actions** → `SLACK_WEBHOOK_URL`
+3. Optional for weekly Apprise digest in CI: `SLACK_BOT_TOKEN` secret + invite bot to channel
+
+Notifies on: lychee link failures, wiki lint failures, MkDocs deploy success/failure, weekly librarian failures.
+
 ## Suggested first records
 
 Seed only tools we have actually researched, for example:

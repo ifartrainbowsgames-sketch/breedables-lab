@@ -1,0 +1,59 @@
+name: Wiki structure
+
+# The information architecture is enforced here, not by convention. A page in
+# the wrong section, a duplicated topic, or a repeated heading fails the build.
+# See tools/librarian/librarian/wiki_schema.py for the rules.
+
+on:
+  pull_request:
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - "tools/librarian/librarian/wiki_schema.py"
+      - "tools/librarian/librarian/wiki_lint.py"
+  push:
+    branches: [main, feature/studio-librarian-v1]
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+  workflow_dispatch:
+
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install librarian
+        run: pip install -e ".[dev]"
+        working-directory: tools/librarian
+
+      - name: Validate information architecture
+        run: python -m librarian.cli wiki-lint
+        working-directory: tools/librarian
+        env:
+          BREEDABLES_REPO_ROOT: ${{ github.workspace }}
+
+      - name: Install MkDocs
+        run: pip install -r requirements-docs.txt
+
+      - name: Build (strict — fails on any broken link)
+        run: mkdocs build --strict
+
+  slack:
+    needs: structure
+    if: always()
+    uses: ./.github/workflows/slack-notify.yml
+    with:
+      title: "Wiki structure lint"
+      conclusion: ${{ needs.structure.result }}
+      notify_on: failure
+      details: "Run locally: `cd tools/librarian && python -m librarian.cli wiki-lint`"
+    secrets:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      SLACK_NOTIFY_CHANNEL: ${{ secrets.SLACK_NOTIFY_CHANNEL }}
