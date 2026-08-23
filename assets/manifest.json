@@ -1,0 +1,236 @@
+{
+  "updated": "2026-08-23T17:52:32Z",
+  "entries": [
+    {
+      "slug": "blender",
+      "url": "https://www.google.com/s2/favicons?domain=blender.org&sz=128",
+      "license": "trademark/fair use logo",
+      "alt": "Blender logo"
+    },
+    {
+      "slug": "maya",
+      "url": "https://www.google.com/s2/favicons?domain=autodesk.com&sz=128",
+      "license": "trademark/fair use logo",
+      "alt": "Autodesk Maya logo"
+    },
+    {
+      "slug": "zbrush",
+      "url": "https://www.google.com/s2/favicons?domain=maxon.net&sz=128",
+      "license": "trademark/fair use logo",
+      "alt": "ZBrush / Maxon logo"
+    },
+    {
+      "slug": "substance-painter",
+      "url": "https://www.google.com/s2/favicons?domain=adobe.com&sz=128",
+      "license": "trademark/fair use logo",
+      "alt": "Adobe Substance 3D Painter logo"
+    },
+    {
+      "slug": "krita",
+      "url": "https://www.google.com/s2/favicons?domain=krita.org&sz=128",
+      "license": "trademark/fair use logo",
+      "alt": "Krita logo"
+    },
+    {
+      "slug": "photoshop",
+      "url": "https://www.google.com/s2/favicons?domain=adobe.com&sz=128",
+      "license": "trademark/fair use logo",
+      "alt": "Adobe Photoshop logo"
+    },
+    {
+      "slug": "material-maker",
+      "url": "https://www.google.com/s2/favicons?domain=material-maker.app&sz=128",
+      "license": "trademark/fair use logo",
+      "alt": "Material Maker logo"
+    },
+    {
+      "slug": "second-life",
+      "url": "https://www.google.com/s2/favicons?domain=secondlife.com&sz=128",
+      "license": "trademark/fair use logo",
+      "alt": "Second Life logo"
+    },
+    {
+      "slug": "marvelous-designer",
+      "url": "https://www.google.com/s2/favicons?domain=marvelousdesigner.com&sz=128",
+      "license": "trademark/fair use logo",
+      "alt": "Marvelous Designer logo"
+    },
+    {
+      "slug": "mari",
+      "url": "https://www.google.com/s2/favicons?domain=foundry.com&sz=128",
+      "license": "trademark/fair use logo",
+      "alt": "Foundry Mari logo"
+    },
+    {
+      "slug": "topogun",
+      "url": "https://www.google.com/s2/favicons?domain=topogun.com&sz=128",
+      "license": "trademark/fair use logo",
+      "alt": "TopoGun logo"
+    },
+    {
+      "slug": "pureref",
+      "url": "https://www.google.com/s2/favicons?domain=pureref.com&sz=128",
+      "license": "trademark/fair use logo",
+      "alt": "PureRef logo"
+    },
+    {
+      "slug": "marmoset-toolbag",
+      "url": "https://www.google.com/s2/favicons?domain=marmoset.co&sz=128",
+      "license": "trademark/fair use logo",
+      "alt": "Marmoset Toolbag logo"
+    },
+    {
+      "slug": "kittycats",
+      "url": "https://www.google.com/s2/favicons?domain=kittycats.ws&sz=128",
+      "license": "trademark/fair use logo",
+      "alt": "KittyCats logo"
+    },
+    {
+      "slug": "meeroos",
+      "url": "https://www.google.com/s2/favicons?domain=meeroos.com&sz=128",
+      "license": "trademark/fair use logo",
+      "alt": "Meeroos logo"
+    }
+  ],
+  "results": [
+    {
+      "slug": "blender",
+      "ok": true,
+      "url": "https://www.google.com/s2/favicons?domain=blender.org&sz=128",
+      "card": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\cards\\blender.png",
+      "inline": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\inline\\blender.png",
+      "card_kb": 3.9,
+      "inline_kb": 3.6
+    },
+    {
+      "slug": "maya",
+      "ok": true,
+      "url": "https://www.google.com/s2/favicons?domain=autodesk.com&sz=128",
+      "card": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\cards\\maya.png",
+      "inline": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\inline\\maya.png",
+      "card_kb": 0.8,
+      "inline_kb": 0.3
+    },
+    {
+      "slug": "zbrush",
+      "ok": true,
+      "url": "https://www.google.com/s2/favicons?domain=maxon.net&sz=128",
+      "card": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\cards\\zbrush.png",
+      "inline": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\inline\\zbrush.png",
+      "card_kb": 6.3,
+      "inline_kb": 5.9
+    },
+    {
+      "slug": "substance-painter",
+      "ok": true,
+      "url": "https://www.google.com/s2/favicons?domain=adobe.com&sz=128",
+      "card": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\cards\\substance-painter.png",
+      "inline": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\inline\\substance-painter.png",
+      "card_kb": 2.9,
+      "inline_kb": 2.6
+    },
+    {
+      "slug": "krita",
+      "ok": true,
+      "url": "https://www.google.com/s2/favicons?domain=krita.org&sz=128",
+      "card": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\cards\\krita.png",
+      "inline": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\inline\\krita.png",
+      "card_kb": 8.4,
+      "inline_kb": 7.9
+    },
+    {
+      "slug": "photoshop",
+      "ok": true,
+      "url": "https://www.google.com/s2/favicons?domain=adobe.com&sz=128",
+      "card": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\cards\\photoshop.png",
+      "inline": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\inline\\photoshop.png",
+      "card_kb": 2.9,
+      "inline_kb": 2.6
+    },
+    {
+      "slug": "material-maker",
+      "ok": false,
+      "url": "https://www.google.com/s2/favicons?domain=material-maker.app&sz=128",
+      "error": "Client error '404 Not Found' for url 'https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://material-maker.app&size=128'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+    },
+    {
+      "slug": "second-life",
+      "ok": true,
+      "url": "https://www.google.com/s2/favicons?domain=secondlife.com&sz=128",
+      "card": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\cards\\second-life.png",
+      "inline": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\inline\\second-life.png",
+      "card_kb": 4.8,
+      "inline_kb": 4.3
+    },
+    {
+      "slug": "marvelous-designer",
+      "ok": true,
+      "url": "https://www.google.com/s2/favicons?domain=marvelousdesigner.com&sz=128",
+      "card": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\cards\\marvelous-designer.png",
+      "inline": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\inline\\marvelous-designer.png",
+      "card_kb": 7.0,
+      "inline_kb": 6.6
+    },
+    {
+      "slug": "mari",
+      "ok": true,
+      "url": "https://www.google.com/s2/favicons?domain=foundry.com&sz=128",
+      "card": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\cards\\mari.png",
+      "inline": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\inline\\mari.png",
+      "card_kb": 3.3,
+      "inline_kb": 2.7
+    },
+    {
+      "slug": "topogun",
+      "ok": true,
+      "url": "https://www.google.com/s2/favicons?domain=topogun.com&sz=128",
+      "card": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\cards\\topogun.png",
+      "inline": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\inline\\topogun.png",
+      "card_kb": 4.9,
+      "inline_kb": 4.4
+    },
+    {
+      "slug": "pureref",
+      "ok": true,
+      "url": "https://www.google.com/s2/favicons?domain=pureref.com&sz=128",
+      "card": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\cards\\pureref.png",
+      "inline": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\inline\\pureref.png",
+      "card_kb": 3.3,
+      "inline_kb": 2.8
+    },
+    {
+      "slug": "marmoset-toolbag",
+      "ok": true,
+      "url": "https://www.google.com/s2/favicons?domain=marmoset.co&sz=128",
+      "card": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\cards\\marmoset-toolbag.png",
+      "inline": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\inline\\marmoset-toolbag.png",
+      "card_kb": 2.7,
+      "inline_kb": 2.4
+    },
+    {
+      "slug": "kittycats",
+      "ok": true,
+      "url": "https://www.google.com/s2/favicons?domain=kittycats.ws&sz=128",
+      "card": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\cards\\kittycats.png",
+      "inline": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\inline\\kittycats.png",
+      "card_kb": 3.3,
+      "inline_kb": 2.8
+    },
+    {
+      "slug": "meeroos",
+      "ok": false,
+      "url": "https://www.google.com/s2/favicons?domain=meeroos.com&sz=128",
+      "error": "Client error '404 Not Found' for url 'https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://meeroos.com&size=128'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+    },
+    {
+      "slug": "material-maker",
+      "ok": true,
+      "url": "https://www.google.com/s2/favicons?domain=github.com&sz=128",
+      "fallback": true,
+      "card": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\cards\\material-maker.png",
+      "inline": "c:\\Users\\ezraw\\OneDrive\\Documents\\Visual Studio Folders\\breedables-lab\\docs\\assets\\inline\\material-maker.png",
+      "card_kb": 1.6,
+      "inline_kb": 1.1
+    }
+  ]
+}
