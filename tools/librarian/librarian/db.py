@@ -120,6 +120,9 @@ class LibrarianDB:
 
                 CREATE INDEX IF NOT EXISTS idx_resources_category
                 ON resources(category);
+
+                CREATE INDEX IF NOT EXISTS idx_resources_github_full_name
+                ON resources(github_full_name);
                 """
             )
 
@@ -153,9 +156,15 @@ class LibrarianDB:
 
         with self.connect() as conn:
             existing = conn.execute(
-                "SELECT * FROM resources WHERE canonical_url = ? OR canonical_name = ? ORDER BY id LIMIT 1",
-                (curl, cname),
+                "SELECT * FROM resources WHERE canonical_url = ? ORDER BY id LIMIT 1",
+                (curl,),
             ).fetchone()
+
+            if not existing and github_full_name:
+                existing = conn.execute(
+                    "SELECT * FROM resources WHERE github_full_name = ? ORDER BY id LIMIT 1",
+                    (github_full_name,),
+                ).fetchone()
 
             if existing:
                 updates = {
