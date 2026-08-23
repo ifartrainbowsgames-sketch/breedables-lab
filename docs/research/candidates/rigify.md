@@ -26,5 +26,5 @@ Core rigging curriculum tool — use Basic Quadruped preset as E04 starting poin
 
 ## Related
 
-- [Blender](../../modeling/blender/index.md)
+- [Blender](../../tools/blender/index.md)
 - [Animation Retargeting](animation-retargeting.md)

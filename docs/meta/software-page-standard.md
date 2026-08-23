@@ -103,7 +103,7 @@ LEVEL N — Topic name
   FAIL criteria (common mistakes)
 ```
 
-See [Blender package card](../modeling/blender/index.md) for the reference implementation.
+See [Blender package card](../tools/blender/index.md) for the reference implementation.
 
 ---
 

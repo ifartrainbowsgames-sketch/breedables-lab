@@ -1,0 +1,16 @@
+title: Blender
+# Lessons 1–10 in teaching order, then the reference pages.
+nav:
+  - Overview: index.md
+  - install-and-setup.md
+  - interface-and-navigation.md
+  - mesh-modeling.md
+  - sculpting.md
+  - retopology.md
+  - uv-mapping.md
+  - pbr-materials.md
+  - rigging-and-skinning.md
+  - animation.md
+  - export-and-upload.md
+  - addon-catalog.md
+  - learning-resources.md

@@ -23,4 +23,4 @@ First open retargeting benchmark for the studio. Record bone mapping, cleanup ef
 ## Related
 
 - [Rigify](rigify.md)
-- [Blender](../../modeling/blender/index.md)
+- [Blender](../../tools/blender/index.md)

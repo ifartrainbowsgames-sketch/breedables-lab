@@ -83,12 +83,12 @@ Before building a species, we need a **species-independent** toolbox: tools that
 
 **What to complete**
 
-- Read: [Phase 0 survey summary](../research/index.md)  
+- Read: [Phase 0 survey summary](index.md)  
 - Read: [Software & Tools hub](index.md)  
 - Do: Add one discovery note to `research/discoveries/` with URL + breedables use case
 
 **Evidence folder** — `research/reports/`, `research/discoveries/`  
-**Related pages** — [Software & Tools](index.md) · [Tools registry](../research/tool-registry.md) · [Phase 0 survey](../research/index.md)
+**Related pages** — [Software & Tools](index.md) · [Tools registry](tool-registry.md) · [Phase 0 survey](index.md)
 
 ### Stage 6 — Image-to-3D (research / blockout)
 
@@ -123,4 +123,4 @@ Fast **concept geometry** from reference art — not a replacement for modeling 
 - Produce: comparison table + cleaned mesh attempt
 
 **Evidence folder** — `research/experiments/e02/`  
-**Related pages** — [TripoSR](../research/candidates/triposr.md) · [Research candidates](../research/candidates/index.md)
+**Related pages** — [TripoSR](candidates/triposr.md) · [Research candidates](candidates/index.md)

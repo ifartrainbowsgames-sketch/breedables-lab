@@ -72,7 +72,7 @@ On small teams one person may span model + texture + export. **Breedables Studio
 |-------------|-------------------|
 | Separate texture artist | Often **you** — plan time for bakes + PBR |
 | Engine technical artist | **SL upload + LOD + land impact** — see [SL adaptation](../second-life/adapting-professional-work.md) |
-| Live ops / design | Genetics, HUD, LSL — [In-world fixture lab](../engineering/projects/in-world-fixture.md) |
+| Live ops / design | Genetics, HUD, LSL — [In-world fixture lab](../projects/in-world-fixture.md) |
 
 ---
 

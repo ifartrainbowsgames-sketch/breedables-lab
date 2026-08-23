@@ -19,16 +19,16 @@ afterwards use the subject pages directly as reference.
 
 | # | Lesson | You will be able to… | Then prove it |
 |---|--------|----------------------|---------------|
-| 1 | [Install & setup](../../modeling/blender/install-and-setup.md) | Install the right LTS and configure units/viewport for SL scale | — |
-| 2 | [Interface & navigation](../../modeling/blender/interface-and-navigation.md) | Move, select and transform confidently | — |
-| 3 | [Mesh modeling](../../modeling/mesh-modeling.md) | Box-model a clean organic creature base | — |
-| 4 | [Sculpting](../../modeling/sculpting.md) | Add organic form with dynamic topology and multires | — |
-| 5 | [Retopology](../../modeling/retopology.md) | Build animation-ready topology and understand land impact | [Retopology project](../../modeling/projects/retopology-project.md) |
-| 6 | [UV mapping](../../modeling/uv-mapping.md) | Unwrap with clean seams and efficient packing | — |
-| 7 | [PBR materials](../../texturing/pbr-materials.md) | Author metallic/roughness PBR that reads correctly in SL | [Organic PBR](../../texturing/projects/organic-pbr-material.md) · [Layered textures](../../texturing/projects/layered-textures.md) |
-| 8 | [Rigging & skinning](../../rigging-animation/rigging-and-skinning.md) | Rig a quadruped and paint clean deformation weights | [Rig + animation](../../rigging-animation/projects/rig-and-animation.md) |
-| 9 | [Animation](../../rigging-animation/animation.md) | Keyframe an idle and a walk cycle and bake for export | [Rig + animation](../../rigging-animation/projects/rig-and-animation.md) |
-| 10 | [Export & upload](../../second-life/export-and-upload.md) | Export mesh, rig and material with LODs and a physics shape | [In-world fixture](../../engineering/projects/in-world-fixture.md) |
+| 1 | [Install & setup](../../tools/blender/install-and-setup.md) | Install the right LTS and configure units/viewport for SL scale | — |
+| 2 | [Interface & navigation](../../tools/blender/interface-and-navigation.md) | Move, select and transform confidently | — |
+| 3 | [Mesh modeling](../../tools/blender/mesh-modeling.md) | Box-model a clean organic creature base | — |
+| 4 | [Sculpting](../../tools/blender/sculpting.md) | Add organic form with dynamic topology and multires | — |
+| 5 | [Retopology](../../tools/blender/retopology.md) | Build animation-ready topology and understand land impact | [Retopology project](../../projects/retopology-project.md) |
+| 6 | [UV mapping](../../tools/blender/uv-mapping.md) | Unwrap with clean seams and efficient packing | — |
+| 7 | [PBR materials](../../tools/blender/pbr-materials.md) | Author metallic/roughness PBR that reads correctly in SL | [Organic PBR](../../projects/organic-pbr-material.md) · [Layered textures](../../projects/layered-textures.md) |
+| 8 | [Rigging & skinning](../../tools/blender/rigging-and-skinning.md) | Rig a quadruped and paint clean deformation weights | [Rig + animation](../../projects/rig-and-animation.md) |
+| 9 | [Animation](../../tools/blender/animation.md) | Keyframe an idle and a walk cycle and bake for export | [Rig + animation](../../projects/rig-and-animation.md) |
+| 10 | [Export & upload](../../tools/blender/export-and-upload.md) | Export mesh, rig and material with LODs and a physics shape | [In-world fixture](../../projects/in-world-fixture.md) |
 
 ## What "done" looks like
 
@@ -47,10 +47,10 @@ After lesson 10 you can take an idea for a breedable creature and produce:
 
 ## Where the knowledge lives
 
-This path deliberately owns no content of its own. If you want the tools,
-documentation and comparisons for a topic, go to its section:
+This path deliberately owns no content of its own — it is an order to read in.
+Every lesson it points at lives on the page of the tool that performs the work:
 
-[3D Modeling](../../modeling/index.md) ·
-[Texturing & Materials](../../texturing/index.md) ·
-[Rigging & Animation](../../rigging-animation/index.md) ·
+[Blender](../../tools/blender/index.md) ·
+[all tools](../../tools/index.md) ·
+[Studio labs](../../projects/index.md) ·
 [Second Life Production](../../second-life/index.md)

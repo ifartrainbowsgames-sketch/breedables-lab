@@ -23,25 +23,26 @@ class Section:
 
 
 #: Top-level information architecture. Order matters — it is the nav order.
+#:
+#: The wiki is organised by *tool*, not by pipeline stage. A pipeline stage is a
+#: reading order, and `pipeline.md` already provides it; splitting the pages
+#: themselves across stages only scattered each tool over several sections.
 SECTIONS: tuple[Section, ...] = (
-    Section("modeling", "3D Modeling",
-            "What tools and workflows do I use to create the model?",
-            ("index", "topic", "software", "project")),
-    Section("texturing", "Texturing & Materials",
-            "How do I create professional surfaces and PBR materials?",
-            ("index", "topic", "software", "project")),
-    Section("rigging-animation", "Rigging & Animation",
-            "How do I make the creature deform and move?",
-            ("index", "topic", "software", "project")),
-    Section("second-life", "Second Life Production",
-            "How do I get the finished asset into Second Life correctly?",
-            ("index", "topic", "software", "project")),
-    Section("engineering", "Breedables Engineering",
-            "How does the breedable system actually work?",
-            ("index", "topic", "software", "project")),
     Section("academy", "Academy",
             "What should I learn next?",
             ("index", "path", "reference")),
+    Section("tools", "Tools",
+            "Which tool do I use, and how do I learn it?",
+            ("index", "topic", "software")),
+    Section("projects", "Studio labs",
+            "What do I build to prove I can do it?",
+            ("index", "project")),
+    Section("second-life", "Second Life Production",
+            "How do I get the finished asset into Second Life correctly?",
+            ("index", "topic")),
+    Section("engineering", "Breedables Engineering",
+            "How does the breedable system actually work?",
+            ("index", "topic")),
     Section("research", "Research & Tools",
             "What are we currently evaluating?",
             ("index", "reference", "candidate", "software")),
@@ -60,7 +61,7 @@ ROOT_PAGES = ("index.md", "pipeline.md", "roadmap.md")
 TYPE_FOLDERS: dict[str, str | None] = {
     "index": None,        # a section or sub-folder landing page
     "topic":  None,       # canonical teaching page for one subject
-    "software": "software",   # one tool card
+    "software": None,     # a tool hub; the Tools section already scopes it
     "project": "projects",    # hands-on lab ending in committed evidence
     "path": "paths",          # Academy: an ordered reading list, links only
     "reference": None,        # tables and indexes, no teaching

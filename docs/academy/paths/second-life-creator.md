@@ -20,12 +20,12 @@ exercises all live there, not here.
 |---|------|-----|
 | 1 | [Platform baseline](../../second-life/platform-baseline.md) | Animesh, PBR, land impact, Linkset Data |
 | 2 | [Adapting professional work](../../second-life/adapting-professional-work.md) | What changes once the 3D is good |
-| 3 | [Export & upload](../../second-life/export-and-upload.md) | Mesh, LODs, physics shape and material |
+| 3 | [Export & upload](../../tools/blender/export-and-upload.md) | Mesh, LODs, physics shape and material |
 | 4 | [Viewer & creator tools](../../second-life/viewer-and-tools.md) | The viewer as a production tool |
 
 ## Prove it
 
-Finish with the **[In-world fixture](../../engineering/projects/in-world-fixture.md)** project. It ends in committed
+Finish with the **[In-world fixture](../../projects/in-world-fixture.md)** project. It ends in committed
 evidence, which is what marks the path complete.
 
 ## Where next

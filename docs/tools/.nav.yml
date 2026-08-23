@@ -1,0 +1,24 @@
+title: Tools
+# Blender sits alone at the top: it is the only tool the studio teaches
+# end to end, so it owns a folder of lessons rather than a single card.
+nav:
+  - Overview: index.md
+  - blender
+  - Modelling & sculpting:
+      - maya
+      - zbrush
+      - topogun
+      - retopoflow
+      - pureref
+  - Texturing & look development:
+      - substance-painter
+      - material-maker
+      - ucupaint
+      - mari
+      - krita
+      - photoshop
+      - marmoset-toolbag
+      - marvelous-designer
+  - Asset libraries:
+      - poly-haven
+      - ambientcg

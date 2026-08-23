@@ -43,8 +43,8 @@ type: topic
 
 | Lesson | Page |
 |--------|------|
-| Export from Blender | [Lesson 10 — Export to SL](export-and-upload.md) |
-| In-world fixture + LSL | [In-world fixture lab](../engineering/projects/in-world-fixture.md) |
+| Export from Blender | [Lesson 10 — Export to SL](../tools/blender/export-and-upload.md) |
+| In-world fixture + LSL | [In-world fixture lab](../projects/in-world-fixture.md) |
 | Platform rules | [Platform baseline](platform-baseline.md) |
 
 ## Beginner exercise

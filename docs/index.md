@@ -25,18 +25,17 @@ Search anything with <kbd>Ctrl</kbd>+<kbd>K</kbd>. New here? Start with the
 | Know 3D and want the whole map | [Production pipeline](pipeline.md) |
 | Want to know what to learn next | [Academy](academy/index.md) |
 | Need to ship something in-world | [Second Life Production](second-life/index.md) |
-| Are picking a tool | [Software database](research/software-database.md) |
+| Are picking a tool | [Tools](tools/index.md) |
 
 ## The sections
 
 | Section | Answers |
 |---------|---------|
-| [3D Modeling](modeling/index.md) | What tools and workflows do I use to create the model? |
-| [Texturing & Materials](texturing/index.md) | How do I create professional surfaces and PBR materials? |
-| [Rigging & Animation](rigging-animation/index.md) | How do I make the creature deform and move? |
+| [Academy](academy/index.md) | What should I learn next? |
+| [Tools](tools/index.md) | Which tool do I use, and how do I learn it? |
+| [Studio labs](projects/index.md) | What do I build to prove I can do it? |
 | [Second Life Production](second-life/index.md) | How do I get the finished asset into Second Life correctly? |
 | [Breedables Engineering](engineering/index.md) | How does the breedable system actually work? |
-| [Academy](academy/index.md) | What should I learn next? |
 | [Research & Tools](research/index.md) | What are we currently evaluating? |
 
 ## The pipeline in one line
@@ -46,8 +45,9 @@ Reference → Model → Sculpt → Retopo/LOD → UV → Texture/PBR → Rig →
     → Optimize → Export → Upload → Script → Genetics → HUD → Test → Release
 ```
 
-Every stage is owned by one section. The full breakdown is on the
-[production pipeline](pipeline.md) page.
+Each stage names the tool that does the work. The full breakdown is on the
+[production pipeline](pipeline.md) page; each tool's own page is under
+[Tools](tools/index.md).
 
 ## Current status
 
@@ -64,7 +64,7 @@ Every stage is owned by one section. The full breakdown is on the
 | **Recommended stack** | Blender · Material Maker · Ucupaint · Poly Haven / ambientCG |
 | **Main blocker** | Zero completed projects, so no benchmark has evidence behind it |
 
-**Next action:** the [retopology project](modeling/projects/retopology-project.md)
+**Next action:** the [retopology project](projects/retopology-project.md)
 is the cheapest first artifact — Blender only, no Second Life upload required.
 
 ## Major decisions on record

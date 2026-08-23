@@ -63,6 +63,52 @@ plugins:
   # files. There is no hand-maintained nav block: add a page to the right
   # folder and it appears. See docs/meta/wiki-style-guide.md.
   - awesome-nav
+  # The wiki moved from pipeline-stage sections to per-tool hubs. These URLs
+  # were already shared in Slack, so they have to keep resolving. Do not prune
+  # this map — a dead link in a pinned message is not worth the tidiness.
+  - redirects:
+      redirect_maps:
+        modeling/index.md: tools/index.md
+        texturing/index.md: tools/index.md
+        rigging-animation/index.md: tools/index.md
+
+        modeling/blender/index.md: tools/blender/index.md
+        modeling/blender/install-and-setup.md: tools/blender/install-and-setup.md
+        modeling/blender/interface-and-navigation.md: tools/blender/interface-and-navigation.md
+        modeling/blender/addon-catalog.md: tools/blender/addon-catalog.md
+        modeling/blender/learning-resources.md: tools/blender/learning-resources.md
+        modeling/mesh-modeling.md: tools/blender/mesh-modeling.md
+        modeling/sculpting.md: tools/blender/sculpting.md
+        modeling/retopology.md: tools/blender/retopology.md
+        modeling/uv-mapping.md: tools/blender/uv-mapping.md
+        texturing/pbr-materials.md: tools/blender/pbr-materials.md
+        rigging-animation/rigging-and-skinning.md: tools/blender/rigging-and-skinning.md
+        rigging-animation/animation.md: tools/blender/animation.md
+        second-life/export-and-upload.md: tools/blender/export-and-upload.md
+
+        modeling/software/maya.md: tools/maya/index.md
+        modeling/software/zbrush.md: tools/zbrush/index.md
+        modeling/software/topogun.md: tools/topogun/index.md
+        modeling/software/retopoflow.md: tools/retopoflow/index.md
+        modeling/software/pureref.md: tools/pureref/index.md
+        texturing/software/material-maker.md: tools/material-maker/index.md
+        texturing/software/ucupaint.md: tools/ucupaint/index.md
+        texturing/software/substance-painter.md: tools/substance-painter/index.md
+        texturing/software/mari.md: tools/mari/index.md
+        texturing/software/photoshop.md: tools/photoshop/index.md
+        texturing/software/krita.md: tools/krita/index.md
+        texturing/software/marmoset-toolbag.md: tools/marmoset-toolbag/index.md
+        texturing/software/marvelous-designer.md: tools/marvelous-designer/index.md
+        texturing/software/poly-haven.md: tools/poly-haven/index.md
+        texturing/software/ambientcg.md: tools/ambientcg/index.md
+
+        modeling/projects/retopology-project.md: projects/retopology-project.md
+        texturing/projects/organic-pbr-material.md: projects/organic-pbr-material.md
+        texturing/projects/layered-textures.md: projects/layered-textures.md
+        rigging-animation/projects/rig-and-animation.md: projects/rig-and-animation.md
+        engineering/projects/in-world-fixture.md: projects/in-world-fixture.md
+
+        rigging-animation/animation-libraries.md: research/animation-libraries.md
 
 markdown_extensions:
   - admonition

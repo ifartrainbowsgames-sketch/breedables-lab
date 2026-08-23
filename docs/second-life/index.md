@@ -9,118 +9,58 @@ question: "How do I get the finished asset into Second Life correctly?"
 !!! abstract "This section answers one question"
     *How do I get the finished asset into Second Life correctly?*
 
-Second Life is a delivery target with hard constraints — land impact,
-LOD, physics shapes, texture cost, permissions and Animesh limits. Learn the
-general professional workflow first in the subject sections; this section covers
-only what must change to ship in-world.
+Second Life is a delivery target with hard constraints — land impact, LOD,
+physics shapes, texture cost, permissions and Animesh limits. Learn the general
+professional workflow from the [tool that does the work](../tools/index.md);
+this section covers only what must change to ship in-world.
 
 ## Topics
 
 | Page | What it covers |
 |------|----------------|
-| [Platform baseline](platform-baseline.md) | Animesh, PBR, land impact, Linkset Data |
-| [Export & upload](export-and-upload.md) | Mesh, LODs, physics and material upload |
-| [Adapting professional work](adapting-professional-work.md) | What changes once the general 3D is good |
-| [Viewer & creator tools](viewer-and-tools.md) | The viewer as a production tool |
+| [Platform baseline](platform-baseline.md) | Animesh, PBR, land impact, Linkset Data — the numbers you design against |
+| [Adapting professional work](adapting-professional-work.md) | What changes once the general 3D is already good |
+| [Viewer & creator tools](viewer-and-tools.md) | The viewer as a production tool, not just a game client |
 
-## Software
+Exporting *out of Blender* is Blender's job, so it is taught as
+[lesson 10](../tools/blender/export-and-upload.md) rather than repeated here.
 
-| Tool | Licence & role |
-|------|----------------|
-| [Second Life viewer](viewer-and-tools.md) | Free — upload and in-world QA |
+## The rule this section exists to enforce
 
-## Pipeline stages owned by this section
+**Blender agreeing with you is not evidence. Second Life agreeing with you is.**
 
-These are the production-line stages this section is responsible for.
+Every studio lab that touches a surface, a rig or a script demands an in-world
+capture for exactly this reason. Renders are made under lighting you chose;
+the platform is not.
 
-### Stage 9 — Export & optimization
+| Check it in-world | Because |
+|-------------------|---------|
+| PBR materials | Metallic and roughness respond to the region's lighting, not your HDRI |
+| Land impact | Only the uploader can tell you the real number, and it decides your cost |
+| LOD behaviour | Your model is judged at distance, where the viewer swaps meshes |
+| Animesh playback | Frame rate, loop seams and bone limits differ from the timeline |
+| Script persistence | A sim restart is the only honest test of Linkset Data |
 
-Deliver **SL-ready** meshes and materials: poly limits, land impact awareness, glTF export paths for PBR.
+Capture under consistent lighting, note the viewer version and the date, and
+commit it. An undated screenshot proves nothing six months later.
 
-!!! tip "Studio pick"
-    **Blender glTF** for PBR material path (studio baseline). **Avastar** worth evaluating for mesh/rig export to SL — paid but SL-specific; add E-export experiment when cat species starts.
+## What to have ready before you upload
 
-=== "Free tools"
+1. A mesh at a **known** triangle count, with LODs you generated deliberately rather than accepted by default.
+2. A physics shape you chose — the automatic one is usually wrong and usually expensive.
+3. Materials exported through the glTF 2.0 path, since that is what carries PBR into the platform.
+4. Somewhere to test that is not a public sandbox, so failures are cheap and repeatable.
 
-    | Tool | Link | Best for |
-    |------|------|----------|
-    | **Blender glTF exporter** | bundled | PBR material export |
-    | **Custom Python in pipeline/** | repo | Repeatable export |
+## Where the evidence goes
 
-=== "Paid tools"
+| Work | Folder |
+|------|--------|
+| Upload packages and export presets | `pipeline/export/` |
+| In-world captures | `training/secondlife/` |
+| QA runs and regression checks | `tests/`, `training/secondlife/qa/` |
 
-    | Tool | Link | Best for |
-    |------|------|----------|
-    | **Avastar** | avastar.de | SL-specific Blender rig/export — **strong paid option for SL** |
-    | **Catalyst** | various | SL mesh tools |
+## Related
 
-**How we use it**
-
-- Blender export presets in `pipeline/export/`  
-- Optimization passes in `pipeline/optimization/`  
-- Pre-upload validation in `pipeline/validation/`
-
-**What to complete**
-
-- Read: SL mesh upload docs on [create.secondlife.com](https://create.secondlife.com/)  
-- Produce: exported glTF/SL upload package + LI notes
-
-**Evidence folder** — `pipeline/export/`, `training/secondlife/export/`  
-**Related pages** — [Lesson 10 — Export to SL](../second-life/export-and-upload.md)
-
-### Stage 10 — Second Life upload & PBR verification
-
-Confirm assets **look and behave correctly in the real runtime** — not just in Blender.
-
-!!! tip "Studio pick"
-    Official **SL viewer + wiki** — no substitute. Budget for test sandbox land as ops cost.
-
-=== "Free tools"
-
-    | Tool | Link | Best for |
-    |------|------|----------|
-    | **Second Life viewer** | secondlife.com | Upload & test |
-    | **SL wiki PBR** | [PBR Materials](https://wiki.secondlife.com/wiki/PBR_Materials) | Official reference |
-
-=== "Paid tools"
-
-    | Tool | Link | Best for |
-    |------|------|----------|
-    | **Land for testing** | SL premium/plot | Stable test region |
-
-**How we use it**
-
-- Upload PBR materials via glTF 2.0 workflow  
-- Screenshot under consistent windlight/sky  
-- Compare to Blender reference — document differences
-
-**What to complete**
-
-- Part of **A01**, **A05**  
-- Produce: dated in-world screenshots with viewer version
-
-**Evidence folder** — `training/secondlife/`  
-**Related pages** — [Lesson 10 — Export to SL](../second-life/export-and-upload.md) · [In-world fixture](../engineering/projects/in-world-fixture.md) · [Platform baseline](../second-life/platform-baseline.md)
-
-### Stage 14 — In-world testing & QA
-
-Prove breeding loop, persistence, animations, and updates work under real SL conditions (re-rez, reset, sim restart).
-
-!!! tip "Studio pick"
-    Structured test checklist in wiki + GitHub issues for traceability.
-
-=== "Free tools"
-
-    | Tool | Link | Best for |
-    |------|------|----------|
-    | **Alt accounts** | SL | Multi-user breeding tests |
-    | **GitHub Issues** | github.com | Bug tracking |
-
-**How we use it**
-
-- Test scripts in `tests/`  
-- Checklists per release  
-- Log bugs in git issues with repro steps + screenshots
-
-**Evidence folder** — `tests/`, `training/secondlife/qa/`  
-**Related pages** — [In-world fixture](../engineering/projects/in-world-fixture.md) · [Experiments](../research/experiments.md)
+- [In-world fixture lab](../projects/in-world-fixture.md) — the lab that proves the whole chain works
+- [Breedables Engineering](../engineering/index.md) — what the creature does once it is in-world
+- [Official mesh upload docs](https://create.secondlife.com/) · [PBR Materials on the SL wiki](https://wiki.secondlife.com/wiki/PBR_Materials)

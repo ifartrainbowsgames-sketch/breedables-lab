@@ -37,8 +37,8 @@ type: topic
 | General skill | SL-specific lesson |
 |---------------|-------------------|
 | Lessons 1–9 (Blender) | Professional creature skills |
-| [Lesson 10 — Export to SL](export-and-upload.md) | Upload package |
-| [In-world fixture lab](../engineering/projects/in-world-fixture.md) | LSL, persistence, Animesh test |
+| [Lesson 10 — Export to SL](../tools/blender/export-and-upload.md) | Upload package |
+| [In-world fixture lab](../projects/in-world-fixture.md) | LSL, persistence, Animesh test |
 | [Platform baseline](platform-baseline.md) | Rules & viewer behavior |
 
 ---

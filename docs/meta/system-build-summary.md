@@ -41,8 +41,8 @@ We are **not** abandoning the Academy. We **stopped** useless meta-docs and **st
 | Piece | Location | What it does |
 |-------|----------|--------------|
 | **Plain-English entry** | [start-here.md](../academy/index.md) | Explains the wiki without A01/B07 codes |
-| **10 Blender lessons** | [software/blender/](../modeling/blender/index.md) | Install → model → texture → rig → export to SL |
-| **5 studio labs** | [tracks/](../texturing/projects/organic-pbr-material.md) | Breedables proof projects with `training/` evidence |
+| **10 Blender lessons** | [software/blender/](../tools/blender/index.md) | Install → model → texture → rig → export to SL |
+| **5 studio labs** | [tracks/](../projects/organic-pbr-material.md) | Breedables proof projects with `training/` evidence |
 | **Tutorial arsenal** | [tutorials.md](../academy/index.md) | Curated videos by pipeline stage |
 | **Market research** | [breedables-market-study.md](../research/breedables-market-study.md) | SL breedables context for the studio |
 | **Concept audit** | [wiki-concept-audit.md](wiki-concept-audit.md) | Why registry ≠ Academy; design rules |

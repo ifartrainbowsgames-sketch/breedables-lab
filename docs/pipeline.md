@@ -13,18 +13,22 @@ workflows (Maya + ZBrush + Substance Painter + Marmoset); creature workshops run
 reference → ZBrush → Maya → Marvelous Designer → Substance Painter.
 
 This page is the **map**. Each stage names what it is for, the professional
-tools, the free alternative, and the studio route — then links to the section
-that owns the subject in depth.
+tools, the free alternative, and the studio route — then links to the tool that
+does the work.
 
-## The sections that own each stage
+## How this page relates to the rest of the wiki
 
-| Stages | Section | Question it answers |
-|--------|---------|---------------------|
-| 0–4 | [3D Modeling](modeling/index.md) | What tools and workflows do I use to create the model? |
-| 5–7 | [Texturing & Materials](texturing/index.md) | How do I create professional surfaces and PBR materials? |
-| 8–9 | [Rigging & Animation](rigging-animation/index.md) | How do I make the creature deform and move? |
-| 10–13 | [Second Life Production](second-life/index.md) | How do I get the finished asset into Second Life correctly? |
-| runtime | [Breedables Engineering](engineering/index.md) | How does the breedable system actually work? |
+A stage is a *reading order*, not a filing cabinet. The pages themselves are
+filed under the tool that performs the work, because a tool used at four stages
+should still be one page.
+
+| You want | Go to |
+|----------|-------|
+| The order to work in | This page |
+| Everything about one tool | [Tools](tools/index.md) |
+| The artifact that proves you can do it | [Studio labs](projects/index.md) |
+| Getting the result in-world | [Second Life Production](second-life/index.md) |
+| How the breedable itself works at runtime | [Breedables Engineering](engineering/index.md) |
 
 ## Three routes at every stage
 
@@ -63,7 +67,7 @@ Each stage: **what it is for (creatures)** · **professional tools** · **free/O
 
 **Artifact:** Reference sheet (front/side + detail callouts) in `training/references/`  
 **PASS:** Named sources, scale notes, color palette intent  
-**Academy:** [PureRef package](modeling/software/pureref.md) · [Video library — reference gathering](modeling/software/pureref.md#videos) · [Start here](academy/index.md)
+**Academy:** [PureRef package](tools/pureref/index.md) · [Video library — reference gathering](tools/pureref/index.md#videos) · [Start here](academy/index.md)
 
 ---
 
@@ -78,7 +82,7 @@ Each stage: **what it is for (creatures)** · **professional tools** · **free/O
 | **Breedables** | Blender |
 
 **Artifact:** Blockout mesh in `training/blender/b03/` or modeling folder  
-**Academy:** [Lesson 3 — Mesh modeling](modeling/mesh-modeling.md)
+**Academy:** [Lesson 3 — Mesh modeling](tools/blender/mesh-modeling.md)
 
 ---
 
@@ -93,7 +97,7 @@ Each stage: **what it is for (creatures)** · **professional tools** · **free/O
 | **Breedables** | Blender (validate against Reference Creature) |
 
 **Artifact:** High-poly sculpt `.blend` or exported sculpt  
-**Academy:** [Lesson 4 — Sculpting](modeling/sculpting.md) · [ZBrush package card](modeling/software/zbrush.md)
+**Academy:** [Lesson 4 — Sculpting](tools/blender/sculpting.md) · [ZBrush package card](tools/zbrush/index.md)
 
 ---
 
@@ -109,7 +113,7 @@ Each stage: **what it is for (creatures)** · **professional tools** · **free/O
 
 **Artifact:** Low-poly game mesh + poly count note  
 **PASS:** Loops at joints; manifold; budget met; silhouette held  
-**Academy:** [Lesson 5](modeling/retopology.md) · [Retopology lab](modeling/projects/retopology-project.md)
+**Academy:** [Lesson 5](tools/blender/retopology.md) · [Retopology lab](projects/retopology-project.md)
 
 ---
 
@@ -124,7 +128,7 @@ Each stage: **what it is for (creatures)** · **professional tools** · **free/O
 | **Breedables** | Blender |
 
 **Artifact:** UV layout screenshot + `.blend`  
-**Academy:** [Lesson 6](modeling/uv-mapping.md)
+**Academy:** [Lesson 6](tools/blender/uv-mapping.md)
 
 ---
 
@@ -154,7 +158,7 @@ Each stage: **what it is for (creatures)** · **professional tools** · **free/O
 | **Breedables** | Blender + Material Maker + Ucupaint layers (A02 lab) |
 
 **Artifact:** Base Color, Normal, Roughness, Metallic (as needed)  
-**Academy:** [Lesson 7](texturing/pbr-materials.md) · [Organic PBR lab](texturing/projects/organic-pbr-material.md)
+**Academy:** [Lesson 7](tools/blender/pbr-materials.md) · [Organic PBR lab](projects/organic-pbr-material.md)
 
 ---
 
@@ -181,7 +185,7 @@ Each stage: **what it is for (creatures)** · **professional tools** · **free/O
 | **Breedables** | Blender Rigify |
 
 **Artifact:** Rigged mesh + weight paint captures  
-**Academy:** [Lesson 8](rigging-animation/rigging-and-skinning.md) · [Rig lab](rigging-animation/projects/rig-and-animation.md)
+**Academy:** [Lesson 8](tools/blender/rigging-and-skinning.md) · [Rig lab](projects/rig-and-animation.md)
 
 ---
 
@@ -196,7 +200,7 @@ Each stage: **what it is for (creatures)** · **professional tools** · **free/O
 | **Breedables** | Blender |
 
 **Artifact:** Two loopable clips + export notes  
-**Academy:** [Lesson 9](rigging-animation/animation.md)
+**Academy:** [Lesson 9](tools/blender/animation.md)
 
 ---
 
@@ -220,7 +224,7 @@ Each stage: **what it is for (creatures)** · **professional tools** · **free/O
 |-------|--------|
 | **Breedables** | Blender → SL upload workflow |
 
-**Academy:** [Lesson 10 — Export to SL](second-life/export-and-upload.md)
+**Academy:** [Lesson 10 — Export to SL](tools/blender/export-and-upload.md)
 
 ---
 
@@ -228,7 +232,7 @@ Each stage: **what it is for (creatures)** · **professional tools** · **free/O
 
 **For:** Mesh upload, PBR materials, Animesh, LODs, physics, LSL fixture.
 
-**Academy:** [In-world fixture lab](engineering/projects/in-world-fixture.md) · [SL adaptation](second-life/adapting-professional-work.md) · [Platform baseline](second-life/platform-baseline.md)
+**Academy:** [In-world fixture lab](projects/in-world-fixture.md) · [SL adaptation](second-life/adapting-professional-work.md) · [Platform baseline](second-life/platform-baseline.md)
 
 ---
 

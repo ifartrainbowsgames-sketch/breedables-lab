@@ -9,7 +9,7 @@ type: meta
     **Date** — 2026-08-23  
     **Status** — LIVING ROADMAP  
     **Owner** — Academy  
-    **Related** — [Software & Tools](../academy/index.md) · [Blender Foundations](../modeling/blender/index.md) · [Wiki concept audit](wiki-concept-audit.md)
+    **Related** — [Software & Tools](../academy/index.md) · [Blender Foundations](../tools/blender/index.md) · [Wiki concept audit](wiki-concept-audit.md)
 
 This is the tracking document for the **Software & Tools** learning section — the guide teaching users how to learn Blender and the other software needed to make 3D models and textures for Second Life breedables. Update the checklist statuses honestly as pages land.
 
@@ -28,7 +28,7 @@ This is the tracking document for the **Software & Tools** learning section — 
 
 **Out of scope (covered elsewhere)**
 
-- In-world scripting/genetics/HUD — see [In-world fixture](../engineering/projects/in-world-fixture.md) and the [production line](../pipeline.md).
+- In-world scripting/genetics/HUD — see [In-world fixture](../projects/in-world-fixture.md) and the [production line](../pipeline.md).
 - Tool license/approval detail — lives in the [tools registry](../research/tool-registry.md).
 
 **Definition of done**
@@ -73,23 +73,23 @@ Status key: **done** = published this run · **stub** = placeholder only · **pl
 
 | Page | Purpose | Status | Evidence needed |
 |------|---------|--------|-----------------|
-| [blender/index.md](../modeling/blender/index.md) | Path overview + sequence | done | — |
-| [Lesson 1 — Install & setup](../modeling/blender/install-and-setup.md) | Right LTS + SL-scale config | done | `training/blender/b01/` startup blend + screenshots |
-| [Lesson 2 — Interface & navigation](../modeling/blender/interface-and-navigation.md) | Viewport, select, transform, editors | done | `training/blender/b02/` practice scene + cheat sheet |
-| [Lesson 3 — Mesh modeling](../modeling/mesh-modeling.md) | Organic creature base | done | `training/blender/b03/` quadruped base + wire shots |
-| [Lesson 4 — Sculpting](../modeling/sculpting.md) | Form + detail | done | `training/blender/b04/` sculpt + matcap render |
-| [Lesson 5 — Retopology](../modeling/retopology.md) | Low-poly + LOD + land impact | done | `training/blender/b05/` retopo + LI screenshot |
-| [Lesson 6 — UV unwrapping](../modeling/uv-mapping.md) | Seams + packed UVs | done | `training/blender/b06/` UV layout + checker shot |
-| [Lesson 7 — Texture painting & PBR](../texturing/pbr-materials.md) | Metallic/roughness + bake | done | `training/blender/b07/` maps + **in-world shot** |
-| [Lesson 8 — Rigging & weight painting](../rigging-animation/rigging-and-skinning.md) | Quadruped rig for Animesh | done | `training/blender/b08/` rig + pose/weight shots |
-| [Lesson 9 — Animation](../rigging-animation/animation.md) | Idle + walk, baked | done | `training/blender/b09/` playblasts |
-| [Lesson 10 — Export to Second Life](../second-life/export-and-upload.md) | LODs, physics, upload | done | `training/blender/b10/` export pkg + LI + in-world shot |
+| [blender/index.md](../tools/blender/index.md) | Path overview + sequence | done | — |
+| [Lesson 1 — Install & setup](../tools/blender/install-and-setup.md) | Right LTS + SL-scale config | done | `training/blender/b01/` startup blend + screenshots |
+| [Lesson 2 — Interface & navigation](../tools/blender/interface-and-navigation.md) | Viewport, select, transform, editors | done | `training/blender/b02/` practice scene + cheat sheet |
+| [Lesson 3 — Mesh modeling](../tools/blender/mesh-modeling.md) | Organic creature base | done | `training/blender/b03/` quadruped base + wire shots |
+| [Lesson 4 — Sculpting](../tools/blender/sculpting.md) | Form + detail | done | `training/blender/b04/` sculpt + matcap render |
+| [Lesson 5 — Retopology](../tools/blender/retopology.md) | Low-poly + LOD + land impact | done | `training/blender/b05/` retopo + LI screenshot |
+| [Lesson 6 — UV unwrapping](../tools/blender/uv-mapping.md) | Seams + packed UVs | done | `training/blender/b06/` UV layout + checker shot |
+| [Lesson 7 — Texture painting & PBR](../tools/blender/pbr-materials.md) | Metallic/roughness + bake | done | `training/blender/b07/` maps + **in-world shot** |
+| [Lesson 8 — Rigging & weight painting](../tools/blender/rigging-and-skinning.md) | Quadruped rig for Animesh | done | `training/blender/b08/` rig + pose/weight shots |
+| [Lesson 9 — Animation](../tools/blender/animation.md) | Idle + walk, baked | done | `training/blender/b09/` playblasts |
+| [Lesson 10 — Export to Second Life](../tools/blender/export-and-upload.md) | LODs, physics, upload | done | `training/blender/b10/` export pkg + LI + in-world shot |
 
 ### Catalog & indexes
 
 | Page | Purpose | Status | Evidence needed |
 |------|---------|--------|-----------------|
-| [software/addon-catalog.md](../modeling/blender/addon-catalog.md) | Built-in/free/paid add-ons | done | periodic link re-check + version notes |
+| [software/addon-catalog.md](../tools/blender/addon-catalog.md) | Built-in/free/paid add-ons | done | periodic link re-check + version notes |
 | [software/software-index.md](../research/software-database.md) | Non-Blender tool hub | done | periodic link re-check |
 
 ### Tutorial arsenal (resources)
@@ -133,10 +133,10 @@ The [Academy tracks A01–A05](../academy/index.md) are **outcome labs**; the Bl
 | B-lesson | Feeds track | Production stage |
 |----------|-------------|------------------|
 | B03, B04 | A-model (planned) | 2 Modeling |
-| B05 | [Retopology](../modeling/projects/retopology-project.md) | 3 Retopo/LOD |
-| B06, B07 | [Organic PBR material](../texturing/projects/organic-pbr-material.md) / [Layered textures](../texturing/projects/layered-textures.md) | 4–5 UV/Texturing |
-| B08, B09 | [Rig + animation](../rigging-animation/projects/rig-and-animation.md) | 7–8 Rig/Animation |
-| B10 | [In-world fixture](../engineering/projects/in-world-fixture.md) | 9–10 Export/Upload |
+| B05 | [Retopology](../projects/retopology-project.md) | 3 Retopo/LOD |
+| B06, B07 | [Organic PBR material](../projects/organic-pbr-material.md) / [Layered textures](../projects/layered-textures.md) | 4–5 UV/Texturing |
+| B08, B09 | [Rig + animation](../projects/rig-and-animation.md) | 7–8 Rig/Animation |
+| B10 | [In-world fixture](../projects/in-world-fixture.md) | 9–10 Export/Upload |
 
 This supplies the learning content the [audit](wiki-concept-audit.md) found missing — a new member can learn Blender and breedables production from this wiki alone.
 
@@ -155,5 +155,5 @@ This supplies the learning content the [audit](wiki-concept-audit.md) found miss
 
 ## References
 
-- [Software & Tools hub](../academy/index.md) · [Blender path](../modeling/blender/index.md) · [Add-on catalog](../modeling/blender/addon-catalog.md) · [Software index](../research/software-database.md) · [Tutorial arsenal](../academy/index.md)
-- [Software & Tools hub](../academy/index.md) · [Blender path](../modeling/blender/index.md) · [Tutorial arsenal](../academy/index.md) · [Wiki concept audit](wiki-concept-audit.md)
+- [Software & Tools hub](../academy/index.md) · [Blender path](../tools/blender/index.md) · [Add-on catalog](../tools/blender/addon-catalog.md) · [Software index](../research/software-database.md) · [Tutorial arsenal](../academy/index.md)
+- [Software & Tools hub](../academy/index.md) · [Blender path](../tools/blender/index.md) · [Tutorial arsenal](../academy/index.md) · [Wiki concept audit](wiki-concept-audit.md)

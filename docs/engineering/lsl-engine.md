@@ -18,7 +18,7 @@ A Second Life breedables engine is an event-driven LSL system that coordinates s
 |---|---|
 | [LSL Portal](https://wiki.secondlife.com/wiki/LSL_Portal) | Official Second Life scripting language and API reference |
 | [LSL definitions](https://github.com/secondlife/lsl-definitions) | Language-server definitions and built-in function signatures |
-| [In-world fixture](projects/in-world-fixture.md) | Reusable test parcel and fixture for breedables QA |
+| [In-world fixture](../projects/in-world-fixture.md) | Reusable test parcel and fixture for breedables QA |
 | [Modern SL persistence fixture](../research/experiments.md#e05-modern-sl-persistence-fixture) | Evaluation of Linkset Data versus legacy persistence patterns |
 | [Second Life platform baseline](../second-life/platform-baseline.md) | Platform constraints that drive persistence and update choices |
 
@@ -87,7 +87,7 @@ HUD scripts should be thin clients: they request state from the pet and display 
 
 ## Debug and QA workflow
 
-Test the engine inside the [in-world fixture](projects/in-world-fixture.md) before any release. A typical QA pass:
+Test the engine inside the [in-world fixture](../projects/in-world-fixture.md) before any release. A typical QA pass:
 
 1. Rez a fresh pet and verify initial state values.
 2. Let one full timer cycle run and confirm hunger/energy/age tick correctly.
@@ -148,6 +148,6 @@ Do not author final engine docs outside git; add sections here as code and test 
 
 ## Related
 
-- [In-world fixture](projects/in-world-fixture.md)
+- [In-world fixture](../projects/in-world-fixture.md)
 - [Modern SL persistence fixture](../research/experiments.md#e05-modern-sl-persistence-fixture)
 - [Second Life platform baseline](../second-life/platform-baseline.md)

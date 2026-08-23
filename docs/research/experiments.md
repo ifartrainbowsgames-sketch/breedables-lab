@@ -23,8 +23,8 @@ E01 is cheap, reusable, and maps directly to Second Life Metallic/Roughness PBR.
 
 ## E01 — PBR pipeline shootout
 
-**Academy:** [Organic PBR material](../texturing/projects/organic-pbr-material.md), [Layered textures](../texturing/projects/layered-textures.md)  
-**Tools:** [Material Maker](../texturing/software/material-maker.md), [Ucupaint](../texturing/software/ucupaint.md), DiffusedTexture (research)
+**Academy:** [Organic PBR material](../projects/organic-pbr-material.md), [Layered textures](../projects/layered-textures.md)  
+**Tools:** [Material Maker](../tools/material-maker/index.md), [Ucupaint](../tools/ucupaint/index.md), DiffusedTexture (research)
 
 **Outputs:** Base Color, Normal, Roughness, Metallic (when appropriate), source projects, in-world PBR screenshots
 
@@ -69,8 +69,8 @@ Yellow/red candidates stay research-only until cleared.
 
 ## E03 — Organic retopology benchmark
 
-**Academy:** [Retopology](../modeling/projects/retopology-project.md)  
-**Tools:** Blender native/manual, [RetopoFlow](../modeling/software/retopoflow.md); postSilver retopology_tool for static/LOD comparison only
+**Academy:** [Retopology](../projects/retopology-project.md)  
+**Tools:** Blender native/manual, [RetopoFlow](../tools/retopoflow/index.md); postSilver retopology_tool for static/LOD comparison only
 
 **Measurement table**
 | Criterion | Native Blender | RetopoFlow | Notes |
@@ -89,8 +89,8 @@ Yellow/red candidates stay research-only until cleared.
 
 ## E04 — Rig and retarget baseline
 
-**Academy:** [Rig + animation](../rigging-animation/projects/rig-and-animation.md)  
-**Tools:** [Blender](../modeling/blender/index.md) + Rigify Basic Quadruped, [Blender Animation Retargeting](https://github.com/Mwni/blender-animation-retargeting)
+**Academy:** [Rig + animation](../projects/rig-and-animation.md)  
+**Tools:** [Blender](../tools/blender/index.md) + Rigify Basic Quadruped, [Blender Animation Retargeting](https://github.com/Mwni/blender-animation-retargeting)
 
 **Steps:** rig → idle/walk → retarget → bake → Animesh-oriented export assumptions
 
@@ -112,7 +112,7 @@ Yellow/red candidates stay research-only until cleared.
 
 ## E05 — Modern SL persistence fixture
 
-**Academy:** [In-world fixture](../engineering/projects/in-world-fixture.md)  
+**Academy:** [In-world fixture](../projects/in-world-fixture.md)  
 **Platform:** Linkset Data, link messages, [LSL definitions](https://github.com/secondlife/lsl-definitions)
 
 **Test:** script reset, re-rez, state ownership, module versioning, fake genetics state, debug visibility

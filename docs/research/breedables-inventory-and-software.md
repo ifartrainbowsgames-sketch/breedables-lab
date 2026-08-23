@@ -14,7 +14,7 @@ type: reference
 - [Breedables case studies](breedables-case-studies.md) — deep profiles of major lines
 - [Breedables market study](breedables-market-study.md) — success/failure patterns
 - [SL platform baseline](../second-life/platform-baseline.md) — Animesh, PBR, Linkset Data
-- [Blender add-on catalog](../modeling/blender/addon-catalog.md) — tools for *making* breedables
+- [Blender add-on catalog](../tools/blender/addon-catalog.md) — tools for *making* breedables
 
 !!! note "Software disclosure is sparse"
     Breedable companies rarely publish their full 3D pipeline. Where no primary source exists, this page marks software as **inferred** (typical SL creator stack for that era) rather than confirmed. "Documented" means we found a direct source or a widely cited SL-specific tool.
@@ -45,7 +45,7 @@ Every breedable line combines **3D art**, **SL upload**, and **LSL/Mono game log
 ### Documented SL-specific tools
 
 - **[Avastar](https://www.avalab.org/avastar/)** (Blender, paid) — quadruped/Animesh rigging, SL skeleton, Collada export; widely used by SL mesh creators ([Avastar quadruped docs](https://avalab.org/avastar/300/reference/usermanual/advanced/non-human-rigging/)).
-- **Built-in Collada + glTF exporters** (Blender) — mesh and PBR material upload ([Lesson 10 — Export to Second Life](../second-life/export-and-upload.md)).
+- **Built-in Collada + glTF exporters** (Blender) — mesh and PBR material upload ([Lesson 10 — Export to Second Life](../tools/blender/export-and-upload.md)).
 - **Rigify** (Blender, free) — alternative rig path; Teulu-style Animesh still needs SL-compatible bone mapping.
 
 ### Runtime / game logic (rarely public)
@@ -196,7 +196,7 @@ Using the **free/OSS Academy stack** (Blender, Material Maker, Ucupaint, RetopoF
 
 ## Recommended 3D plugin shortlist for *making* a new breedable
 
-From [add-on catalog](../modeling/blender/addon-catalog.md) — minimum viable art pipeline:
+From [add-on catalog](../tools/blender/addon-catalog.md) — minimum viable art pipeline:
 
 **Free:** Node Wrangler, LoopTools, Rigify, Collada/glTF exporters, RetopoFlow, Ucupaint, TexTools, Poly Haven
 

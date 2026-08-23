@@ -18,35 +18,35 @@ The subject sections teach; this lists.
 
 | Tool | Cost | What it's for | Canonical page |
 |------|------|---------------|----------------|
-| **Blender** ⭐ | Free · GPL | Modelling, sculpting, retopo, UV, rig, anim, export | [Blender](../modeling/blender/index.md) |
-| Autodesk Maya | Paid | Industry modelling and animation standard | [Maya](../modeling/software/maya.md) |
-| ZBrush | Paid | Industry organic sculpting standard | [ZBrush](../modeling/software/zbrush.md) |
-| TopoGun | Paid | Dedicated retopology and map baking | [TopoGun](../modeling/software/topogun.md) |
-| RetopoFlow | Free · GPL | Guided retopology inside Blender | [RetopoFlow](../modeling/software/retopoflow.md) |
-| PureRef | Free tier / paid | Reference boards | [PureRef](../modeling/software/pureref.md) |
+| **Blender** ⭐ | Free · GPL | Modelling, sculpting, retopo, UV, rig, anim, export | [Blender](../tools/blender/index.md) |
+| Autodesk Maya | Paid | Industry modelling and animation standard | [Maya](../tools/maya/index.md) |
+| ZBrush | Paid | Industry organic sculpting standard | [ZBrush](../tools/zbrush/index.md) |
+| TopoGun | Paid | Dedicated retopology and map baking | [TopoGun](../tools/topogun/index.md) |
+| RetopoFlow | Free · GPL | Guided retopology inside Blender | [RetopoFlow](../tools/retopoflow/index.md) |
+| PureRef | Free tier / paid | Reference boards | [PureRef](../tools/pureref/index.md) |
 
 ## Texturing & materials
 
 | Tool | Cost | What it's for | Canonical page |
 |------|------|---------------|----------------|
-| **Material Maker** ⭐ | Free · MIT | Node-based procedural PBR generator | [Material Maker](../texturing/software/material-maker.md) |
-| **Ucupaint** ⭐ | Free | Layer-based texture painting in Blender | [Ucupaint](../texturing/software/ucupaint.md) |
-| Substance 3D Painter | Paid | Industry texturing standard | [Substance Painter](../texturing/software/substance-painter.md) |
+| **Material Maker** ⭐ | Free · MIT | Node-based procedural PBR generator | [Material Maker](../tools/material-maker/index.md) |
+| **Ucupaint** ⭐ | Free | Layer-based texture painting in Blender | [Ucupaint](../tools/ucupaint/index.md) |
+| Substance 3D Painter | Paid | Industry texturing standard | [Substance Painter](../tools/substance-painter/index.md) |
 | Substance 3D Designer | Paid | Node materials — overlaps Material Maker | [Paid vs free](paid-vs-free-matrix.md) |
-| Foundry Mari | Paid | High-end VFX texture painting | [Mari](../texturing/software/mari.md) |
-| Adobe Photoshop | Paid | General image editing | [Photoshop](../texturing/software/photoshop.md) |
-| Krita | Free · GPL | Open-source painting | [Krita](../texturing/software/krita.md) |
-| Marmoset Toolbag | Paid | Baking and lookdev | [Marmoset](../texturing/software/marmoset-toolbag.md) |
-| Marvelous Designer | Paid | Cloth and accessories | [Marvelous Designer](../texturing/software/marvelous-designer.md) |
-| **Poly Haven** | **CC0** | HDRIs, textures, models | [Poly Haven](../texturing/software/poly-haven.md) |
-| **ambientCG** | **CC0** | PBR material library | [ambientCG](../texturing/software/ambientcg.md) |
+| Foundry Mari | Paid | High-end VFX texture painting | [Mari](../tools/mari/index.md) |
+| Adobe Photoshop | Paid | General image editing | [Photoshop](../tools/photoshop/index.md) |
+| Krita | Free · GPL | Open-source painting | [Krita](../tools/krita/index.md) |
+| Marmoset Toolbag | Paid | Baking and lookdev | [Marmoset](../tools/marmoset-toolbag/index.md) |
+| Marvelous Designer | Paid | Cloth and accessories | [Marvelous Designer](../tools/marvelous-designer/index.md) |
+| **Poly Haven** | **CC0** | HDRIs, textures, models | [Poly Haven](../tools/poly-haven/index.md) |
+| **ambientCG** | **CC0** | PBR material library | [ambientCG](../tools/ambientcg/index.md) |
 
 ## Rigging & animation
 
 | Tool | Cost | What it's for | Canonical page |
 |------|------|---------------|----------------|
-| **Rigify** ⭐ | Free · bundled | Quadruped meta-rig generator | [Add-on catalog](../modeling/blender/addon-catalog.md) |
-| Avastar | Paid | Exact Second Life skeleton for Blender | [Rigging & Animation](../rigging-animation/index.md) |
+| **Rigify** ⭐ | Free · bundled | Quadruped meta-rig generator | [Add-on catalog](../tools/blender/addon-catalog.md) |
+| Avastar | Paid | Exact Second Life skeleton for Blender | [Rigging & skinning](../tools/blender/rigging-and-skinning.md) |
 | Rokoko Studio Live | Free tier | Motion capture into Blender | [Candidate](candidates/rokoko-studio-live.md) |
 | Animation Retargeting | Free | Reuse animation libraries across rigs | [Candidate](candidates/animation-retargeting.md) |
 
