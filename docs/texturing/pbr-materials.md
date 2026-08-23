@@ -155,7 +155,7 @@ The material node editor is its own skill — procedural masks, mix shaders, and
 **Intermediate**
 - **Ryan King Art** — procedural material series (skin, scales, fur-like surfaces). [Channel](https://www.youtube.com/@RyanKingArt) · [Gumroad (Paid extras)](https://ryankingart.gumroad.com/)
 - Manual — [Principled BSDF](https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html) · [Texture nodes](https://docs.blender.org/manual/en/latest/render/shader_nodes/textures/index.html)
-- Add-on: [Node Wrangler](https://docs.blender.org/manual/en/latest/addons/node_wrangler.html) (built-in) — essential node-editing speedups.
+- Add-on: [Node Wrangler](https://docs.blender.org/manual/en/latest/addons/index.html) (built-in) — essential node-editing speedups.
 
 **Advanced**
 - **Default Cube / CGMatter** — deep procedural/node techniques. [Default Cube](https://www.youtube.com/channel/UCdpWKLNfbROyoGPV46-zaUQ) · [@CGMatter](https://www.youtube.com/@CGMatter)

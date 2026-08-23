@@ -16,10 +16,10 @@ Full **start-to-finish** courses — not fragment playlists. See also [training 
 | Blender Fundamentals 4.5 LTS | Blender | Blender Foundation | [Official](https://www.blender.org/support/tutorials/) | Yes | Beginner → intermediate | Model, sculpt, UV, shade, rig, anim |
 | Donut tutorial | Blender | Blender Guru | [Playlist](https://www.youtube.com/playlist?list=PLjEaoINr3zgEPv5y--4MKpciLaoQYZB1Z) | Yes | Complete beginner | Full rendered scene |
 | Maya Quick Start | Maya | Autodesk | [Learn](https://www.autodesk.com/learn/ondemand/collection/maya-quick-start) | Yes (account) | Beginner | Model, UV, rig, anim modules |
-| ZClassroom library | ZBrush | Maxon | [ZClassroom](https://www.maxon.net/en/zbrush/zclassroom) | Yes | Beginner → advanced | Sculpt projects |
+| ZClassroom library | ZBrush | Maxon | [ZClassroom](https://zclassroom.com/) | Yes | Beginner → advanced | Sculpt projects |
 | Substance 3D hub | Substance Painter/Designer | Adobe | [Tutorials](https://helpx.adobe.com/substance-3d-tutorials.html) | Partial | Beginner → advanced | PBR projects |
 | Marmoset Cargo Ship | Toolbag 5 | Marmoset | [6-part series](https://marmoset.co/posts/3d-hard-surface-workflow-in-toolbag-cargo-ship-series/) | Yes | Intermediate | Bake, texture, render |
-| Material Maker docs path | Material Maker | RodZill4 | [Docs + YouTube](https://docs.materialmaker.org/getting_started/first_steps.html) | Yes | Beginner | Procedural PBR |
+| Material Maker docs path | Material Maker | RodZill4 | [Docs + YouTube](https://github.com/RodZill4/material-maker/wiki) | Yes | Beginner | Procedural PBR |
 | Krita manual path | Krita | Krita Foundation | [Manual + tutorials](https://docs.krita.org/) | Yes | Beginner | 2D art / textures |
 | Breedables Blender path | Blender + SL | Breedables Lab | [10 lessons](../modeling/blender/index.md) | Yes | Beginner → SL | Creature + in-world fixture |
 | Learn 3D with Blender | Blender | 3D Illusions | [Channel](https://www.youtube.com/@3d-illusions) | Yes | Beginner → advanced | ~18 hours, fundamentals to advanced |

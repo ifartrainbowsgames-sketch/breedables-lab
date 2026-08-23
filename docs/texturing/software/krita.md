@@ -28,7 +28,8 @@ type: software
 | Type | Resource | Link |
 |------|----------|------|
 | **Manual** | Full documentation | [docs.krita.org](https://docs.krita.org/) |
-| Tutorials index | Official tutorials | [Krita tutorials](https://krita.org/en/learn/krita-tutorials/) |
+| Tutorials index | Official tutorials | [GDQuest — Learn Krita from Zero](https://www.gdquest.com/tutorial/krita/) | Free structured course, ~6 hours, open-source project |
+| [Krita tutorials](https://krita.org/en/learn/krita-tutorials/) |
 | YouTube (official) | Krita Foundation | [Krita YouTube](https://www.youtube.com/user/KritaFoundation) |
 | Getting started | First steps | [Introduction — Krita Manual](https://docs.krita.org/en/getting_started/introduction.html) |
 

@@ -37,7 +37,7 @@ Legend: **BSR** = Breedables Studio recommended route today (may change after ex
 | **When to pay** | Studio job requires ZBrush; speed on complex creatures | Indie, OSS-first, integrated Blender→SL |
 | **BSR** | **Blender** (validate on Reference Creature) |
 
-Official ZBrush learning: [ZBrush Getting Started](https://www.maxon.net/en/zbrush/getting-started) · [ZClassroom](https://www.maxon.net/en/zbrush/zclassroom)
+Official ZBrush learning: [ZBrush Getting Started](https://www.maxon.net/en/zbrush) · [ZClassroom](https://zclassroom.com/)
 
 ---
 

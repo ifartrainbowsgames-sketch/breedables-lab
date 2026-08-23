@@ -26,7 +26,7 @@ phenotype variants come from one graph instead of a folder of hand-painted maps.
 | **Official site** | [materialmaker.org](https://materialmaker.org/) |
 | **Download** | [GitHub releases](https://github.com/RodZill4/material-maker/releases) |
 | **Source** | [RodZill4/material-maker](https://github.com/RodZill4/material-maker) |
-| **Documentation** | [docs.materialmaker.org](https://docs.materialmaker.org/) |
+| **Documentation** | [docs.materialmaker.org](https://www.materialmaker.org/) |
 | **Paid equivalent** | Adobe Substance 3D Designer — see [paid vs free](../../research/paid-vs-free-matrix.md) |
 
 ## Before you use it
@@ -40,10 +40,10 @@ Material Maker generates maps; it does not apply them. Learn the Blender side fi
 
 | Type | Resource |
 |------|----------|
-| Manual | [docs.materialmaker.org](https://docs.materialmaker.org/) |
-| First steps | [Getting started](https://docs.materialmaker.org/getting_started/first_steps.html) |
-| Node reference | [200+ nodes](https://docs.materialmaker.org/nodes/nodes.html) |
-| Export to Blender | [Exporting materials](https://docs.materialmaker.org/getting_started/export.html) |
+| Manual | [docs.materialmaker.org](https://www.materialmaker.org/) |
+| First steps | [Getting started](https://github.com/RodZill4/material-maker/wiki) |
+| Node reference | [200+ nodes](https://github.com/RodZill4/material-maker/wiki) |
+| Export to Blender | [Exporting materials](https://github.com/RodZill4/material-maker/wiki) |
 | Author's channel | [@RodZill4](https://www.youtube.com/@RodZill4) |
 | Intro video | [Material Maker intro](https://www.youtube.com/watch?v=8MMSS2F5vtc) |
 

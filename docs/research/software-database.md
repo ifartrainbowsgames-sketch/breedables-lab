@@ -77,7 +77,7 @@ These are **research candidates**. None is cleared for production; see
 | Area | Source |
 |------|--------|
 | Blender | [Manual](https://docs.blender.org/manual/en/latest/) · [Python API](https://docs.blender.org/api/current/) |
-| Material Maker | [docs.materialmaker.org](https://docs.materialmaker.org/) |
+| Material Maker | [docs.materialmaker.org](https://www.materialmaker.org/) |
 | Ucupaint | [Ucupaint wiki](https://ucupumar.github.io/ucupaint-wiki/) |
 | RetopoFlow | [docs.retopoflow.com](http://docs.retopoflow.com/) |
 | Poly Haven | [CC0 licence](https://polyhaven.com/license) |

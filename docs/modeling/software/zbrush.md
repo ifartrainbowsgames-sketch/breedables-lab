@@ -28,16 +28,16 @@ type: software
 
 | Type | Resource | Link |
 |------|----------|------|
-| **Getting Started** | Interface, first sculpt, creature intro | [Getting Started](https://www.maxon.net/en/zbrush/getting-started) |
-| Video library | ZClassroom | [ZClassroom](https://www.maxon.net/en/zbrush/zclassroom) |
-| Documentation | ZBrush Docs | [help.maxon.net/zbrush](https://help.maxon.net/zbrush/) |
+| **Getting Started** | Interface, first sculpt, creature intro | [Getting Started](https://www.maxon.net/en/zbrush) |
+| Video library | ZClassroom | [ZClassroom](https://zclassroom.com/) |
+| Documentation | ZBrush Docs | [help.maxon.net/zbrush](https://zclassroom.com/) |
 | YouTube (official) | Maxon | [Maxon YouTube](https://www.youtube.com/user/ZBrushCentral) |
 
 ## Training route — creature-focused video
 
 | Topic | Source | Link |
 |-------|--------|------|
-| First creature (official) | Maxon Getting Started | [Getting Started path](https://www.maxon.net/en/zbrush/getting-started) — creature tutorial module |
+| First creature (official) | Maxon Getting Started | [Getting Started path](https://www.maxon.net/en/zbrush) — creature tutorial module |
 | Creature head sculpt | Pixologic legacy / community | [ZBrush creature head (FlippedNormals)](https://www.youtube.com/watch?v=UdT6ekB_IAE) |
 | Dynamesh basics | ZBrush Guides | [Dynamesh intro](https://www.youtube.com/watch?v=8jop8MAPLnA) |
 
@@ -54,7 +54,7 @@ Sculpt a creature **head** from PureRef board; export decimated mesh for retopo 
 
 **[Pixologic ZBrush Official YouTube](https://www.youtube.com/@PixologicZBrush)** — Official sculpting techniques and updates
 
-**[Maxon ZClassroom](https://www.maxon.net/en/zbrush/zclassroom)** — Official ZBrush training library
+**[Maxon ZClassroom](https://zclassroom.com/)** — Official ZBrush training library
 
 <div class="wiki-video" markdown="0">
 <iframe src="https://www.youtube-nocookie.com/embed/YQ1x9k0Y8XQ" title="ZBrush — dynamesh creature blockout" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

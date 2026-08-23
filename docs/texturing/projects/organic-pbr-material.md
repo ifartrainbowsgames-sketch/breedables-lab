@@ -38,7 +38,7 @@ A hands-on project that produces a complete organic PBR material set (base color
 
 | Source | Covers |
 |---|---|
-| [Blender manual — shader nodes](https://docs.blender.org/manual/en/latest/render/shader_nodes/intro.html) | Node editor concepts used to wire PBR maps |
+| [Blender manual — shader nodes](https://docs.blender.org/manual/en/latest/render/shader_nodes/index.html) | Node editor concepts used to wire PBR maps |
 | [Blender manual — UV unwrapping](https://docs.blender.org/manual/en/latest/modeling/meshes/uv/unwrapping/introduction.html) | How to produce a clean single-tile UV layout before painting |
 | [Material Maker wiki](https://github.com/RodZill4/material-maker/wiki) | Procedural material export settings if Material Maker is used |
 | [Second Life wiki — PBR Materials](https://wiki.secondlife.com/wiki/PBR_Materials) | Viewer-side material channel expectations |

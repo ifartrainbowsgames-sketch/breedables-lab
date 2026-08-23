@@ -31,7 +31,7 @@ You can take the creature base from B03 and add **organic form and surface detai
 |--------|------|
 | Manual — Sculpting | [Sculpting](https://docs.blender.org/manual/en/latest/sculpt_paint/sculpting/index.html) |
 | Manual — Sculpt brushes | [Brushes](https://docs.blender.org/manual/en/latest/sculpt_paint/sculpting/tools/index.html) |
-| Manual — Dyntopo | [Dynamic topology](https://docs.blender.org/manual/en/latest/sculpt_paint/sculpting/tools/dyntopo.html) |
+| Manual — Dyntopo | [Dynamic topology](https://docs.blender.org/manual/en/latest/sculpt_paint/sculpting/tool_settings/dyntopo.html) |
 | Manual — Multiresolution | [Multiresolution modifier](https://docs.blender.org/manual/en/latest/modeling/modifiers/generate/multiresolution.html) |
 
 ---

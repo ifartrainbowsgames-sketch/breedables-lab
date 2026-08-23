@@ -30,7 +30,7 @@ type: software
 |------|----------|------|
 | Official tutorials | TopoGun video tutorials | [topogun.com/tutorials](https://www.topogun.com/tutorials/) |
 | Documentation | Manual PDF / help | [topogun.com/documentation](https://www.topogun.com/documentation/) |
-| YouTube (official) | TopoGun | [TopoGun YouTube](https://www.youtube.com/user/TopoGunSoftware) |
+| YouTube (official) | TopoGun | [TopoGun YouTube](https://www.topogun.com/) |
 | Workflow video | Retopo from ZBrush | [TopoGun 3 retopo workflow](https://www.youtube.com/watch?v=wg8S4n5lGQ8) |
 
 ## What pros use it for

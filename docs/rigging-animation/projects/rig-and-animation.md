@@ -34,7 +34,7 @@ Studio lab for a breedable-appropriate quadruped rig and two loopable animations
 | Source | Covers |
 |---|---|
 | [Rigify add-on](https://docs.blender.org/manual/en/latest/addons/rigify/index.html) | Quadruped rig generation and bone layers |
-| [NLA documentation](https://docs.blender.org/manual/en/latest/editors/nla.html) | Organising multiple animation clips |
+| [NLA documentation](https://docs.blender.org/manual/en/latest/editors/nla/index.html) | Organising multiple animation clips |
 | [Uploading a rigged mesh](https://wiki.secondlife.com/wiki/Mesh/Uploading_and_wearing_a_rigged_mesh) | SL mesh upload requirements |
 | [How to create animations](https://wiki.secondlife.com/wiki/How_to_create_animations) | SL animation source workflow |
 | [Animesh User Guide](https://wiki.secondlife.com/wiki/Animesh_User_Guide) | In-world animated mesh setup |

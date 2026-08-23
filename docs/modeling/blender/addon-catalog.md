@@ -21,17 +21,17 @@ These are free, bundled, and stable across LTS releases. Enable them in [Lesson 
 
 | Add-on | Cost | What it does | Relevance to breedables | Priority |
 |--------|------|--------------|--------------------------|----------|
-| [Node Wrangler](https://docs.blender.org/manual/en/latest/addons/node_wrangler.html) | Free (built-in) | Keyboard-driven shader/geo node editing (Ctrl+T, Ctrl+Shift+click preview) | Massive speedup for the PBR node work in [Lesson 7](../../texturing/pbr-materials.md) and phenotype shader groups | ⭐ |
-| [LoopTools](https://docs.blender.org/manual/en/latest/addons/mesh/looptools.html) | Free (built-in) | Extra mesh ops: Relax, Space, Circle, Bridge, Flatten | Cleans edge loops on organic bases ([Lesson 3](../mesh-modeling.md)) and retopo ([Lesson 5](../retopology.md)) | ⭐ |
+| [Node Wrangler](https://docs.blender.org/manual/en/latest/addons/index.html) | Free (built-in) | Keyboard-driven shader/geo node editing (Ctrl+T, Ctrl+Shift+click preview) | Massive speedup for the PBR node work in [Lesson 7](../../texturing/pbr-materials.md) and phenotype shader groups | ⭐ |
+| [LoopTools](https://extensions.blender.org/add-ons/looptools/) | Free (built-in) | Extra mesh ops: Relax, Space, Circle, Bridge, Flatten | Cleans edge loops on organic bases ([Lesson 3](../mesh-modeling.md)) and retopo ([Lesson 5](../retopology.md)) | ⭐ |
 | [Rigify](https://docs.blender.org/manual/en/latest/addons/rigify/index.html) | Free (built-in) | Meta-rig → full rig generator, incl. Basic Quadruped | Studio rigging baseline for [Lesson 8](../../rigging-animation/rigging-and-skinning.md) / [Rig + animation](../../rigging-animation/projects/rig-and-animation.md) | ⭐ |
 | glTF 2.0 importer/exporter | Free (built-in) | Import/export glTF/GLB with PBR materials | SL PBR material upload path ([Lesson 10](../../second-life/export-and-upload.md)) | ⭐ |
 | Collada (.dae) exporter | Free (built-in) | Export COLLADA meshes, LODs, rigs | SL's mesh upload format ([Lesson 10](../../second-life/export-and-upload.md)) | ⭐ |
-| [Bool Tool](https://docs.blender.org/manual/en/latest/addons/mesh/bool_tool.html) | Free (built-in) | Fast boolean union/difference shortcuts | Hard-surface accessories, tack, HUD props | ◻ |
-| [Extra Objects (Add Mesh)](https://docs.blender.org/manual/en/latest/addons/add_mesh/mesh_extra_objects.html) | Free (built-in) | More primitive shapes to start from | Faster blockouts and prop bases | ◻ |
-| [Extra Curve Objects](https://docs.blender.org/manual/en/latest/addons/add_curve/index.html) | Free (built-in) | Extra curve primitives | Leashes, vines, tails-as-curves, HUD elements | ◻ |
-| [Copy Attributes Menu](https://docs.blender.org/manual/en/latest/addons/object/copy_attributes.html) | Free (built-in) | Ctrl+C to copy transforms/data between objects | Speeds repetitive setup across phenotype variants | ◻ |
-| [Auto Mirror](https://docs.blender.org/manual/en/latest/addons/mesh/auto_mirror.html) | Free (built-in) | One-click cut-in-half + Mirror modifier | Symmetric creature modeling ([Lesson 3](../mesh-modeling.md)) | ◻ |
-| [3D-Print Toolbox](https://docs.blender.org/manual/en/latest/addons/mesh/3d_print_toolbox.html) | Free (built-in) | Mesh checks: non-manifold, degenerate, intersecting | Pre-export sanity checks before SL upload | ◻ |
+| [Bool Tool](https://extensions.blender.org/add-ons/bool-tool/) | Free (built-in) | Fast boolean union/difference shortcuts | Hard-surface accessories, tack, HUD props | ◻ |
+| [Extra Objects (Add Mesh)](https://extensions.blender.org/add-ons/extra-mesh-objects/) | Free (built-in) | More primitive shapes to start from | Faster blockouts and prop bases | ◻ |
+| [Extra Curve Objects](https://docs.blender.org/manual/en/latest/addons/index.html) | Free (built-in) | Extra curve primitives | Leashes, vines, tails-as-curves, HUD elements | ◻ |
+| [Copy Attributes Menu](https://docs.blender.org/manual/en/latest/addons/index.html) | Free (built-in) | Ctrl+C to copy transforms/data between objects | Speeds repetitive setup across phenotype variants | ◻ |
+| [Auto Mirror](https://extensions.blender.org/add-ons/auto-mirror/) | Free (built-in) | One-click cut-in-half + Mirror modifier | Symmetric creature modeling ([Lesson 3](../mesh-modeling.md)) | ◻ |
+| [3D-Print Toolbox](https://extensions.blender.org/add-ons/print3d-toolbox/) | Free (built-in) | Mesh checks: non-manifold, degenerate, intersecting | Pre-export sanity checks before SL upload | ◻ |
 
 ---
 

@@ -85,3 +85,22 @@ Upload a **test prim** with PBR material from lesson 7; photograph in-world; not
 **[Medhue Simoni Second Life Animations & Bento](https://www.youtube.com/@Medhue)** — Specialized resource for Bento avatar creation, animation export, and Second Life-compatible rigging.
 
 ---
+
+## Third-party viewers
+
+The official viewer is the reference implementation, but most working creators
+use **Firestorm** — an open-source third-party viewer with a materially better
+build and scripting workflow.
+
+| Viewer | Licence | Why it matters for building |
+|--------|---------|-----------------------------|
+| [Firestorm](https://www.firestormviewer.org/) | Open source (LGPL, from the Second Life viewer codebase) | Better LSL editor, external-editor support, and build tooling. Listed in Linden Lab's [Third Party Viewer Directory](https://wiki.secondlife.com/wiki/Third_Party_Viewer_Directory/Firestorm) |
+| [Firestorm wiki](https://wiki.firestormviewer.org/start) | — | The viewer's own documentation, including its [LSL preprocessor](https://wiki.firestormviewer.org/preview_lsl_text) |
+
+!!! tip "Studio pick"
+    **Firestorm for building, the official viewer for verification.** Firestorm's
+    LSL preprocessor and external-editor hooks make scripting the
+    [engine](../engineering/lsl-engine.md) far less painful. Verify final
+    appearance in the official viewer, because that is the baseline every
+    customer is guaranteed to have.
+

@@ -83,3 +83,17 @@ Follow Autodesk Quick Start **modeling + UV** modules; export FBX to compare wit
 **[XGen Interactive Grooming for Creature Fur and Hair](https://www.autodesk.com/products/maya/features/3d-animation)** — XGen is Maya’s production toolset for fur, hair and feathers on creature projects.
 
 ---
+
+## Free official learning
+
+Maya is paid, but Autodesk publishes its training openly — useful for
+understanding the professional route even if you work in Blender.
+
+| Resource | Note |
+|----------|------|
+| [Maya Learning Channel](https://www.youtube.com/channel/UCHmAXsicpLK2EHMZo5_BtDA) | Autodesk's own tutorials, beginner through deep-dive workflows |
+| [Maya Quick Start](https://www.autodesk.com/learn/ondemand/collection/maya-quick-start) | Structured modules: model, UV, rig, animate |
+
+The free/open equivalent for every stage is in the
+[paid vs free matrix](../../research/paid-vs-free-matrix.md).
+
