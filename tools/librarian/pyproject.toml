@@ -18,6 +18,9 @@ dependencies = [
 dev = [
   "pytest>=8,<9",
 ]
+notify = [
+  "apprise>=1.9,<2",
+]
 research = [
   "trafilatura>=2.0,<3",
   "Pillow>=10,<12",

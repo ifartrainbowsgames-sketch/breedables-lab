@@ -13,6 +13,7 @@ from .ingest import github_search, ingest_feed
 from .seed import seed_baseline
 from .academy_manifest import academy_content_gaps
 from .daily_wiki import run_daily_wiki
+from .notify import NotifyUnavailableError, apprise_urls_from_env, notify_test
 from .extract import extract_discovery_dir
 from .kimi import (
     build_breedables_research_context,
@@ -129,6 +130,9 @@ def cmd_content_gaps(args) -> int:
 
 def cmd_daily_wiki(args) -> int:
     db, settings = _db()
+    notify_slack = args.notify_slack
+    if not args.no_notify_slack and not notify_slack and apprise_urls_from_env(settings):
+        notify_slack = True
     payload = run_daily_wiki(
         db,
         settings.repo_root,
@@ -137,6 +141,8 @@ def cmd_daily_wiki(args) -> int:
         humanize=args.humanize,
         wiki_evolve=args.wiki_evolve,
         wiki_audit=args.wiki_audit,
+        notify_slack=notify_slack,
+        settings=settings if notify_slack else None,
     )
     print(json.dumps(payload["summary"], indent=2))
     print(f"\nReport: {payload['paths']['markdown']}")
@@ -149,9 +155,26 @@ def cmd_daily_wiki(args) -> int:
     if payload.get("wiki_audit"):
         au = payload["wiki_audit"]
         print(f"Wiki audit: {payload['paths'].get('audit')} ({au.get('source')})")
+    if payload.get("slack_notify"):
+        sn = payload["slack_notify"]
+        status = "sent" if sn.get("ok") else "failed"
+        print(f"Slack notify: {status} ({sn.get('targets', 0)} target(s))")
+    elif payload.get("slack_notify_skipped"):
+        print(f"Slack notify: skipped ({payload['slack_notify_skipped']})")
     for action in payload["next_actions"][:5]:
         print(f"  → {action}")
     return 0
+
+
+def cmd_notify_test(_args) -> int:
+    _, settings = _db()
+    try:
+        result = notify_test(settings)
+    except NotifyUnavailableError as exc:
+        print(json.dumps({"ok": False, "error": str(exc)}, indent=2))
+        return 1
+    print(json.dumps(result, indent=2))
+    return 0 if result.get("ok") else 1
 
 
 def cmd_kimi_test(_args) -> int:
@@ -369,7 +392,23 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Write wiki-audit-kimi.md — Kimi audits all docs/ pages and setup",
     )
+    p.add_argument(
+        "--notify-slack",
+        action="store_true",
+        help="Post summary to Slack via Apprise (needs SLACK_NOTIFY_CHANNEL or APPRISE_URLS)",
+    )
+    p.add_argument(
+        "--no-notify-slack",
+        action="store_true",
+        help="Skip Slack notification even when notify env is configured",
+    )
     p.set_defaults(func=cmd_daily_wiki)
+
+    p = sub.add_parser(
+        "notify-test",
+        help="Send a test message via Apprise (https://github.com/caronc/apprise)",
+    )
+    p.set_defaults(func=cmd_notify_test)
 
     p = sub.add_parser("kimi-test", help="Verify Kimi CLI (subscription) or Open Platform API")
     p.set_defaults(func=cmd_kimi_test)

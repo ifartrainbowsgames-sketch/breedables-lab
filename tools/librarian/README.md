@@ -214,6 +214,26 @@ python -m librarian.slack_app
 
 The bot is intentionally read-oriented in V1. It does **not** silently rewrite Slack Canvases.
 
+### Daily digests — Apprise
+
+**[Apprise](https://github.com/caronc/apprise)** posts `daily-wiki` summaries to a channel (no 24/7 bot process needed for digests).
+
+```bash
+pip install -e ".[notify]"
+```
+
+Repo-root `.env`:
+
+```bash
+SLACK_BOT_TOKEN=xoxb-...
+SLACK_NOTIFY_CHANNEL=#breedables-knowledge
+```
+
+```bash
+python -m librarian.cli notify-test
+.\scripts\daily-wiki.ps1   # includes --notify-slack when configured
+```
+
 ## Suggested first records
 
 Seed only tools we have actually researched, for example:
