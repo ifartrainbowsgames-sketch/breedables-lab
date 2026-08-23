@@ -7,6 +7,8 @@ import sys
 from .checks import check_resource
 from .config import Settings
 from .db import LibrarianDB
+from .ingest import github_search, ingest_feed
+from .seed import seed_baseline
 
 
 def _db() -> tuple[LibrarianDB, Settings]:
@@ -107,6 +109,32 @@ def cmd_export(_args) -> int:
     return 0
 
 
+def cmd_seed(_args) -> int:
+    db, _ = _db()
+    print(json.dumps(seed_baseline(db), indent=2))
+    return 0
+
+
+def cmd_ingest_feed(args) -> int:
+    db, _ = _db()
+    result = ingest_feed(db, args.url, category=args.category, limit=args.limit)
+    print(json.dumps(result, indent=2))
+    return 0
+
+
+def cmd_discover_github(args) -> int:
+    db, settings = _db()
+    result = github_search(
+        db,
+        args.query,
+        token=settings.github_token,
+        category=args.category,
+        limit=args.limit,
+    )
+    print(json.dumps(result, indent=2))
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="breedables-librarian")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -156,6 +184,21 @@ def build_parser() -> argparse.ArgumentParser:
 
     p = sub.add_parser("export-json")
     p.set_defaults(func=cmd_export)
+
+    p = sub.add_parser("seed-baseline")
+    p.set_defaults(func=cmd_seed)
+
+    p = sub.add_parser("ingest-feed")
+    p.add_argument("url")
+    p.add_argument("--category", default="research")
+    p.add_argument("--limit", type=int, default=25)
+    p.set_defaults(func=cmd_ingest_feed)
+
+    p = sub.add_parser("discover-github")
+    p.add_argument("query")
+    p.add_argument("--category", default="github-discovery")
+    p.add_argument("--limit", type=int, default=10)
+    p.set_defaults(func=cmd_discover_github)
 
     return parser
 
