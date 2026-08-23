@@ -32,16 +32,6 @@ jobs:
           BREEDABLES_REPO_ROOT: ${{ github.workspace }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Daily wiki gap export
-        id: daily
-        run: |
-          python -m librarian.cli daily-wiki --url-limit 40 --humanize --notify-slack
-        env:
-          BREEDABLES_REPO_ROOT: ${{ github.workspace }}
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-          SLACK_NOTIFY_CHANNEL: "#breedables-knowledge"
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-
       - name: Evidence and content gaps
         run: |
           python -m librarian.cli content-gaps --limit 100
@@ -60,7 +50,7 @@ jobs:
       title: "Librarian weekly check"
       conclusion: ${{ needs.check.result }}
       notify_on: failure
-      details: "Registry link check, daily-wiki, and pytest. Manual run: Actions → Librarian weekly check"
+      details: "Registry link check and pytest. Manual run: Actions → Librarian weekly check"
     secrets:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}

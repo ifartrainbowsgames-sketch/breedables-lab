@@ -23,19 +23,34 @@ Academy rules:
 - Use existing Librarian/daily-wiki/webscreen/Kimi to POPULATE pages — no new meta-frameworks.
 - Reference Creature experiments update the Academy with evidence.
 
-Key docs: docs/academy/mission.md, professional-workflow/, software/packages/, start-here.md
+Information architecture — every page has ONE canonical home, organised by what
+the user wants to learn or do, never by which agent or report produced it:
+- docs/modeling/          3D Modeling — geometry, sculpting, retopology, UVs
+- docs/texturing/         Texturing & Materials — PBR, painting, baking
+- docs/rigging-animation/ Rigging & Animation — armatures, skinning, cycles
+- docs/second-life/       Second Life Production — export, upload, Animesh, QA
+- docs/engineering/       Breedables Engineering — LSL, genetics, persistence, HUD
+- docs/academy/           Academy — learning PATHS only; they link, they do not duplicate
+- docs/research/          Research & Tools — not yet canonical: candidates, experiments
+- docs/meta/              Wiki about the wiki; kept out of the reader-facing nav
+
+Software cards live under the subject that owns them (docs/<subject>/software/).
+Never document a tool twice — add a row to docs/research/software-database.md
+instead. Full rules: docs/meta/wiki-style-guide.md
 """
 
 CONTEXT_FILES: tuple[str, ...] = (
     "docs/index.md",
-    "docs/academy/mission.md",
-    "docs/academy/start-here.md",
-    "docs/academy/overview.md",
-    "docs/academy/professional-workflow/index.md",
-    "docs/academy/professional-workflow/software-map.md",
-    "docs/studio/wiki-design-benchmarks.md",
-    "docs/studio/system-build-summary.md",
-    "docs/research/wiki-concept-audit.md",
+    "docs/pipeline.md",
+    "docs/academy/index.md",
+    "docs/modeling/index.md",
+    "docs/texturing/index.md",
+    "docs/rigging-animation/index.md",
+    "docs/second-life/index.md",
+    "docs/engineering/index.md",
+    "docs/research/index.md",
+    "docs/research/software-database.md",
+    "docs/meta/wiki-style-guide.md",
 )
 
 

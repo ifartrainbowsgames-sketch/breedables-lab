@@ -15,27 +15,47 @@ class WikiLink:
     source: str  # relative path from repo root
 
 
+# Pages that carry curated external URLs. Tutorial and video links now live on
+# the subject page that owns the topic, so these are the section entry points
+# plus the two cross-cutting indexes.
 DEFAULT_WIKI_SOURCES: tuple[str, ...] = (
-    "docs/academy/resources/tutorials.md",
-    "docs/academy/resources/training-videos-by-stage.md",
-    "docs/academy/resources/complete-courses.md",
-    "docs/academy/resources/videos.md",
-    "docs/academy/resources/official-docs.md",
-    "docs/academy/start-here.md",
-    "docs/academy/overview.md",
+    "docs/research/software-database.md",
+    "docs/academy/complete-courses.md",
+    "docs/modeling/index.md",
+    "docs/modeling/mesh-modeling.md",
+    "docs/modeling/sculpting.md",
+    "docs/modeling/retopology.md",
+    "docs/modeling/uv-mapping.md",
+    "docs/texturing/index.md",
+    "docs/texturing/pbr-materials.md",
+    "docs/rigging-animation/index.md",
+    "docs/rigging-animation/rigging-and-skinning.md",
+    "docs/rigging-animation/animation.md",
+    "docs/second-life/index.md",
+    "docs/second-life/export-and-upload.md",
+    "docs/second-life/platform-baseline.md",
+    "docs/engineering/index.md",
+    "docs/pipeline.md",
     "docs/index.md",
 )
 
 
 def _package_card_sources(repo_root: Path) -> list[str]:
-    pkg_dir = repo_root / "docs" / "academy" / "software" / "packages"
-    if not pkg_dir.is_dir():
-        return []
-    return sorted(
-        str(p.relative_to(repo_root)).replace("\\", "/")
-        for p in pkg_dir.glob("*.md")
-        if p.name != "index.md"
-    )
+    """Software cards, which now live under each subject section."""
+    out: list[str] = []
+    for section in ("modeling", "texturing", "second-life"):
+        pkg_dir = repo_root / "docs" / section / "software"
+        if not pkg_dir.is_dir():
+            continue
+        out += [
+            p.relative_to(repo_root).as_posix()
+            for p in pkg_dir.glob("*.md")
+            if p.name != "index.md"
+        ]
+    blender = repo_root / "docs" / "modeling" / "blender" / "index.md"
+    if blender.is_file():
+        out.append(blender.relative_to(repo_root).as_posix())
+    return sorted(out)
 
 
 def extract_links(text: str, source: str) -> list[WikiLink]:

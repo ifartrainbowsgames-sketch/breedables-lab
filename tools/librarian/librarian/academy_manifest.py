@@ -26,35 +26,35 @@ TRACKS: tuple[AcademyTrack, ...] = (
     AcademyTrack(
         id="A01",
         title="Organic PBR Material",
-        lesson_wiki_path="docs/academy/tracks/a01-organic-pbr.md",
+        lesson_wiki_path="docs/texturing/projects/organic-pbr-material.md",
         evidence_path="training/texturing/a01/",
         production_stage="Texturing & PBR",
     ),
     AcademyTrack(
         id="A02",
         title="Layered Texture Refinement",
-        lesson_wiki_path="docs/academy/tracks/a02-layered-textures.md",
+        lesson_wiki_path="docs/texturing/projects/layered-textures.md",
         evidence_path="training/texturing/a02/",
         production_stage="Texturing",
     ),
     AcademyTrack(
         id="A03",
         title="Organic Retopology",
-        lesson_wiki_path="docs/academy/tracks/a03-retopology.md",
+        lesson_wiki_path="docs/modeling/projects/retopology-project.md",
         evidence_path="training/modeling/a03/",
         production_stage="Retopology",
     ),
     AcademyTrack(
         id="A04",
         title="Rig + Two Animations",
-        lesson_wiki_path="docs/academy/tracks/a04-rig-animation.md",
+        lesson_wiki_path="docs/rigging-animation/projects/rig-and-animation.md",
         evidence_path="training/rigging/a04/",
         production_stage="Rigging & animation",
     ),
     AcademyTrack(
         id="A05",
         title="SL Creature Fixture",
-        lesson_wiki_path="docs/academy/tracks/a05-sl-fixture.md",
+        lesson_wiki_path="docs/engineering/projects/in-world-fixture.md",
         evidence_path="training/lsl/a05/",
         production_stage="LSL & in-world test",
     ),
@@ -62,21 +62,21 @@ TRACKS: tuple[AcademyTrack, ...] = (
 
 
 BLENDER_LESSONS: tuple[BlenderLesson, ...] = (
-    BlenderLesson("B01", 1, "Install & setup", "docs/academy/software/blender/b01-install-setup.md", "training/blender/b01/"),
-    BlenderLesson("B02", 2, "Interface & navigation", "docs/academy/software/blender/b02-interface-navigation.md", "training/blender/b02/"),
-    BlenderLesson("B03", 3, "Mesh modeling", "docs/academy/software/blender/b03-mesh-modeling.md", "training/blender/b03/"),
-    BlenderLesson("B04", 4, "Sculpting basics", "docs/academy/software/blender/b04-sculpting.md", "training/blender/b04/"),
-    BlenderLesson("B05", 5, "Retopology", "docs/academy/software/blender/b05-retopology.md", "training/blender/b05/"),
-    BlenderLesson("B06", 6, "UV unwrapping", "docs/academy/software/blender/b06-uv-unwrapping.md", "training/blender/b06/"),
-    BlenderLesson("B07", 7, "Texture painting & PBR", "docs/academy/software/blender/b07-texture-painting-pbr.md", "training/blender/b07/"),
-    BlenderLesson("B08", 8, "Rigging & weight painting", "docs/academy/software/blender/b08-rigging-weight-painting.md", "training/blender/b08/"),
-    BlenderLesson("B09", 9, "Basic animation", "docs/academy/software/blender/b09-animation.md", "training/blender/b09/"),
-    BlenderLesson("B10", 10, "Export to Second Life", "docs/academy/software/blender/b10-export-to-sl.md", "training/blender/b10/"),
+    BlenderLesson("B01", 1, "Install & setup", "docs/modeling/blender/install-and-setup.md", "training/blender/b01/"),
+    BlenderLesson("B02", 2, "Interface & navigation", "docs/modeling/blender/interface-and-navigation.md", "training/blender/b02/"),
+    BlenderLesson("B03", 3, "Mesh modeling", "docs/modeling/mesh-modeling.md", "training/blender/b03/"),
+    BlenderLesson("B04", 4, "Sculpting basics", "docs/modeling/sculpting.md", "training/blender/b04/"),
+    BlenderLesson("B05", 5, "Retopology", "docs/modeling/retopology.md", "training/blender/b05/"),
+    BlenderLesson("B06", 6, "UV unwrapping", "docs/modeling/uv-mapping.md", "training/blender/b06/"),
+    BlenderLesson("B07", 7, "Texture painting & PBR", "docs/texturing/pbr-materials.md", "training/blender/b07/"),
+    BlenderLesson("B08", 8, "Rigging & weight painting", "docs/rigging-animation/rigging-and-skinning.md", "training/blender/b08/"),
+    BlenderLesson("B09", 9, "Basic animation", "docs/rigging-animation/animation.md", "training/blender/b09/"),
+    BlenderLesson("B10", 10, "Export to Second Life", "docs/second-life/export-and-upload.md", "training/blender/b10/"),
 )
 
 WIKI_INDEX_FILES: tuple[str, ...] = (
-    "docs/academy/resources/videos.md",
-    "docs/academy/resources/official-docs.md",
+    "docs/research/software-database.md",
+    "docs/research/software-database.md",
 )
 
 

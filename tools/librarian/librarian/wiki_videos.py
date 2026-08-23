@@ -9,8 +9,8 @@ from typing import Any
 
 from .kimi import KimiUnavailableError, _kimi_complete, _strip_markdown_fence, resolve_kimi_backend
 
-VIDEO_LIBRARY_PATH = "docs/academy/resources/video-library.md"
-VIDEO_MANIFEST_PATH = "docs/academy/resources/video-manifest.json"
+VIDEO_LIBRARY_PATH = "docs/research/software-database.md"
+VIDEO_MANIFEST_PATH = "docs/research/video-manifest.json"
 
 # Kimi expands this list — every production software in the pipeline
 SOFTWARE_VIDEO_TARGETS: list[dict[str, str]] = [

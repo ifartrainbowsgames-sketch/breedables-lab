@@ -214,9 +214,9 @@ python -m librarian.slack_app
 
 The bot is intentionally read-oriented in V1. It does **not** silently rewrite Slack Canvases.
 
-### Daily digests — Apprise
+### Slack notifications — Apprise + CI
 
-**[Apprise](https://github.com/caronc/apprise)** posts `daily-wiki` summaries to a channel (no 24/7 bot process needed for digests).
+**[Apprise](https://github.com/caronc/apprise)** can post messages when you explicitly ask (no scheduled digests).
 
 ```bash
 pip install -e ".[notify]"
@@ -231,7 +231,7 @@ SLACK_NOTIFY_CHANNEL=#breedables-knowledge
 
 ```bash
 python -m librarian.cli notify-test
-.\scripts\daily-wiki.ps1   # includes --notify-slack when configured
+python -m librarian.cli daily-wiki --notify-slack   # opt-in only
 ```
 
 ### GitHub Actions → Slack
@@ -240,9 +240,9 @@ Uses **[slack-github-action](https://github.com/slackapi/slack-github-action)** 
 
 1. Slack app → **Incoming Webhooks** → add webhook to `#breedables-knowledge`
 2. GitHub repo → **Settings → Secrets → Actions** → `SLACK_WEBHOOK_URL`
-3. Optional for weekly Apprise digest in CI: `SLACK_BOT_TOKEN` secret + invite bot to channel
+3. Optional: `SLACK_BOT_TOKEN` secret + invite bot to channel
 
-Notifies on: lychee link failures, wiki lint failures, MkDocs deploy success/failure, weekly librarian failures.
+Notifies on CI failures only: lychee link failures, wiki lint failures, MkDocs deploy success/failure, librarian weekly failures.
 
 ## Suggested first records
 

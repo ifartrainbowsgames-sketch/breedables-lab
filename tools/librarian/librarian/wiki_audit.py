@@ -12,13 +12,21 @@ from typing import Any
 
 from .kimi import KimiUnavailableError, WIKI_MISSION, _kimi_complete, resolve_kimi_backend
 
-MKDOCS_NAV_SECTIONS = (
-    "Home",
-    "Academy",
-    "Studio",
-    "Second Life",
-    "Research",
-)
+# Top-level information architecture. Every wiki page belongs to exactly one
+# subject section; see docs/meta/wiki-style-guide.md.
+SECTION_PREFIXES = {
+    "docs/modeling/": "3D Modeling",
+    "docs/texturing/": "Texturing & Materials",
+    "docs/rigging-animation/": "Rigging & Animation",
+    "docs/second-life/": "Second Life Production",
+    "docs/engineering/": "Breedables Engineering",
+    "docs/academy/": "Academy",
+    "docs/research/": "Research & Tools",
+    "docs/meta/": "Meta",
+}
+
+
+MKDOCS_NAV_SECTIONS = tuple(SECTION_PREFIXES.values())
 
 
 def _first_heading(text: str) -> str:
@@ -36,27 +44,22 @@ def inventory_wiki_pages(repo_root: Path) -> list[dict[str, Any]]:
         rel = path.relative_to(repo_root).as_posix()
         text = path.read_text(encoding="utf-8", errors="replace")
         section = "Other"
-        if rel.startswith("docs/academy/"):
-            section = "Academy"
-        elif rel.startswith("docs/studio/") or rel.startswith("docs/production/"):
-            section = "Studio"
-        elif rel.startswith("docs/research/"):
-            section = "Research"
-        elif rel.startswith("docs/secondlife/"):
-            section = "Second Life"
-        elif rel == "docs/index.md":
-            section = "Home"
-        elif rel == "docs/studio-roadmap.md":
-            section = "Studio"
+        for prefix, name in SECTION_PREFIXES.items():
+            if rel.startswith(prefix):
+                section = name
+                break
+        else:
+            if rel in ("docs/index.md", "docs/pipeline.md", "docs/roadmap.md"):
+                section = "Home"
 
         issues: list[str] = []
         if len(text.strip()) < 400:
             issues.append("thin content (<400 chars)")
         if "TODO" in text or "TBD" in text:
             issues.append("contains TODO/TBD")
-        if rel.startswith("docs/academy/software/blender/b") and "Watch" not in text and "Video" not in text:
+        if rel.startswith("docs/modeling/blender/") and "Watch" not in text and "Video" not in text:
             issues.append("lesson may lack training links")
-        if rel.startswith("docs/academy/tracks/") and len(text.strip()) < 800:
+        if "/projects/" in rel and len(text.strip()) < 800:
             issues.append("studio lab likely skeleton")
 
         pages.append(
@@ -99,7 +102,8 @@ def wiki_audit_local(context: dict[str, Any]) -> str:
     pages = context.get("wiki_pages", [])
     warnings = context.get("mkdocs_warnings", [])
     thin = [p for p in pages if p.get("issues")]
-    no_img = [p for p in pages if not p.get("has_images") and p["path"].startswith("docs/academy/")]
+    no_img = [p for p in pages if not p.get("has_images")
+              and p["path"].split("/")[1] in ("modeling", "texturing", "rigging-animation")]
 
     lines = [
         f"# Wiki audit — {today}",
@@ -111,7 +115,7 @@ def wiki_audit_local(context: dict[str, Any]) -> str:
         f"- **Pages in docs/:** {len(pages)}",
         f"- **MkDocs link warnings:** {len(warnings)}",
         f"- **Pages flagged:** {len(thin)}",
-        f"- **Academy pages without images:** {len(no_img)}",
+        f"- **Subject pages without images:** {len(no_img)}",
         "",
     ]
 
@@ -174,7 +178,7 @@ Rules:
         "pages_with_issues": [p for p in context.get("wiki_pages", []) if p.get("issues")],
         "doc_snippets": context.get("doc_snippets"),
         "daily_gaps": context.get("daily_report", {}).get("academy_gaps"),
-        "design_benchmarks_excerpt": context.get("doc_snippets", {}).get("docs/studio/wiki-design-benchmarks.md", "")[:3000],
+        "design_benchmarks_excerpt": context.get("doc_snippets", {}).get("docs/meta/wiki-style-guide.md", "")[:3000],
     }
     user = (
         "Audit the entire wiki setup and content. Propose concrete fixes.\n\n"
@@ -194,11 +198,11 @@ def build_wiki_audit_context(repo_root: Path, daily_payload: dict | None = None)
 
     repo_root = repo_root.resolve()
     snippets = {rel: _read_snippet(repo_root, rel, max_chars=2500) for rel in CONTEXT_FILES}
-    snippets["docs/studio/wiki-design-benchmarks.md"] = _read_snippet(
-        repo_root, "docs/studio/wiki-design-benchmarks.md", max_chars=2500
+    snippets["docs/meta/wiki-style-guide.md"] = _read_snippet(
+        repo_root, "docs/meta/wiki-style-guide.md", max_chars=2500
     )
-    snippets["docs/studio/system-build-summary.md"] = _read_snippet(
-        repo_root, "docs/studio/system-build-summary.md", max_chars=2500
+    snippets["docs/meta/system-build-summary.md"] = _read_snippet(
+        repo_root, "docs/meta/system-build-summary.md", max_chars=2500
     )
     return {
         "daily_report": daily_payload or {},
