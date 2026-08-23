@@ -40,9 +40,15 @@ jobs:
         (inputs.notify_on == 'failure' && inputs.conclusion == 'failure') ||
         (inputs.notify_on == 'success' && inputs.conclusion == 'success')
       }}
+    # The `secrets` context is not available in step-level `if:` conditions, so
+    # the presence checks below read these through the `env` context instead.
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      SLACK_NOTIFY_CHANNEL: ${{ secrets.SLACK_NOTIFY_CHANNEL }}
     steps:
       - name: Post via incoming webhook
-        if: ${{ secrets.SLACK_WEBHOOK_URL != '' }}
+        if: env.SLACK_WEBHOOK_URL != ''
         uses: slackapi/slack-github-action@v2.0.0
         continue-on-error: true
         with:
@@ -53,14 +59,21 @@ jobs:
               "text": "*${{ inputs.title }}*\n• Status: `${{ inputs.conclusion }}`\n• Branch: `${{ github.ref_name }}`\n• ${{ inputs.details }}\n• <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View workflow run>"
             }
 
+      - name: Resolve bot channel
+        if: env.SLACK_WEBHOOK_URL == '' && env.SLACK_BOT_TOKEN != ''
+        id: channel
+        run: |
+          channel="${SLACK_NOTIFY_CHANNEL:-#breedables-knowledge}"
+          echo "name=$channel" >> "$GITHUB_OUTPUT"
+
       - name: Post via bot token
-        if: ${{ secrets.SLACK_WEBHOOK_URL == '' && secrets.SLACK_BOT_TOKEN != '' }}
+        if: env.SLACK_WEBHOOK_URL == '' && env.SLACK_BOT_TOKEN != ''
         uses: slackapi/slack-github-action@v2.0.0
         continue-on-error: true
         with:
           method: chat.postMessage
           token: ${{ secrets.SLACK_BOT_TOKEN }}
           payload: |
-            channel: "${{ secrets.SLACK_NOTIFY_CHANNEL != '' && secrets.SLACK_NOTIFY_CHANNEL || '#breedables-knowledge' }}"
+            channel: "${{ steps.channel.outputs.name }}"
             text: "*${{ inputs.title }}*\n• Status: `${{ inputs.conclusion }}`\n• Branch: `${{ github.ref_name }}`\n• ${{ inputs.details }}\n• <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View workflow run>"
             mrkdwn: true
