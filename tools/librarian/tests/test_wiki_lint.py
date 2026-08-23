@@ -159,7 +159,9 @@ def test_write_refused_when_generated_page_is_invalid(tmp_path):
 
 
 def test_valid_page_writes_to_derived_path(tmp_path):
-    rel, report = render_and_write(tmp_path, BASE)
+    # body must clear MIN_BODY_WORDS — a stub is a failed generation, not a page
+    payload = {**BASE, "sections": [{"heading": "Why", "body": "word " * 200}]}
+    rel, report = render_and_write(tmp_path, payload)
     assert rel == "texturing/baking-high-to-low.md"
     assert report.ok
     assert (tmp_path / "docs" / rel).is_file()
@@ -196,3 +198,38 @@ def test_write_refused_when_model_invents_a_link(tmp_path):
     bad = {**BASE, "related": [{"title": "Nope", "path": "does/not/exist.md"}]}
     with pytest.raises(PageRejected):
         render_and_write(tmp_path, bad)
+
+
+# --------------------------------------------------- destructive-write guard
+
+MEATY = {**BASE, "sections": [{"heading": "Why", "body": "word " * 200}]}
+
+
+def test_near_empty_render_is_refused(tmp_path):
+    (tmp_path / "docs").mkdir(parents=True)
+    thin = {"title": "RetopoFlow", "section": "modeling", "type": "software"}
+    with pytest.raises(PageRejected, match="no substance"):
+        render_and_write(tmp_path, thin)
+
+
+def test_rewrite_may_not_gut_an_existing_page(tmp_path):
+    target = tmp_path / "docs" / "texturing" / "baking-high-to-low.md"
+    target.parent.mkdir(parents=True)
+    target.write_text('---\ntitle: "T"\n---\n# T\n\n' + ("word " * 400), encoding="utf-8")
+    small = {**BASE, "sections": [{"heading": "Why", "body": "word " * 70}]}
+    with pytest.raises(PageRejected, match="shrink the page"):
+        render_and_write(tmp_path, small)
+
+
+def test_expansion_of_an_existing_page_is_allowed(tmp_path):
+    target = tmp_path / "docs" / "texturing" / "baking-high-to-low.md"
+    target.parent.mkdir(parents=True)
+    target.write_text('---\ntitle: "T"\n---\n# T\n\n' + ("word " * 100), encoding="utf-8")
+    rel, report = render_and_write(tmp_path, MEATY)
+    assert report.ok and rel.endswith("baking-high-to-low.md")
+
+
+def test_new_page_only_needs_the_minimum(tmp_path):
+    (tmp_path / "docs").mkdir(parents=True)
+    rel, report = render_and_write(tmp_path, MEATY)
+    assert report.ok

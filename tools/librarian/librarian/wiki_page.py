@@ -178,6 +178,46 @@ def _known_pages(repo_root: Path, incoming: str) -> set[str]:
     return pages
 
 
+#: A rendered page carrying less than this much prose is a failed generation,
+#: not a short page. Seen in practice: a model answered an "expand this page"
+#: task with a title and nothing else, and the write replaced 243 words with 6.
+MIN_BODY_WORDS = 60
+
+#: A rewrite may not drop below this fraction of what it replaces. Expanding a
+#: page must never be able to shrink it.
+MIN_RETAINED_FRACTION = 0.6
+
+
+def _body_words(markdown: str) -> int:
+    from .wiki_lint import parse_frontmatter
+
+    _, body = parse_frontmatter(markdown)
+    return len(body.split())
+
+
+def check_not_destructive(repo_root: Path, rel: str, markdown: str) -> None:
+    """Refuse a write that would gut the page it replaces.
+
+    Structure validation cannot catch this: a near-empty page is perfectly
+    well-formed. Only comparing against what is already there does.
+    """
+    new_words = _body_words(markdown)
+    if new_words < MIN_BODY_WORDS:
+        raise PageRejected(
+            f"rendered page has only {new_words} words of body content "
+            f"(minimum {MIN_BODY_WORDS}) — the generation produced no substance")
+
+    existing = repo_root / "docs" / rel
+    if not existing.is_file():
+        return
+    old_words = _body_words(existing.read_text(encoding="utf-8", errors="replace"))
+    floor = int(old_words * MIN_RETAINED_FRACTION)
+    if old_words and new_words < floor:
+        raise PageRejected(
+            f"rewrite would shrink the page from {old_words} to {new_words} words "
+            f"(floor {floor}) — refusing to discard existing content")
+
+
 def render_and_write(repo_root: Path, payload: dict[str, Any], *,
                      dry_run: bool = False) -> tuple[str, LintReport]:
     """Render, validate, then write. Refuses to write an invalid page.
@@ -188,6 +228,7 @@ def render_and_write(repo_root: Path, payload: dict[str, Any], *,
     """
     rel = target_path(payload)
     markdown = render(payload)
+    check_not_destructive(repo_root, rel, markdown)
     report = validate(rel, markdown, known_pages=_known_pages(repo_root, rel))
     if not report.ok:
         raise PageRejected(
