@@ -13,7 +13,7 @@ from .ingest import github_search, ingest_feed
 from .seed import seed_baseline
 from .academy_manifest import academy_content_gaps
 from .daily_wiki import run_daily_wiki
-from .notify import NotifyUnavailableError, apprise_urls_from_env, notify_test
+from .notify import NotifyUnavailableError, notify_test
 from .extract import extract_discovery_dir
 from .kimi import (
     build_breedables_research_context,
@@ -130,9 +130,7 @@ def cmd_content_gaps(args) -> int:
 
 def cmd_daily_wiki(args) -> int:
     db, settings = _db()
-    notify_slack = args.notify_slack
-    if not args.no_notify_slack and not notify_slack and apprise_urls_from_env(settings):
-        notify_slack = True
+    notify_slack = args.notify_slack and not args.no_notify_slack
     payload = run_daily_wiki(
         db,
         settings.repo_root,
@@ -254,6 +252,66 @@ def cmd_research_queue(args) -> int:
         "registry": db.registry_gaps(limit=args.limit),
     }
     print(json.dumps(payload, indent=2))
+    return 0
+
+
+def cmd_wiki_lint(args) -> int:
+    """Validate the wiki against the information architecture in wiki_schema."""
+    from .wiki_lint import format_report, lint_wiki
+
+    report = lint_wiki(Settings.from_env().repo_root)
+    sys.stdout.write(format_report(report))
+    if args.strict:
+        return 0 if not report.findings else 1
+    return 0 if report.ok else 1
+
+
+def cmd_wiki_worker(args) -> int:
+    """Continuous wiki maintenance: derive a task queue, act, validate, commit."""
+    from .wiki_worker import (
+        build_queue,
+        clear_cooldown,
+        cooldown_remaining,
+        load_state,
+        run_cycle,
+        run_forever,
+    )
+
+    settings = Settings.from_env()
+    repo = settings.repo_root
+
+    if args.status:
+        state = load_state(repo)
+        secs = cooldown_remaining(state)
+        print(json.dumps({
+            "cycles_run": state.get("cycles", 0),
+            "last_cycle": state.get("last_cycle"),
+            "tasks_completed": len(state.get("completed", [])),
+            "paused_on_usage": bool(secs),
+            "resumes_at": state.get("cooldown_until") if secs else None,
+            "retry_in_seconds": secs or None,
+            "reason": state.get("cooldown_reason") if secs else None,
+        }, indent=2))
+        return 0
+
+    if args.resume:
+        clear_cooldown(repo, load_state(repo))
+        print("cooldown cleared — the worker will call Kimi on the next cycle")
+        return 0
+
+    if args.queue:
+        queue = build_queue(repo)
+        print(json.dumps([t.as_dict() for t in queue], indent=2))
+        print(f"{len(queue)} task(s) queued", file=sys.stderr)
+        return 0
+
+    if args.loop:
+        run_forever(repo, interval=args.interval, max_cycles=args.max_cycles)
+        return 0
+
+    print(json.dumps(
+        run_cycle(repo, dry_run=args.dry_run, wiki_base_url=settings.wiki_base_url),
+        indent=2))
     return 0
 
 
@@ -476,6 +534,29 @@ def build_parser() -> argparse.ArgumentParser:
 
     p = sub.add_parser("status")
     p.set_defaults(func=cmd_status)
+
+    p = sub.add_parser(
+        "wiki-lint",
+        help="Validate wiki structure: placement, page types, headings, canonical homes",
+    )
+    p.add_argument("--strict", action="store_true", help="fail on warnings too")
+    p.set_defaults(func=cmd_wiki_lint)
+
+    p = sub.add_parser(
+        "wiki-worker",
+        help="Continuous wiki maintenance loop (safe: writes to a dated branch only)",
+    )
+    p.add_argument("--queue", action="store_true", help="show the task queue and exit")
+    p.add_argument("--status", action="store_true",
+                   help="show cycle count and whether the worker is paused on usage")
+    p.add_argument("--resume", action="store_true",
+                   help="clear a usage cooldown early and resume immediately")
+    p.add_argument("--once", action="store_true", help="run a single cycle (default)")
+    p.add_argument("--loop", action="store_true", help="run continuously")
+    p.add_argument("--interval", type=int, default=1800, help="seconds between cycles")
+    p.add_argument("--max-cycles", type=int, default=None, help="stop after N cycles")
+    p.add_argument("--dry-run", action="store_true", help="plan only, write nothing")
+    p.set_defaults(func=cmd_wiki_worker)
 
     p = sub.add_parser("export-json")
     p.set_defaults(func=cmd_export)

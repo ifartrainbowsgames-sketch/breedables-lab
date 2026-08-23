@@ -1,0 +1,83 @@
+name: Wiki worker
+
+# Unattended wiki maintenance. Runs on a schedule, derives its own task queue
+# from real gaps, and opens a pull request — it never pushes to main.
+#
+# Safety model:
+#   * every generated page is rendered by librarian.wiki_page (JSON -> Markdown)
+#   * wiki-lint must pass before anything is committed
+#   * output lands on a dated branch behind a PR for human review
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Plan only, write nothing"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: wiki-worker
+  cancel-in-progress: false
+
+jobs:
+  maintain:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install librarian
+        run: pip install -e ".[dev,research]"
+        working-directory: tools/librarian
+
+      - name: Show the task queue
+        run: python -m librarian.cli wiki-worker --queue
+        working-directory: tools/librarian
+        env:
+          BREEDABLES_REPO_ROOT: ${{ github.workspace }}
+
+      - name: Run one maintenance cycle
+        run: |
+          python -m librarian.cli wiki-worker --once \
+            ${{ inputs.dry_run && '--dry-run' || '' }}
+        working-directory: tools/librarian
+        env:
+          BREEDABLES_REPO_ROOT: ${{ github.workspace }}
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+
+      - name: Validate structure before proposing anything
+        run: python -m librarian.cli wiki-lint
+        working-directory: tools/librarian
+        env:
+          BREEDABLES_REPO_ROOT: ${{ github.workspace }}
+
+      - name: Build (strict)
+        run: |
+          pip install -r requirements-docs.txt
+          mkdocs build --strict
+
+      - name: Open a pull request
+        if: ${{ !inputs.dry_run }}
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: wiki-worker/auto
+          title: "Wiki worker: automated maintenance cycle"
+          commit-message: "wiki-worker: automated maintenance cycle"
+          body: |
+            Automated cycle from `librarian.cli wiki-worker`.
+
+            Every page in this PR was rendered from JSON by `wiki_page.py` and
+            passed `wiki-lint` plus `mkdocs build --strict` before the PR opened.
+
+            Review the content; the structure is already machine-checked.
+          delete-branch: true

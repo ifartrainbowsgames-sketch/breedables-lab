@@ -14,6 +14,8 @@ import httpx
 from .academy_manifest import code_glossary, humanize_codes
 from .wiki_context import WIKI_MISSION
 
+from .wiki_page import PAGE_CONTRACT
+
 DEFAULT_BASE_URL = "https://api.moonshot.ai/v1"
 DEFAULT_API_MODEL = "kimi-k3"
 DEFAULT_CLI_MODEL = "kimi-code/kimi-for-coding"
@@ -25,6 +27,58 @@ WIKI_BREEDABLES_INVENTORY = "docs/research/breedables-inventory-and-software.md"
 
 class KimiUnavailableError(RuntimeError):
     """No Kimi backend configured or authenticated."""
+
+
+class KimiQuotaExhausted(KimiUnavailableError):
+    """Usage is spent or rate-limited — stop calling and try again later.
+
+    Distinct from KimiUnavailableError because the response is different: an
+    unauthenticated backend needs a human, whereas an exhausted quota just needs
+    time. ``retry_after`` is seconds, taken from the Retry-After header when the
+    server sends one and otherwise a conservative default.
+    """
+
+    def __init__(self, message: str, retry_after: int = 3600) -> None:
+        super().__init__(message)
+        self.retry_after = max(60, int(retry_after))
+
+
+#: Substrings that mean "out of usage", not "broken". Matched case-insensitively
+#: against the provider's error body.
+_QUOTA_MARKERS = (
+    "quota",
+    "insufficient balance",
+    "insufficient_quota",
+    "exceeded_current_quota",
+    "rate_limit",
+    "rate limit",
+    "too many requests",
+    "billing",
+    "credit",
+)
+
+
+def _quota_error_from(status_code: int, body: str, headers: Any = None) -> "KimiQuotaExhausted | None":
+    """Classify a failed response as a quota/rate-limit condition, or not."""
+    lowered = (body or "").lower()
+    hit = status_code in (402, 429) or any(m in lowered for m in _QUOTA_MARKERS)
+    if not hit:
+        return None
+    retry_after = 3600
+    try:
+        if headers is not None:
+            raw = headers.get("Retry-After") or headers.get("retry-after")
+            if raw:
+                retry_after = int(float(raw))
+    except (TypeError, ValueError):
+        pass
+    # a plain 429 with no hint usually clears quickly; a 402 needs real time
+    if retry_after == 3600 and status_code == 429:
+        retry_after = 300
+    return KimiQuotaExhausted(
+        f"Kimi usage exhausted (HTTP {status_code}): {(body or '')[:200]}",
+        retry_after=retry_after,
+    )
 
 
 def _glossary_block() -> str:
@@ -156,6 +210,10 @@ def _kimi_code_api_chat(
         json=body,
         timeout=timeout,
     )
+    if resp.status_code >= 400:
+        quota = _quota_error_from(resp.status_code, resp.text, resp.headers)
+        if quota:
+            raise quota
     resp.raise_for_status()
     message = resp.json()["choices"][0]["message"]
     content = message.get("content") or message.get("reasoning_content") or ""
@@ -292,6 +350,10 @@ def _kimi_chat_api(
         json=body,
         timeout=timeout,
     )
+    if resp.status_code >= 400:
+        quota = _quota_error_from(resp.status_code, resp.text, resp.headers)
+        if quota:
+            raise quota
     resp.raise_for_status()
     content = resp.json()["choices"][0]["message"]["content"]
     if not content.endswith("\n"):
@@ -339,7 +401,7 @@ def humanize_report_local(payload: dict[str, Any]) -> str:
             "",
             "---",
             "",
-            "Auto-generated (local). Learner guide: `docs/academy/start-here.md`",
+            "Auto-generated (local). Learner guide: `docs/academy/index.md`",
         ]
     )
     return "\n".join(lines) + "\n"
@@ -356,7 +418,7 @@ Rules:
 - Use plain English. Never use internal codes like A01 or B07 unless quoting a folder path.
 - Use the glossary below when translating ids.
 - Be concise: summary, then numbered next steps for a human (not an engineer).
-- Link learners to docs/academy/start-here.md if they seem lost in naming.
+- Link learners to docs/academy/index.md if they seem lost in naming.
 
 Glossary:
 {_glossary_block()}
@@ -465,20 +527,13 @@ Each day you propose how to **evolve and improve** the wiki. Rules:
 2. Every suggestion must be actionable — name specific wiki pages or `training/` folders.
 3. Split work: **human must do** / **AI can draft** / **already automated**.
 4. Plain English for learners — no A01/B07 in headings or link text; codes are for folder paths only.
-4a. HOUSE STYLE for any page you propose or draft — this wiki's readability depends on it:
-   - Page title (H1) in sentence case: "Mesh modeling for organic creatures", not "B03 — Mesh Modeling".
-   - Never repeat the same heading text on one page. If a label recurs in every
-     section (Beginner, Tools, Measurement table), emit it as **bold text**, not
-     `###` — repeated headings flood the table of contents and make the page
-     unreadable. A page should aim for under ~25 table-of-contents entries.
-   - Answer first: state the studio pick in an `!!! tip "Studio pick"` admonition
-     near the top, before the supporting tables.
-   - Free vs paid tool tables belong in `=== "Free tools"` / `=== "Paid tools"` content tabs.
-   - Page metadata (Date, Status, Related) goes in an `!!! info "About this page"`
-     card, never as loose bold lines — without trailing double-spaces those
-     collapse into one run-on paragraph.
-   - Maintainer-only material (templates, code cheat sheets) goes at the BOTTOM
-     of the page, inside a collapsed `??? note` block.
+4a. STRUCTURE IS MACHINE-ENFORCED. Do not write Markdown for new pages.
+   When you propose a page, emit a JSON object per the page contract below. A
+   renderer turns it into house-style Markdown and a linter rejects it if the
+   structure is wrong, so inventing your own layout only wastes a cycle.
+
+{PAGE_CONTRACT}
+
 5. Do not invent URLs. Prefer official Blender manual, SL wiki, GitHub, CC0 asset sites.
 6. Output markdown with exactly these sections:
    ## Mission check
