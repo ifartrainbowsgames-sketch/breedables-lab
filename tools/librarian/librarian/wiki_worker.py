@@ -429,8 +429,13 @@ def _git(repo_root: Path, *args: str) -> str:
 
 
 def tree_is_dirty(repo_root: Path) -> bool:
-    """True if the working copy holds uncommitted work."""
-    return bool(_git(repo_root, "status", "--porcelain"))
+    """True if the working copy holds uncommitted changes to *tracked* files.
+
+    Untracked files are deliberately ignored: git carries them across a branch
+    switch untouched, so they cannot be lost by one. Only modified tracked
+    files make switching unsafe.
+    """
+    return bool(_git(repo_root, "status", "--porcelain", "--untracked-files=no"))
 
 
 def working_branch(repo_root: Path) -> str | None:

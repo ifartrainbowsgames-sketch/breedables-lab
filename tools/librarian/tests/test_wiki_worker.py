@@ -433,3 +433,36 @@ def test_model_supplied_title_wins_over_the_existing_one(tmp_path):
     make_wiki(tmp_path, {"modeling/x.md": '---\ntitle: "Old"\n---\n# Old\n'})
     out = normalise_payload({"title": "New"}, Task("expand-thin", "modeling/x.md", "r", 2), tmp_path)
     assert out["title"] == "New"
+
+
+def test_untracked_files_alone_do_not_block_the_worker(monkeypatch, tmp_path):
+    import librarian.wiki_worker as w
+
+    seen = {}
+
+    def fake_git(_repo, *args):
+        seen["args"] = args
+        if args[:1] == ("rev-parse",):
+            return "main"
+        if args[:1] == ("status",):
+            # tracked files are clean; untracked ones are excluded by the flag
+            assert "--untracked-files=no" in args, "untracked files must not count as dirty"
+            return ""
+        return ""
+
+    monkeypatch.setattr(w, "_git", fake_git)
+    assert w.working_branch(tmp_path).startswith("wiki-worker/")
+
+
+def test_modified_tracked_file_still_blocks(monkeypatch, tmp_path):
+    import librarian.wiki_worker as w
+
+    def fake_git(_repo, *args):
+        if args[:1] == ("rev-parse",):
+            return "main"
+        if args[:1] == ("status",):
+            return " M docs/modeling/index.md"
+        return ""
+
+    monkeypatch.setattr(w, "_git", fake_git)
+    assert w.working_branch(tmp_path) is None
