@@ -4,6 +4,7 @@ import argparse
 import json
 import sys
 from datetime import datetime, timezone
+from pathlib import Path
 
 from .checks import check_resource
 from .config import Settings
@@ -11,6 +12,17 @@ from .db import LibrarianDB
 from .ingest import github_search, ingest_feed
 from .seed import seed_baseline
 from .academy_manifest import academy_content_gaps
+from .daily_wiki import run_daily_wiki
+from .extract import extract_discovery_dir
+from .kimi import (
+    build_breedables_research_context,
+    test_kimi_connection,
+    write_breedables_research,
+    WIKI_BREEDABLES_INVENTORY,
+)
+from .wiki_audit import build_wiki_audit_context, write_wiki_audit
+from .wiki_images import write_wiki_images
+from .wiki_videos import write_wiki_videos
 
 
 def _db() -> tuple[LibrarianDB, Settings]:
@@ -113,6 +125,100 @@ def cmd_content_gaps(args) -> int:
     }
     print(json.dumps(payload, indent=2))
     return 0
+
+
+def cmd_daily_wiki(args) -> int:
+    db, settings = _db()
+    payload = run_daily_wiki(
+        db,
+        settings.repo_root,
+        url_limit=args.url_limit,
+        screen_failures=args.screen_failures,
+        humanize=args.humanize,
+        wiki_evolve=args.wiki_evolve,
+        wiki_audit=args.wiki_audit,
+    )
+    print(json.dumps(payload["summary"], indent=2))
+    print(f"\nReport: {payload['paths']['markdown']}")
+    if payload.get("human_report"):
+        hr = payload["human_report"]
+        print(f"Human briefing: {payload['paths'].get('human')} ({hr.get('source')})")
+    if payload.get("wiki_evolution"):
+        ev = payload["wiki_evolution"]
+        print(f"Wiki evolution: {payload['paths'].get('evolution')} ({ev.get('source')})")
+    if payload.get("wiki_audit"):
+        au = payload["wiki_audit"]
+        print(f"Wiki audit: {payload['paths'].get('audit')} ({au.get('source')})")
+    for action in payload["next_actions"][:5]:
+        print(f"  → {action}")
+    return 0
+
+
+def cmd_kimi_test(_args) -> int:
+    _db()  # loads repo-root .env via Settings
+    result = test_kimi_connection()
+    print(json.dumps(result, indent=2))
+    return 0 if result.get("ok") else 1
+
+
+def cmd_breedables_research(args) -> int:
+    _, settings = _db()
+    repo = settings.repo_root
+    context = build_breedables_research_context(repo)
+    out = repo / (args.out or WIKI_BREEDABLES_INVENTORY)
+    if Path(args.out).is_absolute():
+        out = Path(args.out)
+    result = write_breedables_research(
+        out,
+        context=context,
+        use_kimi=not args.no_kimi,
+        repo_root=repo,
+    )
+    print(json.dumps(result, indent=2))
+    return 0 if result.get("ok") else 1
+
+
+def cmd_wiki_audit(args) -> int:
+    _, settings = _db()
+    repo = settings.repo_root
+    from datetime import date
+
+    out_dir = repo / "research" / "discoveries" / f"daily-{date.today().isoformat()}"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out = out_dir / "wiki-audit-kimi.md"
+    context = build_wiki_audit_context(repo)
+    result = write_wiki_audit(out, context=context, use_kimi=not args.no_kimi, repo_root=repo)
+    print(json.dumps(result, indent=2))
+    return 0 if result.get("ok") else 1
+
+
+def cmd_wiki_videos(args) -> int:
+    _, settings = _db()
+    result = write_wiki_videos(
+        settings.repo_root,
+        use_kimi=not args.no_kimi,
+        merge_seed=not args.no_seed,
+    )
+    print(json.dumps(result, indent=2))
+    return 0 if result.get("ok") else 1
+
+
+def cmd_wiki_images(args) -> int:
+    _, settings = _db()
+    result = write_wiki_images(
+        settings.repo_root,
+        use_kimi=not args.no_kimi,
+    )
+    print(json.dumps(result, indent=2))
+    return 0 if result.get("ok") else 1
+
+
+def cmd_extract(args) -> int:
+    _, settings = _db()
+    discovery_dir = settings.repo_root / "research" / "discoveries" / args.slug
+    result = extract_discovery_dir(discovery_dir)
+    print(json.dumps(result, indent=2))
+    return 0 if result.get("ok") else 1
 
 
 def cmd_research_queue(args) -> int:
@@ -240,6 +346,83 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("research-queue")
     p.add_argument("--limit", type=int, default=50)
     p.set_defaults(func=cmd_research_queue)
+
+    p = sub.add_parser("daily-wiki")
+    p.add_argument("--url-limit", type=int, default=80, help="Max external URLs to HTTP-check")
+    p.add_argument(
+        "--screen-failures",
+        action="store_true",
+        help="Re-screen failed URLs with Go webscreen (requires go + Chrome)",
+    )
+    p.add_argument(
+        "--humanize",
+        action="store_true",
+        help="Write report-human.md (Kimi if MOONSHOT_API_KEY set, else local glossary)",
+    )
+    p.add_argument(
+        "--wiki-evolve",
+        action="store_true",
+        help="Write wiki-evolution.md — Kimi researches how to improve the Academy wiki",
+    )
+    p.add_argument(
+        "--wiki-audit",
+        action="store_true",
+        help="Write wiki-audit-kimi.md — Kimi audits all docs/ pages and setup",
+    )
+    p.set_defaults(func=cmd_daily_wiki)
+
+    p = sub.add_parser("kimi-test", help="Verify Kimi CLI (subscription) or Open Platform API")
+    p.set_defaults(func=cmd_kimi_test)
+
+    p = sub.add_parser(
+        "breedables-research",
+        help="Kimi updates docs/research/breedables-inventory-and-software.md (wiki)",
+    )
+    p.add_argument(
+        "--out",
+        default=WIKI_BREEDABLES_INVENTORY,
+        help="Wiki path relative to repo root (default: live inventory page)",
+    )
+    p.add_argument(
+        "--no-kimi",
+        action="store_true",
+        help="Skip Kimi even if logged in",
+    )
+    p.set_defaults(func=cmd_breedables_research)
+
+    p = sub.add_parser(
+        "wiki-images",
+        help="Kimi finds image URLs; downloads and optimizes docs/assets/cards/",
+    )
+    p.add_argument(
+        "--no-kimi",
+        action="store_true",
+        help="Use favicon fallback only (no Kimi)",
+    )
+    p.set_defaults(func=cmd_wiki_images)
+
+    p = sub.add_parser(
+        "wiki-audit",
+        help="Kimi audits entire docs/ wiki — stale links, gaps, UX",
+    )
+    p.add_argument(
+        "--no-kimi",
+        action="store_true",
+        help="Local audit only (no Kimi)",
+    )
+    p.set_defaults(func=cmd_wiki_audit)
+
+    p = sub.add_parser(
+        "wiki-videos",
+        help="Kimi builds video-library.md with in-wiki YouTube embeds for all software",
+    )
+    p.add_argument("--no-kimi", action="store_true", help="Use local seed only")
+    p.add_argument("--no-seed", action="store_true", help="Kimi only, do not merge seed videos")
+    p.set_defaults(func=cmd_wiki_videos)
+
+    p = sub.add_parser("extract")
+    p.add_argument("slug", help="Discovery folder name under research/discoveries/")
+    p.set_defaults(func=cmd_extract)
 
     p = sub.add_parser("set-evidence")
     p.add_argument("id", type=int)

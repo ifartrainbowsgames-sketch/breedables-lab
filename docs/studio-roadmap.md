@@ -1,4 +1,4 @@
-# Breedables Studio Roadmap — Phases & Open Source Stack
+# Breedables studio roadmap
 
 Date: 2026-08-23
 
@@ -90,6 +90,10 @@ mkdocs serve
 | Project | Role | License | Link |
 |---------|------|---------|------|
 | **linkchecker** | Deep scheduled link crawls (supplement Librarian HTTP checks) | GPL-2.0+ | https://github.com/linkchecker/linkchecker |
+| **Breedables webscreen** | Go CLI: chromedp screening + SearXNG search → `research/discoveries/` | MIT (scaffold) | `tools/webscreen/` · [wiki](production/tools/web-research-stack.md) |
+| **lychee** | CI link checks on `docs/**/*.md` | MIT | `.github/workflows/wiki-links.yml` |
+| **trafilatura** | Post-screen HTML → markdown extract | Apache-2.0 | `python -m librarian.cli extract` |
+| **SearXNG** | Self-hosted meta-search JSON API | AGPL-3.0 | https://github.com/searxng/searxng |
 
 **Librarian V1.1 (build in-repo):**
 1. Structured research-request queue for ChatGPT

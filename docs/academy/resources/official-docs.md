@@ -39,7 +39,7 @@ Primary **Read** links for Academy tracks and the tools registry. Prefer these o
 | PBR materials | https://wiki.secondlife.com/wiki/PBR_Materials |
 | Mesh upload | https://wiki.secondlife.com/wiki/Mesh |
 | LSL portal | https://wiki.secondlife.com/wiki/LSL_Portal |
-| Animations | https://wiki.secondlife.com/wiki/uploading_and_animating_an_avatar_model |
+| Animations | https://wiki.secondlife.com/wiki/How_to_create_animations |
 | Studio baseline | [Platform baseline](../../secondlife/platform-baseline.md) |
 
 ---
@@ -52,5 +52,3 @@ Each registry tool should have `doc_urls` pointing here or to the tool's own man
 python -m librarian.cli gaps
 python -m librarian.cli research-queue
 ```
-
-Slack `/breedtool` and `/breedgaps` read the same evidence fields — no duplicate doc lists in Slack Canvas.

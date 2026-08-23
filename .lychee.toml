@@ -1,0 +1,15 @@
+# Link checker for docs/ — used by .github/workflows/wiki-links.yml
+# Complements Librarian daily-wiki (HTTP) + webscreen chromedp (JS/bot-blocked pages).
+
+exclude = [
+  # Bot / paywall / flaky in CI — verified locally via webscreen when needed
+  "cgcookie.com",
+  "community.secondlife.com",
+  # Slack invite links expire
+  "join.slack.com",
+]
+
+# Academy wiki has many external tutorial links; allow transient failures in CI.
+max_retries = 2
+timeout = 20
+accept = ["200", "204", "301", "302", "303", "307", "308", "429"]

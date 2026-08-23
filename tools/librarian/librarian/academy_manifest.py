@@ -5,6 +5,15 @@ from pathlib import Path
 
 
 @dataclass(frozen=True)
+class BlenderLesson:
+    id: str
+    number: int
+    title: str
+    lesson_wiki_path: str
+    evidence_path: str
+
+
+@dataclass(frozen=True)
 class AcademyTrack:
     id: str
     title: str
@@ -51,10 +60,44 @@ TRACKS: tuple[AcademyTrack, ...] = (
     ),
 )
 
+
+BLENDER_LESSONS: tuple[BlenderLesson, ...] = (
+    BlenderLesson("B01", 1, "Install & setup", "docs/academy/software/blender/b01-install-setup.md", "training/blender/b01/"),
+    BlenderLesson("B02", 2, "Interface & navigation", "docs/academy/software/blender/b02-interface-navigation.md", "training/blender/b02/"),
+    BlenderLesson("B03", 3, "Mesh modeling", "docs/academy/software/blender/b03-mesh-modeling.md", "training/blender/b03/"),
+    BlenderLesson("B04", 4, "Sculpting basics", "docs/academy/software/blender/b04-sculpting.md", "training/blender/b04/"),
+    BlenderLesson("B05", 5, "Retopology", "docs/academy/software/blender/b05-retopology.md", "training/blender/b05/"),
+    BlenderLesson("B06", 6, "UV unwrapping", "docs/academy/software/blender/b06-uv-unwrapping.md", "training/blender/b06/"),
+    BlenderLesson("B07", 7, "Texture painting & PBR", "docs/academy/software/blender/b07-texture-painting-pbr.md", "training/blender/b07/"),
+    BlenderLesson("B08", 8, "Rigging & weight painting", "docs/academy/software/blender/b08-rigging-weight-painting.md", "training/blender/b08/"),
+    BlenderLesson("B09", 9, "Basic animation", "docs/academy/software/blender/b09-animation.md", "training/blender/b09/"),
+    BlenderLesson("B10", 10, "Export to Second Life", "docs/academy/software/blender/b10-export-to-sl.md", "training/blender/b10/"),
+)
+
 WIKI_INDEX_FILES: tuple[str, ...] = (
     "docs/academy/resources/videos.md",
     "docs/academy/resources/official-docs.md",
 )
+
+
+def code_glossary() -> dict[str, str]:
+    """Internal id → plain English (for reports and Kimi prompts)."""
+    out: dict[str, str] = {}
+    for lesson in BLENDER_LESSONS:
+        out[lesson.id] = f"Blender lesson {lesson.number} ({lesson.title})"
+    for track in TRACKS:
+        out[track.id] = track.title
+    out["A-model"] = "Modeling stage (general)"
+    return out
+
+
+def humanize_codes(text: str) -> str:
+    """Replace B01/A01-style codes with plain names in free text."""
+    result = text
+    # Longer ids first so B10 replaces before B1 substring issues.
+    for code, label in sorted(code_glossary().items(), key=lambda x: -len(x[0])):
+        result = result.replace(code, label)
+    return result
 
 
 def academy_content_gaps(repo_root: Path) -> list[dict]:

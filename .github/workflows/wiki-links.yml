@@ -1,0 +1,32 @@
+name: Wiki link check
+
+on:
+  pull_request:
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - ".lychee.toml"
+      - ".github/workflows/wiki-links.yml"
+  push:
+    branches:
+      - main
+      - feature/studio-librarian-v1
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - ".lychee.toml"
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Link check (docs)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --config .lychee.toml --verbose --no-progress './docs/**/*.md'
+          fail: true

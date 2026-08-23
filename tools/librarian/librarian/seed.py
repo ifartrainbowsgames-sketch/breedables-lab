@@ -77,7 +77,7 @@ EVIDENCE_DEFAULTS: dict[str, dict] = {
             "https://docs.blender.org/manual/en/latest/",
             "https://docs.blender.org/manual/en/latest/render/shader_nodes/intro.html",
         ],
-        "lesson_wiki_path": "docs/production/tools/blender.md",
+        "lesson_wiki_path": "docs/academy/software/blender/index.md",
         "evidence_path": "training/blender/",
         "academy_track": "A-model",
     },
@@ -92,6 +92,7 @@ EVIDENCE_DEFAULTS: dict[str, dict] = {
         "academy_track": "A01",
     },
     "Ucupaint": {
+        "primary_video_url": "https://www.youtube.com/watch?v=d3KrMwAWJI0",
         "doc_urls": [
             "https://github.com/ucupumar/ucupaint",
             "https://docs.blender.org/manual/en/latest/sculpt_paint/texture_paint/index.html",
@@ -101,6 +102,7 @@ EVIDENCE_DEFAULTS: dict[str, dict] = {
         "academy_track": "A02",
     },
     "TripoSR": {
+        "primary_video_url": "https://www.youtube.com/watch?v=e2UeHwzncHA",
         "doc_urls": [
             "https://github.com/VAST-AI-Research/TripoSR",
             "https://github.com/VAST-AI-Research/TripoSR/blob/main/LICENSE",
@@ -110,6 +112,7 @@ EVIDENCE_DEFAULTS: dict[str, dict] = {
         "academy_track": "A-model",
     },
     "RetopoFlow": {
+        "primary_video_url": "https://www.youtube.com/watch?v=Ds5Soybs610",
         "doc_urls": [
             "https://github.com/CGCookie/retopoflow",
             "https://docs.blender.org/manual/en/latest/modeling/meshes/retopology.html",
@@ -120,6 +123,7 @@ EVIDENCE_DEFAULTS: dict[str, dict] = {
         "academy_track": "A03",
     },
     "Poly Haven": {
+        "primary_video_url": "https://www.youtube.com/watch?v=ku_xv6WV6UE",
         "doc_urls": [
             "https://polyhaven.com/license",
             "https://docs.blender.org/manual/en/latest/files/asset_libraries/introduction.html",
@@ -128,6 +132,7 @@ EVIDENCE_DEFAULTS: dict[str, dict] = {
         "evidence_path": "training/texturing/assets/",
     },
     "ambientCG": {
+        "primary_video_url": "https://www.youtube.com/watch?v=fUZHyoeuwVI",
         "doc_urls": [
             "https://ambientcg.com/license",
             "https://docs.blender.org/manual/en/latest/files/import_export.html",

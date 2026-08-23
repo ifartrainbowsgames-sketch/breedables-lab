@@ -1,4 +1,4 @@
-# Wiki & Academy Concept Audit — What Went Wrong
+# Wiki & Academy concept audit
 
 **Date:** 2026-08-23  
 **Status:** DIAGNOSTIC — read this before any more wiki or tooling work  
@@ -59,8 +59,7 @@ We are showing **two different classification systems at once**, often contradic
 
 These are **internal engineering labels**. They belong in a **registry admin view**, not on the front page of an Academy.
 
-### The mistake
-
+**The mistake**
 We copied R&D survey vocabulary into user-facing wiki pages without translation. A learner does not care about `GREEN`; they care about **“Watch this → do this exercise → you’re done with A01.”**
 
 ---
@@ -94,8 +93,7 @@ For each track, e.g. **A01 Organic PBR Material**:
 
 We have **none of the Learn / Read / Do structure** — only “Tools wiki → start with registry.”
 
-### The mistake
-
+**The mistake**
 Phase 0 survey **mentions** academy mapping (A01→E01) as a **one-line table**. We treated that table as if it were a curriculum. It was always a **placeholder intent**, never designed content.
 
 ---
@@ -124,8 +122,7 @@ Slack: /breedtool
 A tool page in an **Academy** wiki should answer: **“How do I learn this for our project?”**  
 We answered: **“What’s the license and approval status?”**
 
-### The mistake
-
+**The mistake**
 We used **DataHub / catalog page** template for **Udemy / wiki** content.
 
 ---
@@ -142,8 +139,7 @@ A learner opens **Production** expecting lessons. They get **compliance metadata
 
 A researcher opens **Academy** expecting curriculum. They get **experiment IDs**.
 
-### The mistake
-
+**The mistake**
 **Single MkDocs nav** serves three audiences without separating:
 
 1. **Learners** (Academy — videos, paths, labs)  

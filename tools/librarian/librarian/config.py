@@ -26,13 +26,16 @@ class Settings:
 
     @classmethod
     def from_env(cls) -> "Settings":
+        repo_root = Path(os.getenv("BREEDABLES_REPO_ROOT", _default_repo_root()))
+        # Repo-root .env first (where Slack/Moonshot keys live), then librarian-local override.
+        load_dotenv(repo_root / ".env")
         load_dotenv()
         return cls(
             db_path=Path(os.getenv("LIBRARIAN_DB_PATH", ".data/librarian.sqlite3")),
             github_token=os.getenv("GITHUB_TOKEN") or None,
             slack_bot_token=os.getenv("SLACK_BOT_TOKEN") or None,
             slack_app_token=os.getenv("SLACK_APP_TOKEN") or None,
-            repo_root=Path(os.getenv("BREEDABLES_REPO_ROOT", _default_repo_root())),
+            repo_root=repo_root,
             wiki_base_url=os.getenv(
                 "WIKI_BASE_URL",
                 "https://ifartrainbowsgames-sketch.github.io/breedables-lab",

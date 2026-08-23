@@ -1,9 +1,23 @@
 site_name: Breedables Lab
-site_description: Open-source-first production studio for Second Life breedables
+site_description: Learn Blender and breedables production — plain-language paths, studio labs, market research
 site_url: https://ifartrainbowsgames-sketch.github.io/breedables-lab/
 repo_url: https://github.com/ifartrainbowsgames-sketch/breedables-lab
 repo_name: breedables-lab
+
+# NOTE: pinned to the feature branch so the "edit this page" pencil works today.
+# When feature/studio-librarian-v1 merges, change this to `edit/main/docs/`
+# and drop the feature branch from .github/workflows/docs.yml.
 edit_uri: edit/feature/studio-librarian-v1/docs/
+
+# Staging area for unoptimised screenshots (scripts/optimize-wiki-images.py).
+# Source files, not published pages — keep them out of the built site.
+exclude_docs: |
+  assets/inbox/
+
+# Tool-candidate cards are reached from the research-candidates registry page,
+# not from the sidebar. Declaring them keeps `mkdocs build --strict` quiet.
+not_in_nav: |
+  production/tools/candidates/
 
 theme:
   name: material
@@ -21,12 +35,25 @@ theme:
         icon: material/brightness-4
         name: Light mode
   features:
+    # navigation
     - navigation.tabs
+    - navigation.tabs.sticky   # top-level tabs stay visible while scrolling
     - navigation.sections
-    - navigation.expand
+    - navigation.indexes       # section landing pages instead of dead folders
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer        # prev / next links — always an obvious next step
+    # NOTE: navigation.expand deliberately OFF. This wiki has ~90 pages; expanding
+    # every section produces a sidebar too long to scan.
+    # search
     - search.suggest
     - search.highlight
+    - search.share
+    # content
     - content.code.copy
+    - content.tooltips
+    - content.action.edit
     - toc.follow
 
 plugins:
@@ -38,31 +65,85 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.keys
   - tables
   - attr_list
   - md_in_html
+  - footnotes
+  - abbr
   - toc:
       permalink: true
+      # Only H2/H3 reach the table of contents. Deeper headings are structure
+      # for the author, not navigation for the reader.
+      toc_depth: 3
 
 nav:
   - Home: index.md
   - Academy:
+      - Start here: academy/start-here.md
+      - Academy mission: academy/mission.md
       - Overview: academy/overview.md
+      - Professional workflow:
+          - How pros work: academy/professional-workflow/index.md
+          - Pipeline stages: academy/professional-workflow/pipeline-stages.md
+          - Roles: academy/professional-workflow/roles.md
+          - Software map: academy/professional-workflow/software-map.md
+          - Paid vs free: academy/professional-workflow/paid-vs-free-matrix.md
+          - Second Life adaptation: academy/professional-workflow/second-life-adaptation.md
       - Production line: academy/production-line.md
-      - Tracks:
-          - A01 Organic PBR: academy/tracks/a01-organic-pbr.md
-          - A02 Layered textures: academy/tracks/a02-layered-textures.md
-          - A03 Retopology: academy/tracks/a03-retopology.md
-          - A04 Rig + animation: academy/tracks/a04-rig-animation.md
-          - A05 SL fixture: academy/tracks/a05-sl-fixture.md
+      - Software & tools:
+          - Overview: academy/software/index.md
+          - Page standard: academy/software/software-page-standard.md
+          - Software packages:
+              - Index: academy/software/packages/index.md
+              - PureRef: academy/software/packages/pureref.md
+              - Blender: academy/software/packages/blender.md
+              - Maya: academy/software/packages/maya.md
+              - ZBrush: academy/software/packages/zbrush.md
+              - TopoGun: academy/software/packages/topogun.md
+              - Substance Painter: academy/software/packages/substance-painter.md
+              - Mari: academy/software/packages/mari.md
+              - Material Maker: academy/software/packages/material-maker.md
+              - Krita: academy/software/packages/krita.md
+              - Photoshop: academy/software/packages/photoshop.md
+              - Marvelous Designer: academy/software/packages/marvelous-designer.md
+              - Marmoset Toolbag: academy/software/packages/marmoset-toolbag.md
+              - Second Life: academy/software/packages/second-life.md
+          - Build plan: academy/software/build-plan.md
+          - Blender foundations:
+              - Path overview: academy/software/blender/index.md
+              - "1 · Install & setup": academy/software/blender/b01-install-setup.md
+              - "2 · Interface & navigation": academy/software/blender/b02-interface-navigation.md
+              - "3 · Mesh modeling": academy/software/blender/b03-mesh-modeling.md
+              - "4 · Sculpting basics": academy/software/blender/b04-sculpting.md
+              - "5 · Retopology": academy/software/blender/b05-retopology.md
+              - "6 · UV unwrapping": academy/software/blender/b06-uv-unwrapping.md
+              - "7 · Texture painting & PBR": academy/software/blender/b07-texture-painting-pbr.md
+              - "8 · Rigging & weight painting": academy/software/blender/b08-rigging-weight-painting.md
+              - "9 · Basic animation": academy/software/blender/b09-animation.md
+              - "10 · Export to Second Life": academy/software/blender/b10-export-to-sl.md
+          - Add-on catalog: academy/software/addon-catalog.md
+          - Software index: academy/software/software-index.md
+      - Studio labs:
+          - "Textures · Organic PBR": academy/tracks/a01-organic-pbr.md
+          - "Textures · Layered": academy/tracks/a02-layered-textures.md
+          - "Modeling · Retopology": academy/tracks/a03-retopology.md
+          - "Rig · Animation": academy/tracks/a04-rig-animation.md
+          - "Second Life · In-world fixture": academy/tracks/a05-sl-fixture.md
       - Resources:
-          - Training videos: academy/resources/videos.md
+          - Training videos by stage: academy/resources/training-videos-by-stage.md
+          - Complete workflow courses: academy/resources/complete-courses.md
+          - Tutorial arsenal: academy/resources/tutorials.md
+          - Video library (watch in wiki): academy/resources/video-library.md
+          - Video index: academy/resources/videos.md
           - Official docs: academy/resources/official-docs.md
   - Studio:
+      - System build summary: studio/system-build-summary.md
+      - Wiki design benchmarks: studio/wiki-design-benchmarks.md
       - Roadmap: studio-roadmap.md
-      - Wiki-first strategy: studio/wiki-first-strategy.md
-      - Channel map: studio/channel-map.md
-      - Content requirements: studio/channel-content-requirements.md
+      - LSL engine overview: studio/lsl-engine-overview.md
       - Tools registry:
           - Overview: production/tools/index.md
           - Blender: production/tools/blender.md
@@ -73,6 +154,7 @@ nav:
           - Poly Haven: production/tools/poly-haven.md
           - ambientCG: production/tools/ambientcg.md
           - Research candidates: production/tools/research-candidates.md
+          - Web research stack: production/tools/web-research-stack.md
       - Experiments: production/experiments.md
       - Promotion rules: production/promotion-rules.md
       - Decision model: production/decision-model.md
@@ -80,6 +162,15 @@ nav:
   - Research:
       - Phase 0 survey: research/phase-0-survey.md
       - Wiki concept audit: research/wiki-concept-audit.md
+      - Breedables market study: research/breedables-market-study.md
+      - Breedables case studies: research/breedables-case-studies.md
+      - Breedables inventory & software: research/breedables-inventory-and-software.md
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/wiki-quicknav.js
 
 extra:
   social:

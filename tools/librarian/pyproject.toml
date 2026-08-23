@@ -18,6 +18,10 @@ dependencies = [
 dev = [
   "pytest>=8,<9",
 ]
+research = [
+  "trafilatura>=2.0,<3",
+  "Pillow>=10,<12",
+]
 
 [project.scripts]
 breedables-librarian = "librarian.cli:main"

@@ -1,51 +1,65 @@
-# Breedables Academy
+# Academy overview
 
-Training must **directly improve production capability**. Every lesson produces **evidence** (files, screenshots, in-world results) — not color labels.
+![Academy hub](../assets/inline/blender.png){ width="100" }
 
-## Start here
+**Mission:** [Academy mission](mission.md) — professional creature pipeline + free OSS path + SL breedables.
 
-**[Full production line](production-line.md)** — every stage from research to release: what it's for, free vs paid tools, which is better for breedables, what to learn.
+**Confused by codes?** → [Start here (plain English)](start-here.md)  
+**Watch tutorials in the wiki:** → [Video library](resources/video-library.md) (all software, embedded YouTube)
 
-Also read:
+---
 
-- [Content requirements](../studio/channel-content-requirements.md) — evidence rules per channel  
-- [Channel map](../studio/channel-map.md) — Slack, wiki, repo routing  
+## What we teach
 
-## Tracks (learning paths)
+1. **How professional 3D creature artists work** — multi-tool pipelines (Maya, ZBrush, Substance, …)  
+2. **How to reproduce that on free/open-source tools** — primarily Blender, Material Maker, Krita  
+3. **How to deliver in Second Life** — after correct general 3D habits  
 
-| Track | Subject | Lesson |
-|-------|---------|--------|
-| [A01](tracks/a01-organic-pbr.md) | Organic PBR Material | Texturing & SL PBR |
-| [A02](tracks/a02-layered-textures.md) | Layered Texture Refinement | Texturing |
-| [A03](tracks/a03-retopology.md) | Organic Retopology | Retopo & LOD |
-| [A04](tracks/a04-rig-animation.md) | Rig + Two Animations | Rigging & animation |
-| [A05](tracks/a05-sl-fixture.md) | SL Creature Fixture | LSL, persistence, in-world test |
+Not vague “learn UV mapping” pages — **clickable curriculum** with videos, exercises, artifacts, PASS/FAIL.
 
-Resource indexes: [Training videos](resources/videos.md) · [Official docs](resources/official-docs.md)
+---
 
-Planned: A00 Concept · A-model Modeling · A-export · A-data · A-hud — see [production line](production-line.md#academy-track-index-learning-paths).
+## Core sections
 
-## Lesson template (every track)
+| Section | Purpose |
+|---------|---------|
+| [Professional workflow](professional-workflow/index.md) | Industry pipeline, roles, software map |
+| [Software packages](software/packages/index.md) | One card per program (standard template) |
+| [Blender Foundations](software/blender/index.md) | Our primary free teach path (10 lessons) |
+| [Studio labs](start-here.md#layer-2-studio-labs-breedables-projects) | Breedables proof projects |
+| [Tutorial arsenal](resources/tutorials.md) | Curated videos by stage |
+| [Video library](resources/video-library.md) | **Watch in wiki** — all software, embedded players |
+| [Complete courses](resources/complete-courses.md) | Full start-to-finish workflow courses |
 
-Each lesson must include:
+---
 
-1. **Outcome** — skill gained  
-2. **Watch** — tutorial video URLs  
-3. **Read** — official doc links  
-4. **Explain** — our breedables workflow  
-5. **Do** — hands-on lab  
-6. **Produce** — artifacts to commit  
-7. **Evidence folder** — git path  
+## Three learning routes (every stage)
 
-## Repo folders
+| Route | Example |
+|-------|---------|
+| **A. Professional** | ZBrush sculpt · Substance Painter textures |
+| **B. Free / OSS** | Blender · Material Maker · Krita |
+| **C. Breedables recommended** | What we use now — changes after experiments |
 
-Academy artifacts live under `training/` by subject:
+→ [Paid vs free matrix](professional-workflow/paid-vs-free-matrix.md)
 
-- `training/blender/` · `training/modeling/` · `training/texturing/`  
-- `training/rigging/` · `training/animation/` · `training/lsl/` · `training/secondlife/`  
+---
 
-Watching a tutorial alone is **not** completion.
+## Evidence
 
-## Experiments
+| What | Where |
+|------|-------|
+| Blender lessons 1–10 | `training/blender/b01/` … `b10/` |
+| Studio labs | `training/texturing/`, `training/modeling/`, `training/rigging/`, `training/lsl/` |
+| Reference Creature | `training/` + experiment notes |
 
-Benchmark labs: [E01–E05](../production/experiments.md) — tied to tracks above.
+---
+
+## Maintainers
+
+- [Production line](production-line.md) — stage specs  
+- [Software page standard](software/software-page-standard.md) — completeness checklist  
+- [Tools registry](../production/tools/index.md) — licenses (not learner-facing)  
+- [System build summary](../studio/system-build-summary.md) — daily automation  
+
+Do **not** build new meta-frameworks — populate pages using Librarian + daily-wiki + Kimi evolution briefs.

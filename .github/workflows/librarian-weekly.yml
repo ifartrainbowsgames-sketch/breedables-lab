@@ -19,7 +19,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install librarian
-        run: pip install -e ".[dev]"
+        run: pip install -e ".[dev,research]"
 
       - name: Init and seed registry
         run: |
@@ -31,6 +31,11 @@ jobs:
         env:
           BREEDABLES_REPO_ROOT: ${{ github.workspace }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Daily wiki gap export
+        run: python -m librarian.cli daily-wiki --url-limit 40
+        env:
+          BREEDABLES_REPO_ROOT: ${{ github.workspace }}
 
       - name: Evidence and content gaps
         run: |

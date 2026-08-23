@@ -2,8 +2,6 @@
 
 | Field | Value |
 |-------|-------|
-| **Survey rating** | GREEN / EXPERIMENT |
-| **Librarian status** | EXPERIMENTAL |
 | **Commercial type** | OPEN_SOURCE |
 | **Code license** | MIT |
 | **Model license** | MIT (per upstream repo) |
@@ -25,10 +23,20 @@ Cleanest image-to-3D baseline in Phase 0 survey; benchmark first in [E02](../exp
 !!! warning "Output rights"
     Generated-output rights still need workflow-specific verification before commercial approval.
 
-## Gap
+## Evidence
 
-`/breedgaps` may show **not yet approved (EXPERIMENTAL)**.
+| Field | Link |
+|-------|------|
+| Primary video | [TripoSR image → 3D workflow](https://www.youtube.com/watch?v=e2UeHwzncHA) |
+| Interactive demo | [Hugging Face Space](https://huggingface.co/spaces/stabilityai/TripoSR) |
+| Official docs | [TripoSR GitHub](https://github.com/VAST-AI-Research/TripoSR) |
+| Academy track | A-model (research) |
+| Evidence folder | `training/modeling/triposr/` |
+
+Complete E02 table before using outputs in breedables pipeline.
 
 ## Librarian
 
-Slack: `/breedtool TripoSR`
+```powershell
+python -m librarian.cli show --query "triposr"
+```
