@@ -1,0 +1,33 @@
+display_information:
+  name: Breedables Studio Librarian
+  description: Structured tool and research registry for Breedables Studio.
+  background_color: "#1f2937"
+features:
+  bot_user:
+    display_name: Breedables Librarian
+    always_online: false
+  slash_commands:
+    - command: /breedtool
+      description: Look up a tool or research resource in the Breedables registry.
+      should_escape: false
+    - command: /breedstatus
+      description: Show registry counts by workflow status.
+      should_escape: false
+    - command: /breedgaps
+      description: Show unresolved registry verification gaps.
+      should_escape: false
+oauth_config:
+  scopes:
+    bot:
+      - app_mentions:read
+      - chat:write
+      - commands
+settings:
+  event_subscriptions:
+    bot_events:
+      - app_mention
+  interactivity:
+    is_enabled: true
+  org_deploy_enabled: false
+  socket_mode_enabled: true
+  token_rotation_enabled: false
