@@ -22,6 +22,9 @@ The Librarian must never decide that a workflow is commercially safe from one li
 - tool/status/commercial-type taxonomy
 - HTTP link-health checks
 - GitHub repository metadata enrichment
+- GitHub repository discovery into a review queue
+- RSS/Atom feed ingestion into a review queue
+- curated baseline seeding
 - separate fields for code/model/assets/output/dependency risk
 - CLI
 - Slack Bolt app with Socket Mode
@@ -113,6 +116,27 @@ Export:
 ```bash
 python -m librarian.cli export-json > librarian-export.json
 ```
+
+Seed the currently researched baseline:
+
+```bash
+python -m librarian.cli seed-baseline
+```
+
+Discover recently updated GitHub candidates:
+
+```bash
+python -m librarian.cli discover-github "blender retopology"
+python -m librarian.cli discover-github "second life lsl breedable" --limit 20
+```
+
+Ingest an RSS or Atom feed:
+
+```bash
+python -m librarian.cli ingest-feed "https://example.com/feed.xml" --category blender-news
+```
+
+Discovery commands deliberately store new candidates as `DISCOVERED` with `UNKNOWN` commercial classification unless we already have curated evidence. Discovery is not approval.
 
 ## Taxonomy
 
@@ -208,10 +232,10 @@ Do not mass-import random search results. The point is a curated registry.
 
 V1.1 candidates:
 
-1. RSS/GitHub-release ingestion into a review queue
-2. YouTube resource registry and duplicate detection
-3. structured research-request queue for ChatGPT
-4. scheduled link/version checks
+1. YouTube resource registry and duplicate detection
+2. structured research-request queue for ChatGPT
+3. scheduled link/version checks
+4. GitHub release-watch subscriptions
 5. Slack Canvas sync with review/approval gates
 6. experiment evidence + benchmark records
 7. asset provenance records
