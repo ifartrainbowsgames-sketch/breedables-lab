@@ -1,3 +1,8 @@
+---
+title: "Breedables case studies"
+section: research
+type: reference
+---
 # Breedables case studies
 
 !!! info "About this page"

@@ -1,0 +1,15 @@
+title: Research & Tools
+nav:
+  - Overview: index.md
+  - software-database.md
+  - paid-vs-free-matrix.md
+  - experiments.md
+  - tool-registry.md
+  - decision-model.md
+  - promotion-rules.md
+  - web-research-stack.md
+  - Candidates: candidates
+  - Market research:
+      - breedables-inventory-and-software.md
+      - breedables-case-studies.md
+      - breedables-market-study.md

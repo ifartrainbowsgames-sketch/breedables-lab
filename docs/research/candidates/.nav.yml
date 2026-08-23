@@ -1,0 +1,4 @@
+title: Candidates
+nav:
+  - Overview: index.md
+  - "*.md"

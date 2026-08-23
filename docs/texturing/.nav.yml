@@ -1,0 +1,7 @@
+title: Texturing & Materials
+nav:
+  - Overview: index.md
+  - Workflows:
+      - pbr-materials.md
+  - Software: software
+  - Projects: projects

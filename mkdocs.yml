@@ -17,7 +17,8 @@ exclude_docs: |
 # Tool-candidate cards are reached from the research-candidates registry page,
 # not from the sidebar. Declaring them keeps `mkdocs build --strict` quiet.
 not_in_nav: |
-  production/tools/candidates/
+  meta/
+  .nav.yml
 
 theme:
   name: material
@@ -58,6 +59,10 @@ theme:
 
 plugins:
   - search
+  # Navigation is derived from the folder structure plus per-folder .nav.yml
+  # files. There is no hand-maintained nav block: add a page to the right
+  # folder and it appears. See docs/meta/wiki-style-guide.md.
+  - awesome-nav
 
 markdown_extensions:
   - admonition
@@ -78,93 +83,6 @@ markdown_extensions:
       # Only H2/H3 reach the table of contents. Deeper headings are structure
       # for the author, not navigation for the reader.
       toc_depth: 3
-
-nav:
-  - Home: index.md
-  - Academy:
-      - Start here: academy/start-here.md
-      - Academy mission: academy/mission.md
-      - Overview: academy/overview.md
-      - Professional workflow:
-          - How pros work: academy/professional-workflow/index.md
-          - Pipeline stages: academy/professional-workflow/pipeline-stages.md
-          - Roles: academy/professional-workflow/roles.md
-          - Software map: academy/professional-workflow/software-map.md
-          - Paid vs free: academy/professional-workflow/paid-vs-free-matrix.md
-          - Second Life adaptation: academy/professional-workflow/second-life-adaptation.md
-      - Production line: academy/production-line.md
-      - Software & tools:
-          - Overview: academy/software/index.md
-          - Page standard: academy/software/software-page-standard.md
-          - Software packages:
-              - Index: academy/software/packages/index.md
-              - PureRef: academy/software/packages/pureref.md
-              - Blender: academy/software/packages/blender.md
-              - Maya: academy/software/packages/maya.md
-              - ZBrush: academy/software/packages/zbrush.md
-              - TopoGun: academy/software/packages/topogun.md
-              - Substance Painter: academy/software/packages/substance-painter.md
-              - Mari: academy/software/packages/mari.md
-              - Material Maker: academy/software/packages/material-maker.md
-              - Krita: academy/software/packages/krita.md
-              - Photoshop: academy/software/packages/photoshop.md
-              - Marvelous Designer: academy/software/packages/marvelous-designer.md
-              - Marmoset Toolbag: academy/software/packages/marmoset-toolbag.md
-              - Second Life: academy/software/packages/second-life.md
-          - Build plan: academy/software/build-plan.md
-          - Blender foundations:
-              - Path overview: academy/software/blender/index.md
-              - "1 · Install & setup": academy/software/blender/b01-install-setup.md
-              - "2 · Interface & navigation": academy/software/blender/b02-interface-navigation.md
-              - "3 · Mesh modeling": academy/software/blender/b03-mesh-modeling.md
-              - "4 · Sculpting basics": academy/software/blender/b04-sculpting.md
-              - "5 · Retopology": academy/software/blender/b05-retopology.md
-              - "6 · UV unwrapping": academy/software/blender/b06-uv-unwrapping.md
-              - "7 · Texture painting & PBR": academy/software/blender/b07-texture-painting-pbr.md
-              - "8 · Rigging & weight painting": academy/software/blender/b08-rigging-weight-painting.md
-              - "9 · Basic animation": academy/software/blender/b09-animation.md
-              - "10 · Export to Second Life": academy/software/blender/b10-export-to-sl.md
-          - Add-on catalog: academy/software/addon-catalog.md
-          - Software index: academy/software/software-index.md
-      - Studio labs:
-          - "Textures · Organic PBR": academy/tracks/a01-organic-pbr.md
-          - "Textures · Layered": academy/tracks/a02-layered-textures.md
-          - "Modeling · Retopology": academy/tracks/a03-retopology.md
-          - "Rig · Animation": academy/tracks/a04-rig-animation.md
-          - "Second Life · In-world fixture": academy/tracks/a05-sl-fixture.md
-      - Resources:
-          - Training videos by stage: academy/resources/training-videos-by-stage.md
-          - Complete workflow courses: academy/resources/complete-courses.md
-          - Tutorial arsenal: academy/resources/tutorials.md
-          - Video library (watch in wiki): academy/resources/video-library.md
-          - Video index: academy/resources/videos.md
-          - Official docs: academy/resources/official-docs.md
-  - Studio:
-      - System build summary: studio/system-build-summary.md
-      - Wiki design benchmarks: studio/wiki-design-benchmarks.md
-      - Roadmap: studio-roadmap.md
-      - LSL engine overview: studio/lsl-engine-overview.md
-      - Tools registry:
-          - Overview: production/tools/index.md
-          - Blender: production/tools/blender.md
-          - Material Maker: production/tools/material-maker.md
-          - Ucupaint: production/tools/ucupaint.md
-          - TripoSR: production/tools/triposr.md
-          - RetopoFlow: production/tools/retopoflow.md
-          - Poly Haven: production/tools/poly-haven.md
-          - ambientCG: production/tools/ambientcg.md
-          - Research candidates: production/tools/research-candidates.md
-          - Web research stack: production/tools/web-research-stack.md
-      - Experiments: production/experiments.md
-      - Promotion rules: production/promotion-rules.md
-      - Decision model: production/decision-model.md
-  - Second Life: secondlife/platform-baseline.md
-  - Research:
-      - Phase 0 survey: research/phase-0-survey.md
-      - Wiki concept audit: research/wiki-concept-audit.md
-      - Breedables market study: research/breedables-market-study.md
-      - Breedables case studies: research/breedables-case-studies.md
-      - Breedables inventory & software: research/breedables-inventory-and-software.md
 
 extra_css:
   - stylesheets/extra.css

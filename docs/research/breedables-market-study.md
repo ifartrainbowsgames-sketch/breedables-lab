@@ -1,3 +1,8 @@
+---
+title: "Breedables market & design study"
+section: research
+type: reference
+---
 # Breedables market & design study
 
 !!! info "About this page"
@@ -7,12 +12,12 @@
 
 ## Purpose and scope
 
-This is a market/design study of Second Life "breedables" — virtual breedable pets/creatures such as Ozimals, Amaretto, BioBreeds, KittyCatS, Fennux, Meeroos, Teulu Breedables, and Snuffles — written to inform Breedables Lab's own creature design, not to announce one. It sits alongside the [Phase 0 toolbox survey](phase-0-survey.md) (tool/production readiness) and the [wiki concept audit](wiki-concept-audit.md) (content-model diagnosis) as the third leg of this studio's research: **what does the market itself reward and punish?**
+This is a market/design study of Second Life "breedables" — virtual breedable pets/creatures such as Ozimals, Amaretto, BioBreeds, KittyCatS, Fennux, Meeroos, Teulu Breedables, and Snuffles — written to inform Breedables Lab's own creature design, not to announce one. It sits alongside the [Phase 0 toolbox survey](index.md) (tool/production readiness) and the [wiki concept audit](../meta/wiki-concept-audit.md) (content-model diagnosis) as the third leg of this studio's research: **what does the market itself reward and punish?**
 
 Everything here is sourced from web research — the Second Life wiki, Second Life Community forums, marketplace/destination listings, and contemporary news/blog coverage — not from memory or invention. Claims about real companies and products are hedged ("reportedly," "widely regarded as") where sourcing is thin, and genuine controversies (lawsuits, shutdowns, market crashes) are included because they're directly useful design signal, not because this page is trying to gossip. See [Breedables case studies](breedables-case-studies.md) for the full per-product evidence behind the patterns below, and its [References](breedables-case-studies.md#references) section for the underlying sources.
 
 !!! note "This is analysis, not a decision"
-    Section 3 below lists options and open questions for a future Breedables Lab creature. It is not a chosen design, a roadmap commitment, or a promise about what this studio will build. Treat it the same way the [decision model](../production/decision-model.md) treats any other unproven idea: evidence before commitment.
+    Section 3 below lists options and open questions for a future Breedables Lab creature. It is not a chosen design, a roadmap commitment, or a promise about what this studio will build. Treat it the same way the [decision model](decision-model.md) treats any other unproven idea: evidence before commitment.
 
 ---
 
@@ -44,8 +49,8 @@ Long-running lines added new species/lines periodically rather than launching on
 
 This is the clearest place where **today's Second Life platform gives a new entrant a real, documented advantage** over the 2010-era lines:
 
-- **Prims → mesh → land impact.** Early breedables (Sion chickens, Ozimals bunnies, 2010-era Amaretto horses) were built in the sculpty/prim era. Modern breedable marketing (Teulu, and general community discussion of "1-3 LI each" pets) treats **low land impact per pet** as a headline feature, because a herd of high-LI pets can make a parcel unusable. See the [SL platform baseline](../secondlife/platform-baseline.md) for current LI/LOD guidance this studio already tracks.
-- **Animesh.** Teulu Breedables markets itself explicitly as "the first Animesh breedables in Second Life" (originals launched March 2020, horses November 2022). Older lines pre-date Animesh entirely and had to fake independent movement with older, heavier scripted-prim techniques. This studio's [Animesh baseline notes](../secondlife/platform-baseline.md#animesh-use-now) already flag Animesh as the runtime target for independent animated creatures — the breedables research confirms that's also a genuine market differentiator, not just a technical nicety.
+- **Prims → mesh → land impact.** Early breedables (Sion chickens, Ozimals bunnies, 2010-era Amaretto horses) were built in the sculpty/prim era. Modern breedable marketing (Teulu, and general community discussion of "1-3 LI each" pets) treats **low land impact per pet** as a headline feature, because a herd of high-LI pets can make a parcel unusable. See the [SL platform baseline](../second-life/platform-baseline.md) for current LI/LOD guidance this studio already tracks.
+- **Animesh.** Teulu Breedables markets itself explicitly as "the first Animesh breedables in Second Life" (originals launched March 2020, horses November 2022). Older lines pre-date Animesh entirely and had to fake independent movement with older, heavier scripted-prim techniques. This studio's [Animesh baseline notes](../second-life/platform-baseline.md#animesh-use-now) already flag Animesh as the runtime target for independent animated creatures — the breedables research confirms that's also a genuine market differentiator, not just a technical nicety.
 - **PBR materials / glTF 2.0.** None of the case-study lines researched here predate or were rebuilt around SL's metallic/roughness PBR upload path — it's simply newer than most of them. A breedable species built PBR-native from the start (coat/skin materials with real roughness/metalness variation as a genetics-driven trait, not just diffuse-texture swaps) would be visually differentiated from lines still running legacy Blinn-Phong textures.
 - **Server-side reliability as a failure mode independent of market demand.** BioBreeds' 2023 shutdown is the clearest counter-example to "the market decides everything" — it closed over a backend-ownership dispute (a co-owner refusing to migrate the server), not lack of demand. This is a reminder that a breedable line depends on infrastructure decisions (who owns the server, what happens if they leave) as much as on creature design.
 
@@ -63,13 +68,13 @@ Full case-by-case detail — Sion Chickens, Ozimals, Amaretto Ranch Breedables, 
 
 ## 3. Opportunity analysis for a future breedable
 
-This section synthesizes gaps and lessons from Sections 1–2 into **options and open questions**, not a decided design. Any of this would need its own evidence pass (per the studio's [decision model](../production/decision-model.md)) before being treated as a commitment.
+This section synthesizes gaps and lessons from Sections 1–2 into **options and open questions**, not a decided design. Any of this would need its own evidence pass (per the studio's [decision model](decision-model.md)) before being treated as a commitment.
 
 ### Technical advantages available now that older lines didn't have
 
-- **Animesh-native from day one**, rather than retrofitted onto a prim/scripted-object creature (as Teulu Breedables did starting in 2020). This studio's existing [Blender rigging/animation lessons (B08–B09)](../academy/software/blender/b08-rigging-weight-painting.md) and the [A04 rig + animation track](../academy/tracks/a04-rig-animation.md) already build toward Animesh-capable output — a breedable creature would be a natural forcing function to exercise that pipeline end-to-end.
-- **PBR-driven genetics.** Coat/skin variation expressed through metallic/roughness/normal trait combinations (not just diffuse-texture recoloring) is not something any researched case study does — it's a genuinely underused mechanic given how recent SL's PBR/glTF 2.0 path is relative to when most of these lines were designed. The [B07 texture painting & PBR lesson](../academy/software/blender/b07-texture-painting-pbr.md) and [A01 organic PBR track](../academy/tracks/a01-organic-pbr.md) are the relevant existing groundwork.
-- **Low land-impact per pet as a marketed feature**, following the Teulu/mesh-era pattern rather than the prim-heavy 2010 baseline — directly informed by this studio's [B05 retopology / LOD lesson](../academy/software/blender/b05-retopology.md).
+- **Animesh-native from day one**, rather than retrofitted onto a prim/scripted-object creature (as Teulu Breedables did starting in 2020). This studio's existing [Blender rigging/animation lessons (B08–B09)](../rigging-animation/rigging-and-skinning.md) and the [Rig + animation](../rigging-animation/projects/rig-and-animation.md) already build toward Animesh-capable output — a breedable creature would be a natural forcing function to exercise that pipeline end-to-end.
+- **PBR-driven genetics.** Coat/skin variation expressed through metallic/roughness/normal trait combinations (not just diffuse-texture recoloring) is not something any researched case study does — it's a genuinely underused mechanic given how recent SL's PBR/glTF 2.0 path is relative to when most of these lines were designed. The [Lesson 7 — Texture painting & PBR](../texturing/pbr-materials.md) and [Organic PBR material](../texturing/projects/organic-pbr-material.md) are the relevant existing groundwork.
+- **Low land-impact per pet as a marketed feature**, following the Teulu/mesh-era pattern rather than the prim-heavy 2010 baseline — directly informed by this studio's [Lesson 5 — Retopology](../modeling/retopology.md).
 
 ### Underused mechanics worth considering (not deciding)
 
@@ -95,5 +100,5 @@ Primary sourcing lives on the [case studies page](breedables-case-studies.md#ref
 - [SL Community forum — "Are breedable animals lagging out the grid?"](https://community.secondlife.com/forums/topic/127420-are-breedable-animals-lagging-out-the-grid/)
 - [Medium — "Artificial Scarcity and Perceived Value in Digital Systems"](https://medium.com/design-bootcamp/product-design-and-psychology-the-application-of-artificial-scarcity-in-video-game-design-249b459fee7f)
 - [VirtualPetList forum — "Breeding on Virtual Pet Sites: Essential Feature or Overrated Trend?"](https://www.virtualpetlist.com/threads/breeding-on-virtual-pet-sites-essential-feature-or-overrated-trend.376/)
-- [Second Life platform baseline](../secondlife/platform-baseline.md) (this studio's own tracked platform capabilities)
-- [Studio roadmap](../studio-roadmap.md) and [decision model](../production/decision-model.md) (for how this research feeds studio decisions)
+- [Second Life platform baseline](../second-life/platform-baseline.md) (this studio's own tracked platform capabilities)
+- [Studio roadmap](../roadmap.md) and [decision model](decision-model.md) (for how this research feeds studio decisions)

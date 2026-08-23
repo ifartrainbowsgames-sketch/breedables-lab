@@ -1,179 +1,77 @@
+---
+title: "Breedables Lab"
+type: index
+question: "What is Breedables Lab and where do I start?"
+---
 # Breedables Lab
 
-Learn professional **3D creature production** for **Second Life breedables** — Blender, industry tools, and in-world delivery.
+An open-source-first studio building **Second Life breedables** — and a wiki that
+teaches the whole professional creature pipeline while we do it.
 
 <div class="wiki-hub" markdown>
 
 <p class="wiki-stats" markdown="1">
-<strong>Wiki hub</strong> — search with <kbd>Ctrl</kbd>+<kbd>K</kbd>.
-Pick a card below, or browse [all tutorial videos](academy/resources/video-library.md) with **in-wiki YouTube players**.
+Search anything with <kbd>Ctrl</kbd>+<kbd>K</kbd>. New here? Start with the
+**[Blender foundations path](academy/paths/blender-foundations.md)**.
 </p>
 
-<div class="featured-banner" markdown>
-
-![Breedables research](assets/cards/breedables-research.png){ width="160" }
-
-<div markdown="1">
-
-### Latest · Breedables inventory & software
-
-Master list of SL breedable lines, software stacks, and open niches (Kimi-updated).
-
-**[Open research →](research/breedables-inventory-and-software.md)**
-
-Also: [Case studies](research/breedables-case-studies.md) · [Market study](research/breedables-market-study.md)
-
 </div>
 
-</div>
-
-## Main pages
-
-<div class="grid cards" markdown>
-
-- ![Start here](assets/cards/start-here.png)
-
-    **[Start here](academy/start-here.md)**
-
-    New? Your learning path in plain English
-
-- ![Blender](assets/cards/blender.png)
-
-    **[Blender lesson 1](academy/software/blender/b01-install-setup.md)**
-
-    Ten-lesson free path: model → texture → rig → SL
-
-- ![Breedables](assets/cards/breedables-research.png)
-
-    **[Breedables inventory](research/breedables-inventory-and-software.md)**
-
-    What exists, what tools they used, what's left to make
-
-- ![Second Life](assets/cards/second-life.png)
-
-    **[SL platform baseline](secondlife/platform-baseline.md)**
-
-    Animesh, PBR, land impact, Linkset Data
-
-- ![Add-ons](assets/cards/addons.png)
-
-    **[Add-on catalog](academy/software/addon-catalog.md)**
-
-    Hard Ops, RetopoFlow, Ucupaint, Avastar
-
-- ![Production](assets/cards/production-line.png)
-
-    **[Production line](academy/production-line.md)**
-
-    Full pipeline map — every stage explained
-
-</div>
-
-## Popular pages
-
-<div class="grid cards" markdown>
-
-- ![Workflow](assets/cards/workflow.png)
-
-    **[Professional workflow](academy/professional-workflow/index.md)**
-
-    How studio artists actually work
-
-- ![Blender path](assets/cards/blender-path.png)
-
-    **[All 10 Blender lessons](academy/software/blender/index.md)**
-
-    Structured path with labs and evidence folders
-
-- ![Tutorials](assets/cards/tutorials.png)
-
-    **[Video library](academy/resources/video-library.md)**
-
-    Watch YouTube **inside the wiki** — all software
-
-- ![Labs](assets/cards/studio-labs.png)
-
-    **[Studio labs](academy/tracks/a01-organic-pbr.md)**
-
-    A01–A05 breedables proof projects
-
-- ![Software](assets/cards/software-packages.png)
-
-    **[Software packages](academy/software/packages/index.md)**
-
-    Blender, Maya, ZBrush, Substance, Maya…
-
-- ![Tools](assets/cards/tools-registry.png)
-
-    **[Tools registry](production/tools/index.md)**
-
-    Licenses & experiments (maintainers)
-
-</div>
-
-## Browse by topic
-
-<div class="category-columns" markdown>
-
-<div markdown="1">
-
-### Learn
-
-- [Academy mission](academy/mission.md)
-- [Overview](academy/overview.md)
-- [Video library — watch in wiki](academy/resources/video-library.md)
-- [Training videos by stage](academy/resources/training-videos-by-stage.md)
-- [Complete courses](academy/resources/complete-courses.md)
-
-</div>
-
-<div markdown="1">
-
-### Build
-
-- [Pipeline stages](academy/professional-workflow/pipeline-stages.md)
-- [Paid vs free matrix](academy/professional-workflow/paid-vs-free-matrix.md)
-- [Mesh modeling lesson (B03)](academy/software/blender/b03-mesh-modeling.md)
-- [Retopology lesson (B05)](academy/software/blender/b05-retopology.md)
-- [Export to SL](academy/software/blender/b10-export-to-sl.md)
-
-</div>
-
-<div markdown="1">
-
-### Research
-
-- [Breedables market study](research/breedables-market-study.md)
-- [Case studies](research/breedables-case-studies.md)
-- [Inventory & software](research/breedables-inventory-and-software.md)
-- [Wiki concept audit](research/wiki-concept-audit.md)
-
-</div>
-
-<div markdown="1">
-
-### Studio
-
-- [System build summary](studio/system-build-summary.md)
-- [Wiki design benchmarks](studio/wiki-design-benchmarks.md)
-- [Roadmap](studio-roadmap.md)
-- [Experiments](production/experiments.md)
-
-</div>
-
-</div>
-
-</div>
-
----
-
-## Local preview
-
-```powershell
-pip install -r requirements-docs.txt
-python -m mkdocs serve -a 127.0.0.1:8765
+## Where to start
+
+| If you… | Go to |
+|---------|-------|
+| Have never opened a 3D app | [Blender foundations path](academy/paths/blender-foundations.md) |
+| Know 3D and want the whole map | [Production pipeline](pipeline.md) |
+| Want to know what to learn next | [Academy](academy/index.md) |
+| Need to ship something in-world | [Second Life Production](second-life/index.md) |
+| Are picking a tool | [Software database](research/software-database.md) |
+
+## The sections
+
+| Section | Answers |
+|---------|---------|
+| [3D Modeling](modeling/index.md) | What tools and workflows do I use to create the model? |
+| [Texturing & Materials](texturing/index.md) | How do I create professional surfaces and PBR materials? |
+| [Rigging & Animation](rigging-animation/index.md) | How do I make the creature deform and move? |
+| [Second Life Production](second-life/index.md) | How do I get the finished asset into Second Life correctly? |
+| [Breedables Engineering](engineering/index.md) | How does the breedable system actually work? |
+| [Academy](academy/index.md) | What should I learn next? |
+| [Research & Tools](research/index.md) | What are we currently evaluating? |
+
+## The pipeline in one line
+
+```
+Reference → Model → Sculpt → Retopo/LOD → UV → Texture/PBR → Rig → Animate
+    → Optimize → Export → Upload → Script → Genetics → HUD → Test → Release
 ```
 
-[http://127.0.0.1:8765/breedables-lab/](http://127.0.0.1:8765/breedables-lab/)
+Every stage is owned by one section. The full breakdown is on the
+[production pipeline](pipeline.md) page.
 
-**Kimi automation:** `wiki-videos` · `wiki-images` · `wiki-audit` · `breedables-research` (see `tools/librarian`)
+## Current status
+
+!!! warning "Phase 1 — the wiki is ahead of the workshop"
+    The curriculum and tooling are built. **No creature artifact has been produced
+    yet**: all five project evidence folders under `training/` are empty, and
+    benchmarks E01–E05 have no measurements.
+
+| | |
+|---|---|
+| **Current phase** | Phase 1 — readable wiki from git ([roadmap](roadmap.md)) |
+| **Current goal** | Put the first real artifact in an evidence folder |
+| **Reference Creature** | Not started — no mesh, rig, or material committed |
+| **Recommended stack** | Blender · Material Maker · Ucupaint · Poly Haven / ambientCG |
+| **Main blocker** | Zero completed projects, so no benchmark has evidence behind it |
+
+**Next action:** the [retopology project](modeling/projects/retopology-project.md)
+is the cheapest first artifact — Blender only, no Second Life upload required.
+
+## Major decisions on record
+
+| Decision | Where |
+|----------|-------|
+| Free/open-source pipeline as the default teaching route | [Paid vs free matrix](research/paid-vs-free-matrix.md) |
+| A tool is only approved with committed evidence | [Decision model](research/decision-model.md) · [Promotion rules](research/promotion-rules.md) |
+| Hunyuan3D excluded from the commercial pipeline | [Candidate card](research/candidates/hunyuan3d.md) |
+| Teach general 3D first, Second Life adaptation second | [Adapting professional work](second-life/adapting-professional-work.md) |
