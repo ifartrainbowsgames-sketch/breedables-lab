@@ -27,6 +27,25 @@ def test_add_and_merge_duplicate(tmp_path):
     assert len(db.list()) == 1
 
 
+def test_same_name_different_urls_do_not_merge(tmp_path):
+    db = LibrarianDB(tmp_path / "test.sqlite3")
+    db.init()
+
+    first, first_created = db.add(
+        name="Retarget",
+        url="https://github.com/example-one/retarget",
+    )
+    second, second_created = db.add(
+        name="Retarget",
+        url="https://github.com/example-two/retarget",
+    )
+
+    assert first_created is True
+    assert second_created is True
+    assert first.id != second.id
+    assert len(db.list()) == 2
+
+
 def test_gaps_flags_unchecked_and_unknown(tmp_path):
     db = LibrarianDB(tmp_path / "test.sqlite3")
     db.init()
