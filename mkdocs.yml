@@ -49,6 +49,23 @@ nav:
   - Academy:
       - Overview: academy/overview.md
       - Production line: academy/production-line.md
+      - Software & Tools:
+          - Overview: academy/software/index.md
+          - Build plan: academy/software/build-plan.md
+          - Blender Foundations:
+              - Path overview: academy/software/blender/index.md
+              - B01 Install & setup: academy/software/blender/b01-install-setup.md
+              - B02 Interface & navigation: academy/software/blender/b02-interface-navigation.md
+              - B03 Mesh modeling: academy/software/blender/b03-mesh-modeling.md
+              - B04 Sculpting basics: academy/software/blender/b04-sculpting.md
+              - B05 Retopology: academy/software/blender/b05-retopology.md
+              - B06 UV unwrapping: academy/software/blender/b06-uv-unwrapping.md
+              - B07 Texture painting & PBR: academy/software/blender/b07-texture-painting-pbr.md
+              - B08 Rigging & weight painting: academy/software/blender/b08-rigging-weight-painting.md
+              - B09 Basic animation: academy/software/blender/b09-animation.md
+              - B10 Export to Second Life: academy/software/blender/b10-export-to-sl.md
+          - Add-on catalog: academy/software/addon-catalog.md
+          - Software index: academy/software/software-index.md
       - Tracks:
           - A01 Organic PBR: academy/tracks/a01-organic-pbr.md
           - A02 Layered textures: academy/tracks/a02-layered-textures.md
@@ -57,6 +74,7 @@ nav:
           - A05 SL fixture: academy/tracks/a05-sl-fixture.md
       - Resources:
           - Training videos: academy/resources/videos.md
+          - Tutorial arsenal: academy/resources/tutorials.md
           - Official docs: academy/resources/official-docs.md
   - Studio:
       - Roadmap: studio-roadmap.md
@@ -80,6 +98,8 @@ nav:
   - Research:
       - Phase 0 survey: research/phase-0-survey.md
       - Wiki concept audit: research/wiki-concept-audit.md
+      - Breedables market & design study: research/breedables-market-study.md
+      - Breedables case studies: research/breedables-case-studies.md
 
 extra:
   social:

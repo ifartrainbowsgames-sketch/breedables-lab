@@ -4,6 +4,8 @@ Training must **directly improve production capability**. Every lesson produces 
 
 ## Start here
 
+**Never opened Blender?** Start with the **[Software & Tools section](software/index.md)** — the [Blender Foundations path](software/blender/index.md) (B01–B10) takes you from install to an SL-ready creature, plus an [add-on catalog](software/addon-catalog.md), [wider software index](software/software-index.md), and a curated [tutorial arsenal](resources/tutorials.md).
+
 **[Full production line](production-line.md)** — every stage from research to release: what it's for, free vs paid tools, which is better for breedables, what to learn.
 
 Also read:
