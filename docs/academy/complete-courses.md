@@ -22,6 +22,10 @@ Full **start-to-finish** courses — not fragment playlists. See also [training 
 | Material Maker docs path | Material Maker | RodZill4 | [Docs + YouTube](https://docs.materialmaker.org/getting_started/first_steps.html) | Yes | Beginner | Procedural PBR |
 | Krita manual path | Krita | Krita Foundation | [Manual + tutorials](https://docs.krita.org/) | Yes | Beginner | 2D art / textures |
 | Breedables Blender path | Blender + SL | Breedables Lab | [10 lessons](../modeling/blender/index.md) | Yes | Beginner → SL | Creature + in-world fixture |
+| Learn 3D with Blender | Blender | 3D Illusions | [Channel](https://www.youtube.com/@3d-illusions) | Yes | Beginner → advanced | ~18 hours, fundamentals to advanced |
+| Get Good @ Blender · Nodes 4 Noobs | Blender | Grant Abbitt | [Channel](https://www.youtube.com/@grabbitt) | Yes | Beginner → intermediate | Game-asset and creature work |
+| Rig Anything With Rigify | Blender | CGDive | [Course](https://cgdive.com/rigify/) | Free fundamentals module | Intermediate | Quadruped rigs, Rigify export |
+| Blender Fundamentals 4.5 LTS | Blender | Blender Studio | [Studio course](https://studio.blender.org/training/blender-fundamentals-45-lts/) | Free tier | Beginner | Text plus short clips |
 
 ---
 
@@ -31,7 +35,7 @@ Full **start-to-finish** courses — not fragment playlists. See also [training 
 |--------------|----------|-------|
 | **Full creature** (free, Blender) | HIGH | End-to-end quadruped |
 | **Game-ready character** (Substance + Maya/ZBrush) | MEDIUM | Document pro route |
-| **Rigged + animated creature** | HIGH | Tie to A04 lab |
+| **Rigged + animated creature** | ~~HIGH~~ found | CGDive Rigify above, plus the CC-BY [Rain rig](../modeling/blender/learning-resources.md) for practice |
 | **PBR texture-only project** | MEDIUM | Tie to A01 lab |
 | Gnomon-style paid courses | LOW | List separately with pricing links |
 
@@ -59,3 +63,10 @@ Full **start-to-finish** courses — not fragment playlists. See also [training 
 | Second Life (official) | SL platform & creation | Free | [@secondlife](https://www.youtube.com/@secondlife) |
 
 ---
+
+## Open-source alternatives
+
+Community-maintained curricula, curated indexes and practice `.blend` files live
+on [open-source Blender learning resources](../modeling/blender/learning-resources.md).
+Courses above are free to watch; that page tracks what is also free to **reuse**,
+with licences named.
