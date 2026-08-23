@@ -1,0 +1,26 @@
+# Link checker for docs/ — used by .github/workflows/wiki-links.yml
+# Complements Librarian daily-wiki (HTTP) + webscreen chromedp (JS/bot-blocked pages).
+
+exclude = [
+  # --- Bot-blocked: these answer a real browser but refuse automated clients.
+  # Verified by hand; re-check with scripts/ link audit rather than deleting.
+  "cgcookie.com",
+  "wiki.secondlife.com",        # 403 to any non-browser client
+  "community.secondlife.com",
+  "autodesk.com",               # 403 via Cloudflare
+  "helpx.adobe.com",            # refuses the TLS handshake from CLI clients
+  "adobe.com",
+  "firestormviewer.org",        # 403 to automated clients
+  "thegnomonworkshop.com",      # returns 202 to crawlers
+
+  # --- Rate limited rather than broken
+  "github.com/search",
+
+  # Slack invite links expire
+  "join.slack.com",
+]
+
+# Academy wiki has many external tutorial links; allow transient failures in CI.
+max_retries = 2
+timeout = 20
+accept = ["200", "204", "301", "302", "303", "307", "308", "429"]

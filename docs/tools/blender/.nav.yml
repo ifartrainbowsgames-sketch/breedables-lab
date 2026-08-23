@@ -1,0 +1,16 @@
+title: Blender
+# Lessons 1–10 in teaching order, then the reference pages.
+nav:
+  - Blender home: index.md
+  - Lesson 1 — Install: install-and-setup.md
+  - Lesson 2 — Interface: interface-and-navigation.md
+  - Lesson 3 — Mesh modeling: mesh-modeling.md
+  - Lesson 4 — Sculpting: sculpting.md
+  - Lesson 5 — Retopology: retopology.md
+  - Lesson 6 — UV unwrapping: uv-mapping.md
+  - Lesson 7 — PBR materials: pbr-materials.md
+  - Lesson 8 — Rigging: rigging-and-skinning.md
+  - Lesson 9 — Animation: animation.md
+  - Lesson 10 — Export to SL: export-and-upload.md
+  - Add-on catalog: addon-catalog.md
+  - Open-source resources: learning-resources.md

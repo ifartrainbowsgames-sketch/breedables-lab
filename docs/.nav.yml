@@ -1,0 +1,15 @@
+# Top-level navigation. Sections come from wiki_schema.SECTIONS — add a folder
+# there and here, and every page inside it appears automatically.
+# meta/ is deliberately absent: it is the wiki about the wiki.
+nav:
+  - Home:
+      - Overview: index.md
+      - Production pipeline: pipeline.md
+      - Studio roadmap: roadmap.md
+  - academy
+  - tutorials
+  - tools
+  - projects
+  - second-life
+  - engineering
+  - research

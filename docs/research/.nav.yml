@@ -1,0 +1,16 @@
+title: Research
+nav:
+  - Overview: index.md
+  - Software database: software-database.md
+  - Paid vs free: paid-vs-free-matrix.md
+  - Experiments: experiments.md
+  - Tool registry: tool-registry.md
+  - Decision model: decision-model.md
+  - Promotion rules: promotion-rules.md
+  - Web research stack: web-research-stack.md
+  - Animation libraries: animation-libraries.md
+  - Candidates: candidates
+  - Market research:
+      - Inventory & software: breedables-inventory-and-software.md
+      - Case studies: breedables-case-studies.md
+      - Market study: breedables-market-study.md

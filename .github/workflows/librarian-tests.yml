@@ -1,0 +1,46 @@
+name: Librarian tests
+
+on:
+  push:
+    paths:
+      - "tools/librarian/**"
+      - ".github/workflows/librarian-tests.yml"
+  pull_request:
+    paths:
+      - "tools/librarian/**"
+      - ".github/workflows/librarian-tests.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/librarian
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        run: pip install -e ".[dev,notify]"
+
+      - name: Test
+        run: pytest -q
+
+  slack:
+    needs: test
+    if: always()
+    uses: ./.github/workflows/slack-notify.yml
+    with:
+      title: "Librarian tests (pytest)"
+      conclusion: ${{ needs.test.result }}
+      notify_on: failure
+    secrets:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      SLACK_NOTIFY_CHANNEL: ${{ secrets.SLACK_NOTIFY_CHANNEL }}

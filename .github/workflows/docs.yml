@@ -1,0 +1,55 @@
+name: Deploy docs
+
+on:
+  push:
+    branches:
+      - main
+      - feature/studio-librarian-v1
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - "requirements-docs.txt"
+      - ".github/workflows/docs.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: docs-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install MkDocs
+        run: pip install -r requirements-docs.txt
+
+      - name: Build (strict)
+        run: mkdocs build --strict
+
+      - name: Deploy to GitHub Pages
+        run: mkdocs gh-deploy --force
+
+  slack:
+    needs: deploy
+    if: always()
+    uses: ./.github/workflows/slack-notify.yml
+    with:
+      title: "Wiki deploy (MkDocs → GitHub Pages)"
+      conclusion: ${{ needs.deploy.result }}
+      notify_on: always
+      details: "Site: https://ifartrainbowsgames-sketch.github.io/breedables-lab/"
+    secrets:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      SLACK_NOTIFY_CHANNEL: ${{ secrets.SLACK_NOTIFY_CHANNEL }}

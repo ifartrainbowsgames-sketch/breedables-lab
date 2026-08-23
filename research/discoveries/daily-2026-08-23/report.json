@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-08-23T17:12:51.164837+00:00",
+  "report_dir": "research/discoveries/daily-2026-08-23",
+  "summary": {
+    "wiki_links_checked": 5,
+    "wiki_links_failed": 0,
+    "academy_gaps": 0,
+    "registry_gaps": 1,
+    "resource_evidence_gaps": 0,
+    "browser_rescreens": 0
+  },
+  "academy_gaps": [],
+  "registry_gaps": [
+    {
+      "kind": "registry",
+      "id": 5,
+      "name": "RetopoFlow",
+      "issues": [
+        "commercial type unknown"
+      ]
+    }
+  ],
+  "resource_evidence_gaps": [],
+  "link_checks": [
+    {
+      "url": "https://www.youtube.com/@BlenderOfficial",
+      "source": "docs/academy/resources/tutorials.md",
+      "http_status": 200,
+      "ok": true
+    },
+    {
+      "url": "https://studio.blender.org/",
+      "source": "docs/academy/resources/tutorials.md",
+      "http_status": 200,
+      "ok": true
+    },
+    {
+      "url": "https://www.youtube.com/@BlenderStudio",
+      "source": "docs/academy/resources/tutorials.md",
+      "http_status": 200,
+      "ok": true
+    },
+    {
+      "url": "https://www.youtube.com/playlist?list=PLjEaoINr3zgEPv5y--4MKpciLaoQYZB1Z",
+      "source": "docs/academy/resources/tutorials.md",
+      "http_status": 200,
+      "ok": true
+    },
+    {
+      "url": "https://www.gabbitt.co.uk/",
+      "source": "docs/academy/resources/tutorials.md",
+      "http_status": 200,
+      "ok": true
+    }
+  ],
+  "failures": [],
+  "browser_rescreens": [],
+  "next_actions": [
+    "Registry: RetopoFlow \u2014 commercial type unknown"
+  ]
+}

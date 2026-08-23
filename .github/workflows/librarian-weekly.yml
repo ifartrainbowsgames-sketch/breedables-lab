@@ -1,0 +1,57 @@
+name: Librarian weekly check
+
+on:
+  schedule:
+    - cron: "0 14 * * 1"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/librarian
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install librarian
+        run: pip install -e ".[dev,research,notify]"
+
+      - name: Init and seed registry
+        run: |
+          python -m librarian.cli init-db
+          python -m librarian.cli seed-baseline
+
+      - name: Link check (registry)
+        run: python -m librarian.cli check --limit 25
+        env:
+          BREEDABLES_REPO_ROOT: ${{ github.workspace }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Evidence and content gaps
+        run: |
+          python -m librarian.cli content-gaps --limit 100
+          python -m librarian.cli research-queue --limit 100
+        env:
+          BREEDABLES_REPO_ROOT: ${{ github.workspace }}
+
+      - name: Run tests
+        run: pytest -q
+
+  slack:
+    needs: check
+    if: always()
+    uses: ./.github/workflows/slack-notify.yml
+    with:
+      title: "Librarian weekly check"
+      conclusion: ${{ needs.check.result }}
+      notify_on: failure
+      details: "Registry link check and pytest. Manual run: Actions → Librarian weekly check"
+    secrets:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      SLACK_NOTIFY_CHANNEL: ${{ secrets.SLACK_NOTIFY_CHANNEL }}

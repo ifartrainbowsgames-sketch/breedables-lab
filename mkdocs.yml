@@ -1,0 +1,151 @@
+site_name: Breedables Lab
+site_description: Learn Blender and breedables production — plain-language paths, studio labs, market research
+site_url: https://ifartrainbowsgames-sketch.github.io/breedables-lab/
+repo_url: https://github.com/ifartrainbowsgames-sketch/breedables-lab
+repo_name: breedables-lab
+
+# NOTE: pinned to the feature branch so the "edit this page" pencil works today.
+# When feature/studio-librarian-v1 merges, change this to `edit/main/docs/`
+# and drop the feature branch from .github/workflows/docs.yml.
+edit_uri: edit/feature/studio-librarian-v1/docs/
+
+# Staging area for unoptimised screenshots (scripts/optimize-wiki-images.py).
+# Source files, not published pages — keep them out of the built site.
+exclude_docs: |
+  assets/inbox/
+
+# Tool-candidate cards are reached from the research-candidates registry page,
+# not from the sidebar. Declaring them keeps `mkdocs build --strict` quiet.
+not_in_nav: |
+  meta/
+  .nav.yml
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Light mode
+  features:
+    # navigation
+    #
+    # NOTE: navigation.tabs is deliberately OFF. With tabs, top-level sections
+    # move into a bar above the page and the left sidebar shows only the tab you
+    # are already inside — so you cannot see Tools while reading Academy, and
+    # moving between them costs a round trip through the tab bar. Without tabs
+    # every section is present in one collapsible tree on the left.
+    #
+    # navigation.sections is OFF for the same reason: it flattens top-level
+    # groups into always-open headings, which is what makes a deep wiki
+    # unscrollable. Collapsible is the point.
+    - navigation.indexes       # section landing pages instead of dead folders
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer        # prev / next links — always an obvious next step
+    # NOTE: navigation.expand deliberately OFF. This wiki has ~100 pages;
+    # expanding every section produces a sidebar too long to scan. The reader
+    # opens the branch they want, and it stays open.
+    # search
+    - search.suggest
+    - search.highlight
+    - search.share
+    # content
+    - content.code.copy
+    - content.tooltips
+    - content.action.edit
+    - toc.follow
+
+plugins:
+  - search
+  # Navigation is derived from the folder structure plus per-folder .nav.yml
+  # files. There is no hand-maintained nav block: add a page to the right
+  # folder and it appears. See docs/meta/wiki-style-guide.md.
+  - awesome-nav
+  # The wiki moved from pipeline-stage sections to per-tool hubs. These URLs
+  # were already shared in Slack, so they have to keep resolving. Do not prune
+  # this map — a dead link in a pinned message is not worth the tidiness.
+  - redirects:
+      redirect_maps:
+        modeling/index.md: tools/index.md
+        texturing/index.md: tools/index.md
+        rigging-animation/index.md: tools/index.md
+
+        modeling/blender/index.md: tools/blender/index.md
+        modeling/blender/install-and-setup.md: tools/blender/install-and-setup.md
+        modeling/blender/interface-and-navigation.md: tools/blender/interface-and-navigation.md
+        modeling/blender/addon-catalog.md: tools/blender/addon-catalog.md
+        modeling/blender/learning-resources.md: tools/blender/learning-resources.md
+        modeling/mesh-modeling.md: tools/blender/mesh-modeling.md
+        modeling/sculpting.md: tools/blender/sculpting.md
+        modeling/retopology.md: tools/blender/retopology.md
+        modeling/uv-mapping.md: tools/blender/uv-mapping.md
+        texturing/pbr-materials.md: tools/blender/pbr-materials.md
+        rigging-animation/rigging-and-skinning.md: tools/blender/rigging-and-skinning.md
+        rigging-animation/animation.md: tools/blender/animation.md
+        second-life/export-and-upload.md: tools/blender/export-and-upload.md
+
+        modeling/software/maya.md: tools/maya/index.md
+        modeling/software/zbrush.md: tools/zbrush/index.md
+        modeling/software/topogun.md: tools/topogun/index.md
+        modeling/software/retopoflow.md: tools/retopoflow/index.md
+        modeling/software/pureref.md: tools/pureref/index.md
+        texturing/software/material-maker.md: tools/material-maker/index.md
+        texturing/software/ucupaint.md: tools/ucupaint/index.md
+        texturing/software/substance-painter.md: tools/substance-painter/index.md
+        texturing/software/mari.md: tools/mari/index.md
+        texturing/software/photoshop.md: tools/photoshop/index.md
+        texturing/software/krita.md: tools/krita/index.md
+        texturing/software/marmoset-toolbag.md: tools/marmoset-toolbag/index.md
+        texturing/software/marvelous-designer.md: tools/marvelous-designer/index.md
+        texturing/software/poly-haven.md: tools/poly-haven/index.md
+        texturing/software/ambientcg.md: tools/ambientcg/index.md
+
+        modeling/projects/retopology-project.md: projects/retopology-project.md
+        texturing/projects/organic-pbr-material.md: projects/organic-pbr-material.md
+        texturing/projects/layered-textures.md: projects/layered-textures.md
+        rigging-animation/projects/rig-and-animation.md: projects/rig-and-animation.md
+        engineering/projects/in-world-fixture.md: projects/in-world-fixture.md
+
+        rigging-animation/animation-libraries.md: research/animation-libraries.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.keys
+  - tables
+  - attr_list
+  - md_in_html
+  - footnotes
+  - abbr
+  - toc:
+      permalink: true
+      # Only H2/H3 reach the table of contents. Deeper headings are structure
+      # for the author, not navigation for the reader.
+      toc_depth: 3
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/wiki-quicknav.js
+  - javascripts/wiki-sidebar.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ifartrainbowsgames-sketch/breedables-lab

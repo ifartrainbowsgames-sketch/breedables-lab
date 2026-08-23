@@ -1,0 +1,12 @@
+use_default_settings: true
+
+server:
+  secret_key: "change-me-local-dev-only"
+  limiter: false
+
+search:
+  safe_search: 0
+  autocomplete: ""
+  formats:
+    - html
+    - json

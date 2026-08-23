@@ -1,0 +1,136 @@
+---
+title: "Blender add-on catalog"
+section: tools
+type: topic
+---
+# Blender add-on catalog
+
+A curated list of Blender add-ons that genuinely help the **Second Life breedables pipeline**, grouped by cost. For each: what it does, its relevance to breedables, and whether it is **Essential** or **Nice-to-have** for our workflow.
+
+**Legend:** ⭐ Essential for the SL breedables pipeline · ◻ Nice-to-have.
+
+Install built-ins via **Preferences → Add-ons** (search the name). Free/community add-ons install from a downloaded `.zip` (or, in Blender 4.2+, via the **Extensions** platform). Paid add-ons come from the developer or a marketplace (Superhive/Blender Market, Gumroad).
+
+For learning *how* to use these in context, see the [Blender Foundations path](index.md) and the [tutorial arsenal](../../academy/index.md).
+
+---
+
+## Built-in (ships with Blender — just enable)
+
+These are free, bundled, and stable across LTS releases. Enable them in [Lesson 1](install-and-setup.md).
+
+| Add-on | Cost | What it does | Relevance to breedables | Priority |
+|--------|------|--------------|--------------------------|----------|
+| [Node Wrangler](https://docs.blender.org/manual/en/latest/addons/index.html) | Free (built-in) | Keyboard-driven shader/geo node editing (Ctrl+T, Ctrl+Shift+click preview) | Massive speedup for the PBR node work in [Lesson 7](pbr-materials.md) and phenotype shader groups | ⭐ |
+| [LoopTools](https://extensions.blender.org/add-ons/looptools/) | Free (built-in) | Extra mesh ops: Relax, Space, Circle, Bridge, Flatten | Cleans edge loops on organic bases ([Lesson 3](mesh-modeling.md)) and retopo ([Lesson 5](retopology.md)) | ⭐ |
+| [Rigify](https://docs.blender.org/manual/en/latest/addons/rigify/index.html) | Free (built-in) | Meta-rig → full rig generator, incl. Basic Quadruped | Studio rigging baseline for [Lesson 8](rigging-and-skinning.md) / [Rig + animation](../../projects/rig-and-animation.md) | ⭐ |
+| glTF 2.0 importer/exporter | Free (built-in) | Import/export glTF/GLB with PBR materials | SL PBR material upload path ([Lesson 10](export-and-upload.md)) | ⭐ |
+| Collada (.dae) exporter | Free (built-in) | Export COLLADA meshes, LODs, rigs | SL's mesh upload format ([Lesson 10](export-and-upload.md)) | ⭐ |
+| [Bool Tool](https://extensions.blender.org/add-ons/bool-tool/) | Free (built-in) | Fast boolean union/difference shortcuts | Hard-surface accessories, tack, HUD props | ◻ |
+| [Extra Objects (Add Mesh)](https://extensions.blender.org/add-ons/extra-mesh-objects/) | Free (built-in) | More primitive shapes to start from | Faster blockouts and prop bases | ◻ |
+| [Extra Curve Objects](https://docs.blender.org/manual/en/latest/addons/index.html) | Free (built-in) | Extra curve primitives | Leashes, vines, tails-as-curves, HUD elements | ◻ |
+| [Copy Attributes Menu](https://docs.blender.org/manual/en/latest/addons/index.html) | Free (built-in) | Ctrl+C to copy transforms/data between objects | Speeds repetitive setup across phenotype variants | ◻ |
+| [Auto Mirror](https://extensions.blender.org/add-ons/auto-mirror/) | Free (built-in) | One-click cut-in-half + Mirror modifier | Symmetric creature modeling ([Lesson 3](mesh-modeling.md)) | ◻ |
+| [3D-Print Toolbox](https://extensions.blender.org/add-ons/print3d-toolbox/) | Free (built-in) | Mesh checks: non-manifold, degenerate, intersecting | Pre-export sanity checks before SL upload | ◻ |
+
+---
+
+## Free / community
+
+Free (some open-source, some free-tier). Verify license before shipping anything bundled — see the [tools registry](../../research/tool-registry.md).
+
+| Add-on | Cost | What it does | Relevance to breedables | Priority |
+|--------|------|--------------|--------------------------|----------|
+| [RetopoFlow](https://github.com/CGCookie/retopoflow) | Free (GPL; also sold to support CG Cookie) | Dedicated retopology toolset (guided quad drawing) | Faster clean retopo for [Lesson 5](retopology.md)/[Retopology](../../projects/retopology-project.md); [registry](../retopoflow/index.md) | ⭐ |
+| [Ucupaint](https://github.com/ucupumar/ucupaint) | Free (open-source) | Layer-based texture painting inside Blender | Phenotype variant layers in [Layered textures](../../projects/layered-textures.md); [registry](../ucupaint/index.md) | ⭐ |
+| [TexTools](https://github.com/franMarz/TexTools-Blender) | Free (open-source) | UV + texture utilities: align/rectify UVs, texel density, baking helpers | Even texel density and quick bakes for [Lesson 6](uv-mapping.md)/[Lesson 7](pbr-materials.md) | ⭐ |
+| [Poly Haven Assets](https://polyhaven.com/plugins/blender) ([GitHub](https://github.com/Poly-Haven/polyhavenassets)) | Free (assets are CC0) | Browse/download CC0 HDRIs, textures, models in the Asset Browser | CC0 reference materials + studio lighting; [registry](../poly-haven/index.md) | ⭐ |
+| [MACHIN3tools](https://machin3.io/MACHIN3tools/) | Free | Modeling QoL pie menus & smart tools | General modeling speed for [Lesson 3](mesh-modeling.md) and hard-surface props | ◻ |
+
+> Blender **4.2+ Extensions**: many of these are installable directly from the in-app Extensions browser or [extensions.blender.org](https://extensions.blender.org/). Prefer that channel where available for auto-updates.
+
+---
+
+## Open source, off-catalog
+
+Not in Blender's extensions list, but GPL-compatible and worth knowing. None is
+studio-approved — run it past the [decision model](../../research/decision-model.md) first.
+
+| Add-on | Licence | What it does | Why it matters here |
+|--------|---------|--------------|---------------------|
+| [GameRig](https://github.com/Arminando/GameRig) | Open source | Rigify-based auto-rigging aimed at game engines; adds rigs and metarigs | Game-engine-friendly rigs are closer to what Second Life wants than a film rig |
+| [CloudRig](https://gitlab.com/blender/CloudRig) | Open source | Blender Studio's production rig-building framework | The rigging system behind Blender Studio's own characters |
+| [Rigify (upstream)](https://github.com/cessen/rigify) | GPL | The add-on's development repository | Where quadruped metarig behaviour is actually decided |
+| [AutoRemesher](https://github.com/huxingyi/autoremesher) | GPLv3 | Automatic all-quad retopology, with a Blender bridge | An automatic first pass before manual cleanup — feed it into [E03](../../research/experiments.md#e03-organic-retopology-benchmark) |
+| [B-Surfaces GPL Edition](https://extensions.blender.org/add-ons/bsurfaces-gpl-edition/) | GPL | Draw-based modelling and retopology in Edit Mode | Free alternative to RetopoFlow's stroke workflow |
+
+## Procedural and scripting
+
+For phenotype variants, one node graph beats a folder of hand-made meshes.
+
+| Project | Licence | What it does |
+|---------|---------|--------------|
+| [Geometry Script](https://github.com/carson-katri/geometry-script) | Open source | Write geometry node trees as Python — reviewable in git, unlike a node graph |
+| [geonodes](https://github.com/al1brn/geonodes) | Open source | Build geometry nodes from Python scripts |
+| [pynodes](https://github.com/iplai/pynodes) | Open source | Programmatic geometry, shader and compositor nodes |
+| [NodeToPython](https://github.com/BrendanParmer/NodeToPython) | Open source | Convert an existing node group into a Python add-on |
+| [Sorcar](https://github.com/aachman98/Sorcar) | Open source | Node-based procedural modelling, Houdini-inspired |
+
+## Paid — but worth it
+
+Only adopt a paid add-on when it wins on measured evidence (see the [tool comparison rules](../../research/decision-model.md#writing-a-tool-comparison)). These are the ones that repeatedly justify their cost for SL work.
+
+| Add-on | Cost | What it does | Relevance to breedables | Priority |
+|--------|------|--------------|--------------------------|----------|
+| [Avastar](https://www.avalab.org/avastar/) ([docs](https://blog.machinimatrix.org/avastar/)) | Paid | Blender add-on with the **exact Second Life avatar skeleton**, weighting, fitted-mesh and SL-native animation/mesh export | **The** SL rigging/Animesh bridge — provides SL bones and `.anim`/mesh export that hand-rigging struggles to match. Central to [Lesson 8](rigging-and-skinning.md)/[Lesson 10](export-and-upload.md) for animated creatures | ⭐ |
+| [Auto-Rig Pro](https://www.lucky3d.fr/auto-rig-pro/doc/) ([Superhive](https://superhivemarket.com/products/auto-rig-pro)) | Paid ($25 Lite / $50 Full) | Fast character rigging, retargeting, skinning helpers, FBX export | Speeds quadruped rigging & animation retarget for [Rig + animation](../../projects/rig-and-animation.md); pair with SL-skeleton export | ◻ |
+| [UVPackmaster](https://uvpackmaster.com/) | Paid (from ~$39) | GPU/CPU high-efficiency UV packing | Squeezes more texture resolution from one SL texture set ([Lesson 6](uv-mapping.md)) — only after packing is a measured bottleneck | ◻ |
+| [Zen UV](https://zenmastersteam.github.io/Zen-UV/latest/) | Paid | Full UV toolkit (marking, unwrap, stacking, texel density) | Faster, more consistent unwraps for [Lesson 6](uv-mapping.md) | ◻ |
+| [SimpleBake](https://superhivemarket.com/products/simplebake---simple-pbr-and-other-baking-in-blender-2) | Paid | One-click PBR + specialist map baking (AO, curvature, ID, etc.) | Streamlines the sculpt→low-poly bakes in [Lesson 7](pbr-materials.md); Blender's built-in bake also works for free | ◻ |
+| [Hard Ops / Boxcutter](https://masterxeon1001.gumroad.com/l/hopscutter) ([site](https://masterxeon1001.com/)) | Paid (bundle) | Best-in-class hard-surface modeling & cutting | Accessories, collars, HUD hardware, mechanical props — not needed for the organic creature itself | ◻ |
+
+---
+
+## Choosing what to install (breedables shortlist)
+
+**Minimum to complete the [Blender Foundations path](index.md):** the built-ins (Node Wrangler, LoopTools, Rigify, glTF, Collada) + free RetopoFlow, Ucupaint, TexTools, Poly Haven. That is a fully free stack.
+
+**Add when producing animated creatures for sale:** **Avastar** (⭐) — the one paid add-on that is hard to replace for SL Animesh.
+
+**Add only if measured pain justifies it:** UVPackmaster / Zen UV (UV throughput), SimpleBake (baking convenience), Auto-Rig Pro (rig speed), Hard Ops/Boxcutter (hard-surface accessories).
+
+---
+
+## Related
+
+- [Blender Foundations path](index.md) · [Tutorial arsenal](../../academy/index.md) · [Wider software index](../../research/software-database.md)
+- [Tools registry](../../research/tool-registry.md) — license/status detail for reviewers
+- [Production line — tool comparison rules](../../research/decision-model.md#writing-a-tool-comparison)
+
+## Videos
+
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/blender/index.md). Titles below stay so you can see what we picked.
+
+
+**Beginner**
+
+**[Blender Bros Hard Ops & Boxcutter Tutorials](https://www.youtube.com/@BlenderBros/videos)** — Beginner-friendly breakdowns of common Hard Ops and Boxcutter operations in Blender.
+
+**[Dikko Hard Ops for Beginners](https://www.youtube.com/@Dikko/videos)** — Clear introductory tutorials covering the Hard Ops UI and essential boolean modeling shortcuts.
+
+**Intermediate**
+
+**[Hard Ops — quick start](https://www.youtube.com/@HardOps)** — Hard-surface modeling add-on for props
+
+**[Hard Ops Official Channel](https://www.youtube.com/@hardops)** — Official source for Hard Ops/Boxcutter updates and workflow demos from the add-on authors.
+
+**[CGDive Hard Surface / Boxcutter Workflow](https://www.youtube.com/@CGDive/videos)** — Focused hard-surface modeling workflows using Boxcutter and Hard Ops in production.
+
+**[Default Cube Hard Ops/Boxcutter Tips](https://www.youtube.com/@DefaultCube/videos)** — Concise tips and workflow tricks for speeding up hard-surface design with Hard Ops add-ons.
+
+**Advanced**
+
+**[Josh Gambrell Hard Surface Workflow](https://www.youtube.com/@JoshGambrell/videos)** — Professional hard-surface workflows that integrate Hard Ops/Boxcutter for game-ready assets.
+
+---

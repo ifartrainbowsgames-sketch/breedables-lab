@@ -1,0 +1,12 @@
+title: Tutorials
+nav:
+  - All tutorials: index.md
+  - Blender: blender
+  - Autodesk Maya: maya.md
+  - ZBrush: zbrush.md
+  - Substance 3D Painter: substance-painter.md
+  - Material Maker: material-maker.md
+  - Ucupaint: ucupaint.md
+  - Krita: krita.md
+  - Second Life: second-life.md
+  - More tools: more-tools.md

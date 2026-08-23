@@ -1,0 +1,8 @@
+title: Studio labs
+nav:
+  - All labs: index.md
+  - Retopology: retopology-project.md
+  - Organic PBR material: organic-pbr-material.md
+  - Layered textures: layered-textures.md
+  - Rig + animation: rig-and-animation.md
+  - In-world fixture: in-world-fixture.md
