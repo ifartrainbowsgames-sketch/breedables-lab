@@ -1,0 +1,11 @@
+# MkDocs build output
+site/
+
+# Docs virtualenv
+.venv-docs/
+
+# Secrets (Librarian also ignores tools/librarian/.env)
+.env
+
+# Python packaging
+*.egg-info/

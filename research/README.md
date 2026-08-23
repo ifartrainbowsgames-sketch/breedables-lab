@@ -10,3 +10,9 @@ Open-source-first discovery and evaluation area.
 Research flow:
 
 Discovery -> License check -> Experiment -> Decision -> Approved tool or Rejected
+
+## Roadmap
+
+Phased plan for daily research, documentation, and open source tooling:
+
+**[docs/studio-roadmap.md](../docs/studio-roadmap.md)**

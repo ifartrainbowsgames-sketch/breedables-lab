@@ -230,16 +230,30 @@ Do not mass-import random search results. The point is a curated registry.
 
 ## What comes next
 
-V1.1 candidates:
+See the full phased plan and recommended open source stack:
+
+**[docs/studio-roadmap.md](../../docs/studio-roadmap.md)**
+
+### Librarian V1.1 (build in-repo)
 
 1. YouTube resource registry and duplicate detection
-2. structured research-request queue for ChatGPT
-3. scheduled link/version checks
+2. Structured research-request queue for ChatGPT
+3. Scheduled link/version checks
 4. GitHub release-watch subscriptions
 5. Slack Canvas sync with review/approval gates
-6. experiment evidence + benchmark records
-7. asset provenance records
-8. weekly compact change report
+6. Experiment evidence + benchmark records
+7. Asset provenance records
+8. Weekly compact change report
+
+### Companion OSS by phase (adopt, don't fork)
+
+| Phase | Focus | Recommended OSS |
+|-------|-------|-----------------|
+| 1 | Readable wiki | [MkDocs Material](https://github.com/squidfunk/mkdocs-material), [Wiki.js](https://github.com/requarks/wiki) |
+| 2 | Schedules + link depth | [linkchecker](https://github.com/linkchecker/linkchecker) |
+| 3 | Cursor / IDE search | [self-docs](https://github.com/AdamRussak/self-doc), [OmniDocs-RAG](https://github.com/ElvinBayramov/OmniDocs-RAG) |
+| 4 | Papers & academy | [ResearchShelf](https://pypi.org/project/researchshelf/), [GROBID](https://github.com/kermitt2/grobid) |
+| 5 | Slack living wiki | [Beever Atlas](https://github.com/Beever-AI/beever-atlas), [Outline](https://github.com/outline/outline) |
 
 ## Security
 

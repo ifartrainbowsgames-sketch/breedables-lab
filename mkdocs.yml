@@ -1,0 +1,72 @@
+site_name: Breedables Lab
+site_description: Open-source-first production studio for Second Life breedables
+site_url: https://ifartrainbowsgames-sketch.github.io/breedables-lab/
+repo_url: https://github.com/ifartrainbowsgames-sketch/breedables-lab
+repo_name: breedables-lab
+edit_uri: edit/feature/studio-librarian-v1/docs/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Roadmap: studio-roadmap.md
+  - Production:
+      - Decision model: production/decision-model.md
+      - Tools:
+          - Overview: production/tools/index.md
+          - Blender: production/tools/blender.md
+          - Material Maker: production/tools/material-maker.md
+          - Ucupaint: production/tools/ucupaint.md
+          - TripoSR: production/tools/triposr.md
+          - RetopoFlow: production/tools/retopoflow.md
+          - Poly Haven: production/tools/poly-haven.md
+          - ambientCG: production/tools/ambientcg.md
+          - Research candidates: production/tools/research-candidates.md
+      - Experiments: production/experiments.md
+      - Promotion rules: production/promotion-rules.md
+  - Second Life: secondlife/platform-baseline.md
+  - Academy: academy/overview.md
+  - Research:
+      - Phase 0 survey: research/phase-0-survey.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ifartrainbowsgames-sketch/breedables-lab
