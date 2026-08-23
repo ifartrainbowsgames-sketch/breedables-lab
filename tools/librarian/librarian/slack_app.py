@@ -7,6 +7,7 @@ from slack_bolt.adapter.socket_mode import SocketModeHandler
 
 from .config import Settings
 from .db import LibrarianDB
+from .wiki_videos import breedwiki_reply, inventory_wiki_videos
 
 
 def _wiki_link(settings: Settings, wiki_path: str | None) -> str | None:
@@ -99,14 +100,25 @@ def build_app(settings: Settings) -> App:
             lines.append(f"• #{item['id']} *{item['name']}*: {', '.join(item['issues'])}{suffix}")
         respond("\n".join(lines))
 
+    @app.command("/breedwiki")
+    def breedwiki(ack, respond, command):
+        ack()
+        query = (command.get("text") or "").strip()
+        inventory = inventory_wiki_videos(settings.repo_root, no_kimi=True)
+        respond(breedwiki_reply(settings.wiki_base_url, query=query, inventory=inventory))
+
     @app.event("app_mention")
     def on_mention(event, say):
         text = re.sub(r"<@[^>]+>", "", event.get("text", "")).strip()
         if not text:
-            say("Try `tool <name>`, `status`, or `gaps`.")
+            say("Try `tool <name>`, `status`, `gaps`, or `wiki`.")
             return
         db = _open_db(settings)
         lowered = text.casefold()
+        if lowered in {"wiki", "videos"}:
+            inventory = inventory_wiki_videos(settings.repo_root, no_kimi=True)
+            say(breedwiki_reply(settings.wiki_base_url, inventory=inventory))
+            return
         if lowered == "status":
             resources = db.list(limit=500)
             with_lesson = sum(1 for r in resources if r.lesson_wiki_path)
@@ -130,7 +142,7 @@ def build_app(settings: Settings) -> App:
         else:
             say(
                 "I link tools to wiki lessons and evidence folders. "
-                f"Try `tool <name>`, `status`, or `gaps`. Full wiki: {settings.wiki_base_url}/"
+                f"Try `tool <name>`, `status`, `gaps`, or `wiki`. Full wiki: {settings.wiki_base_url}/"
             )
 
     return app

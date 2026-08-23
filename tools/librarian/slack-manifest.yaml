@@ -16,6 +16,10 @@ features:
     - command: /breedgaps
       description: Show unresolved registry verification gaps.
       should_escape: false
+    - command: /breedwiki
+      description: Open the Academy curated video library.
+      usage_hint: "[track or title]"
+      should_escape: false
 oauth_config:
   scopes:
     bot:
