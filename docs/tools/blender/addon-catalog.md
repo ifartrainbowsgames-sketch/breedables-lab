@@ -109,6 +109,10 @@ Only adopt a paid add-on when it wins on measured evidence (see the [tool compar
 
 ## Videos
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/blender/index.md). Titles below stay so you can see what we picked.
+
+
 **Beginner**
 
 **[Blender Bros Hard Ops & Boxcutter Tutorials](https://www.youtube.com/@BlenderBros/videos)** — Beginner-friendly breakdowns of common Hard Ops and Boxcutter operations in Blender.

@@ -18,16 +18,16 @@ You can box-model a **clean, all-quad organic creature base** — a quadruped bo
 
 ## Watch
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/blender/index.md). Titles below stay so you can see what we picked.
+
+
 | Topic | Video | Why this one |
 |-------|-------|--------------|
 | Modeling fundamentals | [Blender Guru — Donut series (modeling parts)](https://www.youtube.com/playlist?list=PLjEaoINr3zgEPv5y--4MKpciLaoQYZB1Z) | Teaches extrude/loop-cut/subdivision surface in context |
 | Organic / creature modeling | [Grant Abbitt — YouTube channel](https://www.youtube.com/@grabbitt) | Creature and character base-mesh workflows for beginners |
 
 → Full Blender playlist: [Video library — Blender](../../research/software-database.md)
-
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/nIoXOplUvAw" title="Blender Guru Donut modeling intro" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
 
 ---
 
@@ -123,7 +123,6 @@ Lesson: [Lesson 3 — Mesh modeling for organic creatures](mesh-modeling.md)
 
 **Beginner**
 - **Blender Guru — Donut series** (modeling parts). The canonical first course. [Playlist](https://www.youtube.com/playlist?list=PLjEaoINr3zgEPv5y--4MKpciLaoQYZB1Z)
-- **Blender 4.0 Beginner Tutorial — Part 1** (Blender Foundation). [Video](https://www.youtube.com/watch?v=B0J27sf02NU)
 - **Grant Abbitt** — bite-size modeling fundamentals & low-poly creatures. [Channel](https://www.youtube.com/@grabbitt)
 - Manual — [Mesh modeling](https://docs.blender.org/manual/en/latest/modeling/meshes/index.html) · [Modeling introduction](https://docs.blender.org/manual/en/latest/modeling/introduction.html)
 

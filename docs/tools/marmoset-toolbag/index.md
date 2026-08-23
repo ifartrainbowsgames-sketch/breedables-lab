@@ -50,6 +50,10 @@ Bake normal + AO from sculpt/high to game mesh; turntable render for portfolio c
 
 ## Videos
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/more-tools.md#marmoset-toolbag). Titles below stay so you can see what we picked.
+
+
 **Beginner**
 
 **[Official Marmoset YouTube Channel](https://www.youtube.com/@marmosetco)** — Official video tutorials, release overviews, and workflow tips from Marmoset.

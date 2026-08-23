@@ -38,7 +38,6 @@ Blender bake + paint · [Krita](../krita/index.md) · [Material Maker](../materi
 | Topic | Source | Link |
 |-------|--------|------|
 | Full beginner series | Adobe | [Substance 3D tutorials hub](https://helpx.adobe.com/substance-3d-tutorials.html) |
-| Creature texturing | Community (verify annually) | [Painter — stylized creature skin](https://www.youtube.com/watch?v=0yOKG8G2ae8) |
 | Baking workflow | Adobe docs | [Baking mesh maps](https://helpx.adobe.com/substance-3d-painter/using/baking-mesh-maps.html) |
 
 ## Beginner exercise
@@ -50,11 +49,11 @@ Import low-poly UV’d mesh; bake maps; paint Base Color + Roughness; export PNG
 
 ## Videos
 
-**Beginner**
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/substance-painter.md). Titles below stay so you can see what we picked.
 
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/RQ-hRk0WHJ8" title="FlippedNormals — Substance Painter intro" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+
+**Beginner**
 
 **[FlippedNormals — Substance Painter intro](https://www.youtube.com/watch?v=RQ-hRk0WHJ8)** — Complete Painter UI and layer workflow
 
@@ -72,11 +71,6 @@ Import low-poly UV’d mesh; bake maps; paint Base Color + Roughness; export PNG
 
 **Intermediate**
 
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/0yOKG8G2ae8" title="Creature skin texturing" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[Creature skin texturing](https://www.youtube.com/watch?v=0yOKG8G2ae8)** — Painter creature skin workflow
 
 **[Baking Mesh Maps in Substance 3D Painter](https://helpx.adobe.com/substance-3d-painter.html)** — Proper normal, ambient occlusion, curvature, and thickness bakes are prerequisites for clean smart-material results.
 

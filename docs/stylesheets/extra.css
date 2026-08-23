@@ -117,6 +117,50 @@
   color: var(--md-accent-fg-color);
 }
 
+/* ---------------------------------------------------------------------------
+   Collapsible left navigation
+   Material hides the sidebar only below its desktop breakpoint, so the toggle
+   is shown only where the sidebar would otherwise be permanent.
+   --------------------------------------------------------------------------- */
+
+.wiki-nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  margin: 0 0.2rem;
+  color: currentColor;
+  background: none;
+  border: 0;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+.wiki-nav-toggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+@media screen and (min-width: 76.25em) {
+  .wiki-nav-toggle {
+    display: inline-flex;
+  }
+
+  body.wiki-nav-collapsed .md-sidebar--primary {
+    display: none;
+  }
+}
+
+/* The nav tree is the main way around a wiki this deep, so give it room to
+   breathe and make the active branch obvious. */
+.md-nav__item .md-nav__item .md-nav__link {
+  font-size: 0.72rem;
+}
+
+.md-nav__link--active,
+.md-nav__link--active code {
+  font-weight: 700;
+}
+
 /* Responsive in-wiki YouTube embeds */
 .wiki-video {
   position: relative;
@@ -131,11 +175,44 @@
   border: 1px solid var(--md-default-fg-color--lightest);
 }
 
-.wiki-video iframe {
+.wiki-video iframe,
+.wiki-video video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   border: 0;
+  background: #000;
+}
+
+/* Short silent screen-capture clips streamed from a source repository. They
+   carry no audio and are usually under a minute, so they are presented as
+   figures rather than as full video players with chrome. */
+.wiki-clip {
+  max-width: 720px;
+  margin: 1rem 0 1.5rem;
+}
+
+.wiki-clip video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #000;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.35rem;
+}
+
+.wiki-clip figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.wiki-clip figcaption .wiki-clip__source {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.7rem;
+  opacity: 0.85;
 }

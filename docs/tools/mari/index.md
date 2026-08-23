@@ -47,6 +47,10 @@ Blender + Krita for SL-scale PBR
 
 ## Videos
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/more-tools.md#foundry-mari). Titles below stay so you can see what we picked.
+
+
 **Beginner**
 
 **[Foundry Mari Official Tutorials](https://www.foundry.com/products/mari/tutorials)** — Developer-curated lessons covering the latest Mari tools and standard texturing workflows.

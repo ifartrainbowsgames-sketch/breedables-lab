@@ -19,6 +19,10 @@ You can keyframe an **idle** and a **walk cycle** on your quadruped rig using th
 
 ## Watch
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/blender/index.md). Titles below stay so you can see what we picked.
+
+
 | Topic | Video | Why this one |
 |-------|-------|--------------|
 | Animation fundamentals | [Blender Guru — Donut series (animation part)](https://www.youtube.com/playlist?list=PLjEaoINr3zgEPv5y--4MKpciLaoQYZB1Z) | Keyframes, timeline, and the graph editor in context |

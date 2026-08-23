@@ -22,6 +22,10 @@ ambientCG is a public-domain (CC0) library of PBR materials and reference assets
 
 ## Watch
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/more-tools.md#ambientcg). Titles below stay so you can see what we picked.
+
+
 | Topic | Video | Why this one |
 |---|---|---|
 | PBR texture maps in Blender | [PBR texture maps in Blender](https://www.youtube.com/watch?v=fUZHyoeuwVI) | Demonstrates how to wire color, roughness, metallic, normal and displacement maps in Blender, matching the map sets ambientCG distributes. |

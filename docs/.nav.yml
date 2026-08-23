@@ -4,9 +4,10 @@
 nav:
   - Home:
       - Overview: index.md
-      - pipeline.md
-      - roadmap.md
+      - Production pipeline: pipeline.md
+      - Studio roadmap: roadmap.md
   - academy
+  - tutorials
   - tools
   - projects
   - second-life

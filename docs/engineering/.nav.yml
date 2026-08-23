@@ -1,4 +1,4 @@
-title: Breedables Engineering
+title: Engineering
 nav:
   - Overview: index.md
-  - lsl-engine.md
+  - LSL engine: lsl-engine.md

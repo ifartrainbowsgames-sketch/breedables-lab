@@ -38,8 +38,6 @@ type: software
 | Topic | Source | Link |
 |-------|--------|------|
 | Interface basics | Krita Foundation | [Krita 5 basics playlist](https://www.youtube.com/playlist?list=PL0SmoKE9LH-KqKj6aa-CuSFo-Zi1d3fE) |
-| Hand-painted textures | Nathan Lavigne | [Hand-painted textures in Krita](https://www.youtube.com/watch?v=1v24b1nNBJE) |
-| Seamless textures | GDQuest | [Krita seamless textures](https://www.youtube.com/watch?v=0m8c2g7U3KE) |
 
 ## Beginner exercise
 
@@ -52,19 +50,13 @@ Maintainers: link from [Organic PBR lab](../../projects/organic-pbr-material.md)
 
 ## Videos
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/krita.md). Titles below stay so you can see what we picked.
+
+
 **Beginner**
 
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/1v24b1nNBJE" title="Krita hand-painted textures" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
 
-**[Krita hand-painted textures](https://www.youtube.com/watch?v=1v24b1nNBJE)** — Free 2D paint finish on exported maps
-
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/nH8N1V1kJZQ" title="Krita — texture painting for 3D" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[Krita — texture painting for 3D](https://www.youtube.com/watch?v=nH8N1V1kJZQ)** — Hand-painted detail layers
 
 **[Krita Foundation Official Channel](https://www.youtube.com/@KritaFoundation)** — Official source for Krita feature overviews, release guides, and beginner-friendly introductions.
 

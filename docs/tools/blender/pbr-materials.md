@@ -19,11 +19,13 @@ You can build a **metallic/roughness PBR material**, bake your B04 sculpt detail
 
 ## Watch
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/blender/index.md). Titles below stay so you can see what we picked.
+
+
 | Topic | Video | Why this one |
 |-------|-------|--------------|
-| Blender shader/PBR basics | [PBR Texturing in Blender (Ryan King Art)](https://www.youtube.com/watch?v=4_xYiw1nL5M) | Practical metallic/roughness node setup |
 | Shader node fundamentals | [Ryan King Art — YouTube channel](https://www.youtube.com/@RyanKingArt) | Deep, topic-by-topic node tutorials (see the [tutorial arsenal](#shader-nodes)) |
-| Procedural PBR alternative | [Material Maker intro](https://www.youtube.com/watch?v=8MMSS2F5vtc) | Procedural generators for skin/fur variants |
 
 ---
 
@@ -127,12 +129,10 @@ This is the visible product. Correct metallic/roughness authoring is the differe
 Lesson: [Lesson 7 — Texture painting & PBR materials](pbr-materials.md) · Tracks: [Organic PBR material](../../projects/organic-pbr-material.md)/[Layered textures](../../projects/layered-textures.md)
 
 **Beginner**
-- **PBR Texturing in Blender** (Ryan King Art) — metallic/roughness setup. [Video](https://www.youtube.com/watch?v=4_xYiw1nL5M)
 - **Grant Abbitt** — texture painting fundamentals. [Channel](https://www.youtube.com/@grabbitt)
 - Manual — [Texture painting](https://docs.blender.org/manual/en/latest/sculpt_paint/texture_paint/index.html) · [Baking](https://docs.blender.org/manual/en/latest/render/cycles/baking.html)
 
 **Intermediate**
-- **Material Maker intro** — procedural PBR generators for skin/fur variants. [Video](https://www.youtube.com/watch?v=8MMSS2F5vtc) · [Material Maker](https://www.materialmaker.org/)
 - Tool: [Ucupaint](https://github.com/ucupumar/ucupaint) (layer painting) — [registry](../ucupaint/index.md)
 
 ### Advanced / SL-specific

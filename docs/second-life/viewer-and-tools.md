@@ -35,7 +35,6 @@ type: topic
 
 | Topic | Source | Link |
 |-------|--------|------|
-| Mesh upload basics | Gaia Clift | [SL mesh upload tutorial](https://www.youtube.com/watch?v=uZ5KyLvivkw) |
 | PBR materials in SL | Community | Search [tutorial arsenal](../academy/index.md) for pinned SL PBR walkthrough |
 | Animesh overview | Linden Lab / community | [Animesh wiki](https://wiki.secondlife.com/wiki/Animesh) + arsenal |
 
@@ -56,13 +55,12 @@ Upload a **test prim** with PBR material from lesson 7; photograph in-world; not
 
 ## Videos
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../tutorials/second-life.md). Titles below stay so you can see what we picked.
+
+
 **Beginner**
 
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/uZ5KyLvivkw" title="Gaia Clift — mesh upload" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[Gaia Clift — mesh upload](https://www.youtube.com/watch?v=uZ5KyLvivkw)** — SL mesh upload walkthrough
 
 **[Second Life — Animesh User Guide](https://wiki.secondlife.com/wiki/Animesh_User_Guide)** — Animated creature delivery target
 

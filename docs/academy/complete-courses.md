@@ -5,7 +5,8 @@ type: reference
 ---
 # Complete workflow courses
 
-Full **start-to-finish** courses — not fragment playlists. See also [training videos by stage](index.md).
+Full **start-to-finish** courses — not fragment playlists. Playable videos are
+collected under [Tutorials](../tutorials/index.md).
 
 ---
 

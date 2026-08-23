@@ -19,16 +19,16 @@ You can build a **clean low-poly mesh** over your high-detail sculpt with animat
 
 ## Watch
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/blender/index.md). Titles below stay so you can see what we picked.
+
+
 | Topic | Video | Why this one |
 |-------|-------|--------------|
 | Manual retopology | [Grant Abbitt — YouTube channel](https://www.youtube.com/@grabbitt) | Clear beginner retopo-over-sculpt walkthroughs |
 | Retopology in context | [Blender Guru — YouTube](https://www.youtube.com/@BlenderOfficial) *(also see [Blender official](https://www.youtube.com/@BlenderOfficial))* | Broader modeling context |
 
 → [Video library — retopo & all software](../../research/software-database.md)
-
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/h6E9N10rN5s" title="Royal Skies Blender retopology beginner" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
 
 ---
 

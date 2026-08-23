@@ -37,7 +37,6 @@ Blender cloth simulation + manual modeling
 | Topic | Source | Link |
 |-------|--------|------|
 | Beginner intro | Marvelous Designer | [Getting started — official channel](https://www.youtube.com/user/MarvelousDesigner) |
-| Export to Blender/Maya | Community | [MD to Blender workflow](https://www.youtube.com/watch?v=GvH98j4TqXM) |
 
 ## Beginner exercise
 
@@ -47,15 +46,14 @@ Simulate a simple **collar or blanket** for a quadruped; export mesh to Blender 
 
 ## Videos
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/more-tools.md#marvelous-designer). Titles below stay so you can see what we picked.
+
+
 **Beginner**
 
 **[Marvelous Designer official channel](https://www.youtube.com/user/MarvelousDesigner)** — Cloth simulation for collars and garments
 
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/mJ8vF7ZJ8ZQ" title="Marvelous Designer — beginner garment" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[Marvelous Designer — beginner garment](https://www.youtube.com/watch?v=mJ8vF7ZJ8ZQ)** — First cloth sim workflow
 
 **[Marvelous Designer Official YouTube Channel](https://www.youtube.com/@MarvelousDesigner)** — Official video library covering the latest features, beginner workflows, and feature announcements.
 

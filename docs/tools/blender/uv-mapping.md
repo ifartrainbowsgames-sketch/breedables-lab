@@ -19,6 +19,10 @@ You can **unwrap** your low-poly creature with well-placed seams and a packed, e
 
 ## Watch
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/blender/index.md). Titles below stay so you can see what we picked.
+
+
 | Topic | Video | Why this one |
 |-------|-------|--------------|
 | UV unwrapping fundamentals | [Grant Abbitt — YouTube channel](https://www.youtube.com/@grabbitt) | Beginner-friendly seam + unwrap explainers |

@@ -19,6 +19,10 @@ You can export your creature from Blender and **upload it into Second Life** wit
 
 ## Watch
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/second-life.md). Titles below stay so you can see what we picked.
+
+
 | Topic | Video | Why this one |
 |-------|-------|--------------|
 | SL mesh upload workflow | [Second Life official — YouTube](https://www.youtube.com/@SecondLife) | Official channel; SL upload UI changes, prefer current SL/Firestorm walkthroughs |

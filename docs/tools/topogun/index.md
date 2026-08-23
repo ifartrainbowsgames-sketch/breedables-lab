@@ -31,7 +31,6 @@ type: software
 | Official tutorials | TopoGun video tutorials | [topogun.com/tutorials](https://www.topogun.com/tutorials/) |
 | Documentation | Manual PDF / help | [topogun.com/documentation](https://www.topogun.com/documentation/) |
 | YouTube (official) | TopoGun | [TopoGun YouTube](https://www.topogun.com/) |
-| Workflow video | Retopo from ZBrush | [TopoGun 3 retopo workflow](https://www.youtube.com/watch?v=wg8S4n5lGQ8) |
 
 ## What pros use it for
 
@@ -45,6 +44,10 @@ Retopo a simple sculpt; compare time/quality vs Blender lesson 5.
 
 ## Videos
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/more-tools.md#topogun). Titles below stay so you can see what we picked.
+
+
 **Beginner**
 
 **[TopoGun Official YouTube Channel](https://www.youtube.com/@topogun)** — Official feature overviews, release notes, and workflow demonstrations straight from the TopoGun developers.
@@ -55,11 +58,6 @@ Retopo a simple sculpt; compare time/quality vs Blender lesson 5.
 
 **Intermediate**
 
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/wg8S4n5lGQ8" title="TopoGun 3 workflow" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[TopoGun 3 workflow](https://www.youtube.com/watch?v=wg8S4n5lGQ8)** — Standalone professional retopo tool
 
 **[TopoGun official channel](https://www.youtube.com/user/TopoGun)** — Official retopo walkthroughs
 

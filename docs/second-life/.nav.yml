@@ -1,7 +1,6 @@
-title: Second Life Production
-# Exporting from Blender is Blender's lesson 10, so it lives in tools/blender/.
+title: Second Life
 nav:
   - Overview: index.md
-  - platform-baseline.md
-  - adapting-professional-work.md
-  - viewer-and-tools.md
+  - Platform baseline: platform-baseline.md
+  - Adapting professional work: adapting-professional-work.md
+  - Viewer & creator tools: viewer-and-tools.md

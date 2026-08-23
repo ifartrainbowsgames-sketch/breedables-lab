@@ -38,7 +38,6 @@ Blockout · UV · Quad Draw retopo · rig · animation — [map](../../pipeline.
 | Topic | Source | Link |
 |-------|--------|------|
 | Modeling basics | Autodesk | [Quick Start — Modeling](https://www.autodesk.com/learn/ondemand/collection/maya-quick-start) (filter modules) |
-| Quad Draw retopo | FlippedNormals | [Maya Quad Draw retopology](https://www.youtube.com/watch?v=7T_yQ62jMTY) |
 | UV workflow | Autodesk | Modules in Quick Start collection |
 | Rigging intro | Maya Learning Channel | [Maya rigging playlist](https://www.youtube.com/playlist?list=PLD8E571C962DA2F46) |
 
@@ -49,6 +48,10 @@ Follow Autodesk Quick Start **modeling + UV** modules; export FBX to compare wit
 **Artifact:** `training/references/maya-comparison/` — notes on pro vs Blender UX (optional track for job seekers).
 
 ## Videos
+
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/maya.md). Titles below stay so you can see what we picked.
+
 
 **Beginner**
 
@@ -62,17 +65,7 @@ Follow Autodesk Quick Start **modeling + UV** modules; export FBX to compare wit
 
 **Intermediate**
 
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/7T_yQ62jMTY" title="FlippedNormals — Quad Draw retopo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
 
-**[FlippedNormals — Quad Draw retopo](https://www.youtube.com/watch?v=7T_yQ62jMTY)** — Industry retopo with Quad Draw
-
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/W6XdpDOHJaE" title="Maya UV layout basics" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[Maya UV layout basics](https://www.youtube.com/watch?v=W6XdpDOHJaE)** — Professional UV workflow reference
 
 **[Arnold Look Development: Shaders, Lighting and Rendering](https://www.autodesk.com/products/maya/features/rendering-look-development)** — Arnold integration lets you validate creature surfacing before exporting to engines.
 

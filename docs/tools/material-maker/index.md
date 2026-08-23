@@ -45,7 +45,6 @@ Material Maker generates maps; it does not apply them. Learn the Blender side fi
 | Node reference | [200+ nodes](https://github.com/RodZill4/material-maker/wiki) |
 | Export to Blender | [Exporting materials](https://github.com/RodZill4/material-maker/wiki) |
 | Author's channel | [@RodZill4](https://www.youtube.com/@RodZill4) |
-| Intro video | [Material Maker intro](https://www.youtube.com/watch?v=8MMSS2F5vtc) |
 
 ## Exercise
 
@@ -63,13 +62,12 @@ material verified in EEVEE *and* in-world.
 
 ## Videos
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/material-maker.md). Titles below stay so you can see what we picked.
+
+
 **Beginner**
 
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/8MMSS2F5vtc" title="Material Maker intro" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[Material Maker intro](https://www.youtube.com/watch?v=8MMSS2F5vtc)** — OSS procedural PBR for breedable variants
 
 **[Material Maker Official Website](https://material-maker.app/)** — Official hub for downloading Material Maker, browsing docs, and finding community resources for procedural texture creation.
 
@@ -81,11 +79,6 @@ material verified in EEVEE *and* in-world.
 
 **Intermediate**
 
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/Vv9bKJ8KJ0Q" title="Material Maker — node basics" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[Material Maker — node basics](https://www.youtube.com/watch?v=Vv9bKJ8KJ0Q)** — Procedural material graph depth
 
 **[Material Maker GitHub Repository](https://github.com/RodZill4/material-maker)** — Source code, issue tracker, and bundled example materials for users who want to customize or extend the tool.
 

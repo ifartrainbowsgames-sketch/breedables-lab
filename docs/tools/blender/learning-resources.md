@@ -7,7 +7,7 @@ type: topic
 
 !!! info "About this page"
     **Canonical home** — open-source Blender curricula, curated indexes and practice files  
-    **Watch here** — videos play in the wiki; nothing needs downloading  
+    **Watch** — players live in [Tutorials](../../tutorials/blender/index.md); nothing is downloaded  
     **Courses** — long-form paths live in [complete workflow courses](../../academy/complete-courses.md)
 
 Community-maintained lists, open-licensed curricula and repositories of practice
@@ -17,19 +17,12 @@ commercial breedable.
 
 ## Watch in the wiki
 
-The Blender Guru donut series is the standard zero-to-competent introduction.
-It plays here — no download, no account.
+Players are collected under [Tutorials](../../tutorials/index.md), not copied
+into this repository.
 
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLjEaoINr3zgEPv5y--4MKpciLaoQYZB1Z" title="Blender Guru — donut series playlist" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/B0J27sf02NU" title="Blender Foundation — beginner tutorial part 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-More embedded players sit on the tool pages themselves — see
-[Blender](index.md#videos) and the [software database](../../research/software-database.md).
+- [Blender tutorials](../../tutorials/blender/index.md) — donut series and channels
+- [GitHub screen clips](../../tutorials/blender/github-clips.md) — 21 `.webm` lessons streamed from the modeling-course repo
+- [Complete workflow courses](../../academy/complete-courses.md) — start-to-finish paths
 
 ## Curated indexes
 

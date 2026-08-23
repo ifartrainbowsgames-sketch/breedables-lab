@@ -18,6 +18,10 @@ You can navigate the 3D viewport, select and transform objects, switch between t
 
 ## Watch
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/blender/index.md). Titles below stay so you can see what we picked.
+
+
 | Topic | Video | Why this one |
 |-------|-------|--------------|
 | Interface + navigation | [Blender Guru — Donut series (Parts 1–2)](https://www.youtube.com/playlist?list=PLjEaoINr3zgEPv5y--4MKpciLaoQYZB1Z) | Walks through viewport navigation and the interface hands-on |

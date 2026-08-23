@@ -20,6 +20,10 @@ Poly Haven is a public library of CC0 HDRIs, PBR textures, and 3D models maintai
 
 ## Watch
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/more-tools.md#poly-haven). Titles below stay so you can see what we picked.
+
+
 | Topic | Video | Why this one |
 |---|---|---|
 | Blender add-on | [Poly Haven Blender add-on](https://www.youtube.com/watch?v=ku_xv6WV6UE) | Demonstrates the one-click HDRI and material import workflow that matches the lab's Blender pipeline. |

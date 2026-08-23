@@ -37,16 +37,24 @@ theme:
         name: Light mode
   features:
     # navigation
-    - navigation.tabs
-    - navigation.tabs.sticky   # top-level tabs stay visible while scrolling
-    - navigation.sections
+    #
+    # NOTE: navigation.tabs is deliberately OFF. With tabs, top-level sections
+    # move into a bar above the page and the left sidebar shows only the tab you
+    # are already inside — so you cannot see Tools while reading Academy, and
+    # moving between them costs a round trip through the tab bar. Without tabs
+    # every section is present in one collapsible tree on the left.
+    #
+    # navigation.sections is OFF for the same reason: it flattens top-level
+    # groups into always-open headings, which is what makes a deep wiki
+    # unscrollable. Collapsible is the point.
     - navigation.indexes       # section landing pages instead of dead folders
     - navigation.instant
     - navigation.tracking
     - navigation.top
     - navigation.footer        # prev / next links — always an obvious next step
-    # NOTE: navigation.expand deliberately OFF. This wiki has ~90 pages; expanding
-    # every section produces a sidebar too long to scan.
+    # NOTE: navigation.expand deliberately OFF. This wiki has ~100 pages;
+    # expanding every section produces a sidebar too long to scan. The reader
+    # opens the branch they want, and it stays open.
     # search
     - search.suggest
     - search.highlight
@@ -135,6 +143,7 @@ extra_css:
 
 extra_javascript:
   - javascripts/wiki-quicknav.js
+  - javascripts/wiki-sidebar.js
 
 extra:
   social:

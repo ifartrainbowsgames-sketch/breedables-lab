@@ -72,76 +72,22 @@ Bundled add-ons such as Rigify are part of the baseline — see the
 
 ## Videos
 
-**Beginner**
+Players live on **[Blender tutorials](../../tutorials/blender/index.md)**. Screen
+clips stored on GitHub play from
+**[GitHub screen clips](../../tutorials/blender/github-clips.md)** — nothing is
+downloaded into this repository.
 
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/B0J27sf02NU" title="Blender 4.0 Beginner Tutorial — Part 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+The titles below stay so you can see what we picked, and jump to the channel
+when a single video is gone.
 
-**[Blender 4.0 Beginner Tutorial — Part 1](https://www.youtube.com/watch?v=B0J27sf02NU)** — Official Blender Foundation intro to interface and basics
-
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/nIoXOplUvAw" title="Blender Guru — Donut (modeling)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[Blender Guru — Donut (modeling)](https://www.youtube.com/watch?v=nIoXOplUvAw)** — Canonical beginner modeling series
-
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/lP3G5jADgYo" title="Grant Abbitt — low-poly character" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[Grant Abbitt — low-poly character](https://www.youtube.com/watch?v=lP3G5jADgYo)** — Game-ready creature/character base mesh
-
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/KeL21Eap1hE" title="Grant Abbitt — sculpting for beginners" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[Grant Abbitt — sculpting for beginners](https://www.youtube.com/watch?v=KeL21Eap1hE)** — Organic sculpt fundamentals before retopo
-
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/h6E9N10rN5s" title="Royal Skies — retopology beginner" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[Royal Skies — retopology beginner](https://www.youtube.com/watch?v=h6E9N10rN5s)** — Manual retopo over high-poly sculpt
-
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/mLuhL_vgGUE" title="Blender Official — UV basics" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[Blender Official — UV basics](https://www.youtube.com/watch?v=mLuhL_vgGUE)** — UV unwrapping fundamentals
-
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/2XXH8M25sNM" title="Blender — weight painting basics" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[Blender — weight painting basics](https://www.youtube.com/watch?v=2XXH8M25sNM)** — Deformation cleanup after auto weights
-
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/u6Q6LNDLJNQ" title="Blender — animation fundamentals" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[Blender — animation fundamentals](https://www.youtube.com/watch?v=u6Q6LNDLJNQ)** — Keyframe loops for idle/walk cycles
-
-**[Blender Official YouTube](https://www.youtube.com/@BlenderOfficial)** — Official feature overviews and release highlights
-
-**[Grant Abbitt channel](https://www.youtube.com/@GrantAbbitt)** — Low-poly and game asset tutorials
-
-**[Grant Abbitt — low-poly creatures](https://www.youtube.com/@grabbitt)** — Creature base meshes
-
-**Intermediate**
-
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/4_xYiw1nL5M" title="Ryan King Art — PBR texturing" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[Ryan King Art — PBR texturing](https://www.youtube.com/watch?v=4_xYiw1nL5M)** — Metallic/roughness workflow for game/SL assets
-
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/6Km2tRFTxvs" title="Darkfall — quadruped rigging intro" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[Darkfall — quadruped rigging intro](https://www.youtube.com/watch?v=6Km2tRFTxvs)** — Creature rig for breedables
-
-**[FlippedNormals — Blender creature workflow](https://www.youtube.com/@FlippedNormals)** — Industry creature modeling content
+| Title | Lives on |
+|-------|----------|
+| Blender Guru donut series | [Tutorials](../../tutorials/blender/index.md) |
+| Geometry Nodes (Default Cube) | [Tutorials](../../tutorials/blender/index.md) |
+| GitHub viewport clips | [GitHub screen clips](../../tutorials/blender/github-clips.md) |
+| [@BlenderOfficial](https://www.youtube.com/@BlenderOfficial) | Official releases |
+| [@grabbitt](https://www.youtube.com/@grabbitt) | Game-asset and creature work |
+| [@RyanKingArt](https://www.youtube.com/@RyanKingArt) | Shader and PBR |
+| [@FlippedNormals](https://www.youtube.com/@FlippedNormals) | Industry creature workflow |
 
 ---

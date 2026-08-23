@@ -47,6 +47,7 @@ in committed evidence rather than a watched video.
 | [Production pipeline](../pipeline.md) | The full professional sequence, stage by stage |
 | [Roles in production](roles.md) | Who does what: modeller, texture artist, rigger, animator |
 | [Complete workflow courses](complete-courses.md) | Long-form external courses covering an entire pipeline |
+| [Tutorials](../tutorials/index.md) | Every collected video, playable in one place |
 
 ## What the Academy is
 

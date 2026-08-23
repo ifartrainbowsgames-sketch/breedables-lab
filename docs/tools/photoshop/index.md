@@ -37,7 +37,6 @@ type: software
 | Topic | Source | Link |
 |-------|--------|------|
 | Layers & masks basics | Adobe | [Get to know layers](https://helpx.adobe.com/photoshop/using/layers.html) |
-| Hand-painted texture | Community | [Hand-painted texture basics](https://www.youtube.com/watch?v=1L5835aY0eA) |
 
 ## Beginner exercise
 
@@ -46,6 +45,10 @@ Paint a **decal or alpha mask** for a breedable skin variant; export PNG for Ble
 **Artifact:** `training/references/photoshop-comparison/` (optional)
 
 ## Videos
+
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/more-tools.md#adobe-photoshop). Titles below stay so you can see what we picked.
+
 
 **Beginner**
 

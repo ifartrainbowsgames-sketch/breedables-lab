@@ -19,6 +19,10 @@ You can build a **quadruped armature**, skin the creature to it, and paint clean
 
 ## Watch
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/blender/index.md). Titles below stay so you can see what we picked.
+
+
 | Topic | Video | Why this one |
 |-------|-------|--------------|
 | Rigging fundamentals | [Grant Abbitt — YouTube channel](https://www.youtube.com/@grabbitt) | Beginner rigging + weight painting for game characters |

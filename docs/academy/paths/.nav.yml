@@ -1,8 +1,8 @@
 title: Paths
 nav:
-  - blender-foundations.md
-  - 3d-model-artist.md
-  - texture-artist.md
-  - rigging-animation.md
-  - second-life-creator.md
-  - breedables-engineer.md
+  - Blender foundations: blender-foundations.md
+  - 3D model artist: 3d-model-artist.md
+  - Texture artist: texture-artist.md
+  - Rigging & animation: rigging-animation.md
+  - Second Life creator: second-life-creator.md
+  - Breedables engineer: breedables-engineer.md

@@ -26,6 +26,10 @@ Ucupaint is an open-source Blender add-on for non-destructive, layer-based textu
 
 ## Watch
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/ucupaint.md). Titles below stay so you can see what we picked.
+
+
 | Topic | Video | Why this one |
 |---|---|---|
 | Ucupaint workflow | [Ucupaint — layered PBR in Blender](https://www.youtube.com/watch?v=d3KrMwAWJI0) | Primary reference for the Substance-like layer workflow inside Blender. |

@@ -36,6 +36,9 @@ Strong benchmark tool; complete commercial-type and asset audit before studio ap
 
 ## Evidence
 
+!!! tip "Play it in Tutorials"
+    The player lives on [More tool tutorials — RetopoFlow](../../tutorials/more-tools.md#retopoflow).
+
 | Field | Link |
 |-------|------|
 | Primary video | [RetopoFlow 4 setup](https://www.youtube.com/watch?v=Ds5Soybs610) |

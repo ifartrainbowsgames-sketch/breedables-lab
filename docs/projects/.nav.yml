@@ -1,9 +1,8 @@
 title: Studio labs
-# Roughly pipeline order: geometry, then surface, then motion, then in-world.
 nav:
-  - Overview: index.md
-  - retopology-project.md
-  - organic-pbr-material.md
-  - layered-textures.md
-  - rig-and-animation.md
-  - in-world-fixture.md
+  - All labs: index.md
+  - Retopology: retopology-project.md
+  - Organic PBR material: organic-pbr-material.md
+  - Layered textures: layered-textures.md
+  - Rig + animation: rig-and-animation.md
+  - In-world fixture: in-world-fixture.md

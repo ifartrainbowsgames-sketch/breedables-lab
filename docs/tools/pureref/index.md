@@ -35,7 +35,6 @@ Same app on personal tier · simple folder/image boards in OS or Blender image e
 | Official handbook | User guide | [pureref.com/handbook](https://www.pureref.com/handbook/) |
 | Official blog / updates | PureRef 2.1 features | [Blog](https://www.pureref.com/blog/) |
 | Video (official channel) | PureRef on YouTube | [YouTube — PureRef](https://www.youtube.com/@PureRef) |
-| Community intro | Reference board workflow (verified 2026) | [FlippedNormals — PureRef intro](https://www.youtube.com/watch?v=9YQTXN9nT0E) |
 
 ## Beginner exercise
 
@@ -52,13 +51,12 @@ Same app on personal tier · simple folder/image boards in OS or Blender image e
 
 ## Videos
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/more-tools.md#pureref). Titles below stay so you can see what we picked.
+
+
 **Beginner**
 
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/9YQTXN9nT0E" title="PureRef intro workflow" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[PureRef intro workflow](https://www.youtube.com/watch?v=9YQTXN9nT0E)** — Reference board setup for creature design
 
 **[PureRef — reference gathering tips](https://www.pureref.com/faq)** — Official workflow and hotkeys
 

@@ -20,10 +20,13 @@ Watching alone is not completion — you commit a configured startup `.blend` an
 
 ## Watch
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/blender/index.md). Titles below stay so you can see what we picked.
+
+
 | Topic | Video | Why this one |
 |-------|-------|--------------|
 | Blender beginner series (install + basics) | [Blender Guru — Donut series (Part 1)](https://www.youtube.com/playlist?list=PLjEaoINr3zgEPv5y--4MKpciLaoQYZB1Z) | The standard zero-to-competent intro; Part 1 covers install and first launch |
-| Official beginner intro | [Blender 4.0 Beginner Tutorial — Part 1](https://www.youtube.com/watch?v=B0J27sf02NU) | Blender Foundation channel; stable overview of install and interface |
 
 ---
 

@@ -38,8 +38,6 @@ type: software
 | Topic | Source | Link |
 |-------|--------|------|
 | First creature (official) | Maxon Getting Started | [Getting Started path](https://www.maxon.net/en/zbrush) — creature tutorial module |
-| Creature head sculpt | Pixologic legacy / community | [ZBrush creature head (FlippedNormals)](https://www.youtube.com/watch?v=UdT6ekB_IAE) |
-| Dynamesh basics | ZBrush Guides | [Dynamesh intro](https://www.youtube.com/watch?v=8jop8MAPLnA) |
 
 ## Beginner exercise
 
@@ -50,17 +48,16 @@ Sculpt a creature **head** from PureRef board; export decimated mesh for retopo 
 
 ## Videos
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/zbrush.md). Titles below stay so you can see what we picked.
+
+
 **Beginner**
 
 **[Pixologic ZBrush Official YouTube](https://www.youtube.com/@PixologicZBrush)** — Official sculpting techniques and updates
 
 **[Maxon ZClassroom](https://zclassroom.com/)** — Official ZBrush training library
 
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/YQ1x9k0Y8XQ" title="ZBrush — dynamesh creature blockout" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[ZBrush — dynamesh creature blockout](https://www.youtube.com/watch?v=YQ1x9k0Y8XQ)** — Fast organic blockout before retopo
 
 **[Maxon ZBrush Official Learning Hub](https://www.maxon.net/en/zbrush)** — Official hub for ZBrush documentation, feature overviews, and guided learning paths.
 
@@ -74,11 +71,6 @@ Sculpt a creature **head** from PureRef board; export decimated mesh for retopo 
 
 **Intermediate**
 
-<div class="wiki-video" markdown="0">
-<iframe src="https://www.youtube-nocookie.com/embed/UdT6ekB_IAE" title="FlippedNormals — creature head sculpt" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-**[FlippedNormals — creature head sculpt](https://www.youtube.com/watch?v=UdT6ekB_IAE)** — ZBrush creature workflow
 
 **[Michael Pavlovich ZBrush Workflow Tutorials](https://www.youtube.com/@MichaelPavlovich)** — Deep-dive tool explanations and project workflows from a veteran ZBrush artist.
 

@@ -26,12 +26,14 @@ Search anything with <kbd>Ctrl</kbd>+<kbd>K</kbd>. New here? Start with the
 | Want to know what to learn next | [Academy](academy/index.md) |
 | Need to ship something in-world | [Second Life Production](second-life/index.md) |
 | Are picking a tool | [Tools](tools/index.md) |
+| Want to watch a tutorial | [Tutorials](tutorials/index.md) |
 
 ## The sections
 
 | Section | Answers |
 |---------|---------|
 | [Academy](academy/index.md) | What should I learn next? |
+| [Tutorials](tutorials/index.md) | Where do I watch, without leaving the wiki? |
 | [Tools](tools/index.md) | Which tool do I use, and how do I learn it? |
 | [Studio labs](projects/index.md) | What do I build to prove I can do it? |
 | [Second Life Production](second-life/index.md) | How do I get the finished asset into Second Life correctly? |

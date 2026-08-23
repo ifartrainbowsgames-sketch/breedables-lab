@@ -18,6 +18,10 @@ You can take the creature base from B03 and add **organic form and surface detai
 
 ## Watch
 
+!!! tip "Play it in Tutorials"
+    The player lives on [Tutorials](../../tutorials/blender/index.md). Titles below stay so you can see what we picked.
+
+
 | Topic | Video | Why this one |
 |-------|-------|--------------|
 | Sculpting introduction | [Grant Abbitt — YouTube channel](https://www.youtube.com/@grabbitt) | Grant's beginner sculpting explainers are the clearest for game/creature work |

@@ -2,6 +2,6 @@ title: Academy
 nav:
   - Start here: index.md
   - Paths: paths
-  - complete-projects.md
-  - complete-courses.md
-  - roles.md
+  - The five labs: complete-projects.md
+  - Full courses: complete-courses.md
+  - Studio roles: roles.md
