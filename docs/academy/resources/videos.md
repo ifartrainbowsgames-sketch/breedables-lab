@@ -8,6 +8,7 @@ When adding a video:
 2. Add tool version / date reviewed
 3. Prefer official channels or long-standing tutorials
 4. Run `/breedtool <name>` after updating Librarian `primary_video_url`
+5. Slack `/breedwiki` should keep linking here — do not paste long video lists into channels
 
 ---
 
@@ -69,4 +70,5 @@ Lesson: [A05 SL Creature Fixture](../tracks/a05-sl-fixture.md)
 cd tools/librarian
 python -m librarian.cli set-evidence <id> --video "https://..." --docs "https://...,https://..."
 python -m librarian.cli content-gaps
+python -m librarian.cli wiki-videos --no-kimi
 ```

@@ -28,8 +28,8 @@ The Librarian must never decide that a workflow is commercially safe from one li
 - separate fields for code/model/assets/output/dependency risk
 - CLI
 - Slack Bolt app with Socket Mode
-- `/breedtool`, `/breedstatus`, `/breedgaps`
-- app mentions: `tool <name>`, `status`, `gaps`
+- `/breedtool`, `/breedstatus`, `/breedgaps`, `/breedwiki`
+- app mentions: `tool <name>`, `status`, `gaps`, `wiki`
 - pytest coverage for normalization and dedupe
 
 ## Install
@@ -130,6 +130,12 @@ python -m librarian.cli discover-github "blender retopology"
 python -m librarian.cli discover-github "second life lsl breedable" --limit 20
 ```
 
+Count curated Academy wiki videos (no Kimi enrichment):
+
+```bash
+python -m librarian.cli wiki-videos --no-kimi
+```
+
 Ingest an RSS or Atom feed:
 
 ```bash
@@ -198,6 +204,7 @@ Enable **Socket Mode**, generate an app-level token with `connections:write`, an
 - `/breedtool`
 - `/breedstatus`
 - `/breedgaps`
+- `/breedwiki` (Academy video library)
 
 Set:
 

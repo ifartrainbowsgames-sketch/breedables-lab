@@ -4,6 +4,7 @@ import argparse
 import json
 import sys
 from datetime import datetime, timezone
+from pathlib import Path
 
 from .checks import check_resource
 from .config import Settings
@@ -11,6 +12,7 @@ from .db import LibrarianDB
 from .ingest import github_search, ingest_feed
 from .seed import seed_baseline
 from .academy_manifest import academy_content_gaps
+from .wiki_videos import inventory_wiki_videos
 
 
 def _db() -> tuple[LibrarianDB, Settings]:
@@ -172,6 +174,13 @@ def cmd_ingest_feed(args) -> int:
     return 0
 
 
+def cmd_wiki_videos(args) -> int:
+    settings = Settings.from_env()
+    repo_root = args.repo_root or settings.repo_root
+    print(json.dumps(inventory_wiki_videos(repo_root, no_kimi=args.no_kimi), indent=2))
+    return 0
+
+
 def cmd_discover_github(args) -> int:
     db, settings = _db()
     result = github_search(
@@ -272,6 +281,15 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--category", default="github-discovery")
     p.add_argument("--limit", type=int, default=10)
     p.set_defaults(func=cmd_discover_github)
+
+    p = sub.add_parser("wiki-videos", help="Inventory curated Academy wiki videos.")
+    p.add_argument(
+        "--no-kimi",
+        action="store_true",
+        help="Skip Kimi enrichment and count wiki-index videos only.",
+    )
+    p.add_argument("--repo-root", type=Path, help="Repository root override.")
+    p.set_defaults(func=cmd_wiki_videos)
 
     return parser
 

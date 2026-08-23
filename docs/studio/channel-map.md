@@ -54,7 +54,7 @@ From your workspace **Agents & apps** sidebar:
 
 | Channel / App | Function (today) | Supposed to do | Status |
 |---------------|------------------|----------------|--------|
-| **Breedables Librarian** | Slash commands in channels: `/breedstatus`, `/breedtool`, `/breedgaps` | **Registry lookup only** — tool facts, gaps, status counts; later link to wiki lessons | `LIVE` |
+| **Breedables Librarian** | Slash commands in channels: `/breedstatus`, `/breedtool`, `/breedgaps`, `/breedwiki` | **Registry lookup + wiki links** — tool facts, gaps, status counts, and the Academy video library | `LIVE` |
 | **ChatGPT** | External AI chat (Slack app) | **Deep research & synthesis** — comparisons, license interpretation, draft lesson text; output → research reports | `PARTIAL` |
 | **Claude** | External AI chat (Slack app) | Architecture review, implementation plans, code review; not source of truth | `PARTIAL` |
 | **Cursor** | IDE agent integration | Implementation, repo edits, runs Librarian locally; connects to wiki via git | `PARTIAL` |
@@ -70,7 +70,8 @@ These are **interaction channels** into the SQLite registry:
 | `/breedstatus` | Count tools by workflow status | Same + link to wiki registry page | `LIVE` |
 | `/breedtool <query>` | Search tool records | Same + link to **Academy lesson** that uses the tool | `LIVE` / `WRONG SHAPE` |
 | `/breedgaps` | List approval/license gaps | Split: **registry gaps** vs **content gaps** (missing videos/labs) | `WRONG SHAPE` |
-| `@Breedables Librarian tool/status/gaps` | App mention text commands | Optional; same as slash commands | `LIVE` |
+| `/breedwiki [query]` | Link to the Academy video library | Same + optional title/track filter | `LIVE` |
+| `@Breedables Librarian tool/status/gaps/wiki` | App mention text commands | Optional; same as slash commands | `LIVE` |
 
 ---
 
